@@ -2362,8 +2362,11 @@ h1, h2, h3{
 .header .desktopNavMega {
   position: absolute;
   top: 100%;
-  left: -40px;
-  width: 970px;
+  /* left: -40px;
+  width: 970px; */
+  width: 100%;
+  left: 0;
+  right: 0;
   max-width: 100vw;
   padding-top: 20px;
   z-index: 20;
@@ -2384,26 +2387,37 @@ h1, h2, h3{
 
 .header .desktopNavMega__container {
   display: grid;
-  grid-template-columns: 1fr 410px;
-  gap: 40px;
+  /* grid-template-columns: 1fr 410px; */
+  grid-template-columns: 1fr 0px;
+  gap: 20px;
+  /* gap: 40px; */
   background-color: white;
   border-radius: 12px;
   border: 1px solid var(--Border, #E7E6E6);
   box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
-  padding: 30px;
+  /* padding: 30px; */
+  padding: 0 15px 0 15px;
 }
 
 .header .desktopNavMega__lists {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
 }
 
 .header .desktopNavMega .desktopNavMega-list__title {
-  color: var(--color-third, #05073C);
+  /* color: var(--color-third, #05073C);
   font-size: 16px;
   font-weight: 500;
-  line-height: 187.5%;
+  line-height: 187.5%; */
+
+  color: #383838;
+  background-color: transparent;
+  padding: 10px 0px 10px 0px;
+  font-weight: 500;
+  font-size: 17px;
+  border-bottom: 1px solid #f2f2f2;
 }
 
 .header .desktopNavMega .desktopNavMega-list__list {
@@ -2411,9 +2425,13 @@ h1, h2, h3{
 }
 
 .header .desktopNavMega .desktopNavMega-list__link {
-  color: var(--color-third, #05073C);
+  /* color: var(--color-third, #05073C);
   font-size: 15px;
-  line-height: 233.333%;
+  line-height: 233.333%; */
+  color: var(--color-third, #05073C);
+  font-size: 17px;
+  line-height: 26px;
+  padding: 5px 0px 5px 7px;
 }
 
 .header.-type-2 {
@@ -3178,7 +3196,7 @@ h1, h2, h3{
 }
 
 .footer.-type-1 .footer__info {
-  padding-top: 55px;
+  padding-top: 90px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(235, 102, 43, 0.15);
 }
@@ -3302,9 +3320,11 @@ h1, h2, h3{
     border-radius: 0 !important;
   }
 }
-.header .desktopNav__item a{
-  font-size: 18px;
-  color: var(--color-logo-1);
+.header .desktopNav__item .desktopNav__item_a{
+    /* padding: 30px 0; */
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-logo-1);
 }
 .hero.-type-1 {
   position: relative;
@@ -5425,10 +5445,11 @@ h1, h2, h3{
 }
 
 .pageHeader.-type-1 .pageHeader__title {
-  font-size: 70px;
+  font-size: 45px;
   font-weight: 600;
   line-height: 1.2;
   color: white;
+  -webkit-text-fill-color: unset;
 }
 
 @media (max-width: 991px) {
@@ -14095,7 +14116,10 @@ button.gm-ui-hover-effect::after {
     font-weight: 600;
     color: var(--logo-color1);
 }
-/* .international-tour-card {
+.tourCard h5{
+  color: #05073C;
+}
+.international-tour-card {
     position: relative;
     box-shadow: inset 0 0 0 0 #aa833f;
     overflow: hidden;
@@ -14109,14 +14133,61 @@ button.gm-ui-hover-effect::after {
     height: 100%;
     top: 0;
     right: 100%;
-    background-color: #410f06;
+    background-color: #004d91;
     transition: all 0.3s ease-in-out;
 }
 .tourCard:hover .international-tour-card::before {
     right: 0;
 }
+.tourCard:hover img{
+  transform: scale(1.15);
+}
 .tourCard:hover .tourCard__location,
-.tourCard:hover .tourCard__location i
+.tourCard:hover .tourCard__location i,
+.tourCard:hover h5,
+.tourCard:hover .home-duration .duration-content
 {
-  color: #FFFFFF;
+  color: #FFFFFF!important;
+}
+/* .tourCard:hover .home-duration .duration-content{
+  border-top: 1px solid #FFFFFF;
 } */
+.international-tour-card .tourCard__location,
+.international-tour-card h5,
+.home-duration .duration-content{
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease-in-out;
+}
+.desktop-head-nav{
+  position: relative;
+}
+.header .desktop-head-nav .desktopNav__item{
+  position: static;
+}
+.image_block_one .image-box {
+  position: relative;
+  display: block;
+}
+.image_block_one .image-box .image {
+  position: relative;
+  display: block;
+  border-radius: 50%;
+}
+.image_block_one .image-box .image img {
+  width: 100%;
+  border-radius: 50%;
+}
+.bg-color-1 {
+    background: #F5F5F5;
+}
+.feature-section .pattern-layer {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

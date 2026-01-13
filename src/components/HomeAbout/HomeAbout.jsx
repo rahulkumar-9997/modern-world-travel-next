@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heading } from '../Heading/Heading';
+import Link from 'next/link';
 export const HomeAbout = () => {
     return (
         <div className="container relative md:mt-20 mt-16">
@@ -26,9 +27,9 @@ export const HomeAbout = () => {
                         <p className="mb-3!">
                             Our major focused areas are Holiday Packages (Domestic & International). We will endeavour to be the most preferred travel company for the national and international travellers, by achieving excellence in customer satisfaction. We believe in Guest delight. We strive constanty to keep up the Service Excellence Level at its best for our guest. We are an Equal Opportunity employer and we believe that it is essential to be Good Corporate Citizens to serve the community that sustains us.
                         </p>
-                        <a href="" className="py-2! px-5! inline-block tracking-wide align-middle duration-500 text-base text-center bg-logo-color1 text-white rounded-md hover:!text-white">
+                        <Link href="/about-us" className="py-2! px-5! inline-block tracking-wide align-middle duration-500 text-base text-center bg-logo-color1 text-white rounded-md hover:!text-white">
                             Read More 
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div className="absolute bottom-0 start-1/3 -z-1">

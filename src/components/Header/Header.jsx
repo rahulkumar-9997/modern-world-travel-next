@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect } from 'react'
-
+import Link from 'next/link';
 export const Header = () => {
     useEffect(() => {
         headerSticky()
@@ -18,53 +18,107 @@ export const Header = () => {
                         </button>
                     </div>
                     <div className="header__logo">
-                        <a href="index.html" className="header-logo-btn">
+                        <Link href="./." className="header-logo-btn">
                             <img src="/assets/modern-img/logo-new.jpg" alt="logo icon" />
-                        </a>
-                        <div className="xl:d-none ml-30">
+                        </Link>
+                        <div className="xl:d-none ml-30 desktop-head-nav">
                             <div className="desktopNav">
                                 <div className="desktopNav__item">
-                                    <a href="#">
-                                        Home <i className="icon-chevron-down" />
+                                    <Link className="desktopNav__item_a" href="./.">Home</Link>
+                                </div>
+                                <div className="desktopNav__item">
+                                    <Link className="desktopNav__item_a" href="/about-us">About Us</Link>
+                                </div>
+                                <div className="desktopNav__item">
+                                    <a href="#" className="desktopNav__item_a">
+                                        Destination 
+                                        <i className="icon-chevron-down"/>
                                     </a>
-                                    <div className="desktopNavSubnav">
-                                        <div className="desktopNavSubnav__content">
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="index.html">Home 01</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="home-2.html">Home 02</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="home-3.html">Home 03</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="home-4.html">Home 04</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="home-5.html">Home 05</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="home-6.html">Home 06</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="home-7.html">Home 07</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="home-8.html">Home 08</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="home-9.html">Home 09</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="home-10.html">Home 10</a>
-                                            </div>
+                                    <div className="desktopNavMega">
+                                        <div className="desktopNavMega__container">
+                                            <div className="desktopNavMega__lists">
+                                                <div className="desktopNavMega-list">
+                                                    <div className="desktopNavMega-list__item">
+                                                        <div className="desktopNavMega-list__title">
+                                                            Favourite Cities
+                                                        </div>
+                                                        <div className="desktopNavMega-list__list">
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-1.html">Tour list 1</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-2.html">Tour list 2</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-3.html">Tour list 3</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-4.html">Tour list 4</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-5.html">Tour list 5</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-6.html">Tour list 6</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-7.html">Tour list 7</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-8.html">Tour list 8</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-9.html">Tour list 9</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-10.html">Tour list 10</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="desktopNavMega-list">
+                                                    <div className="desktopNavMega-list__item">
+                                                        <div className="desktopNavMega-list__title">
+                                                            UP Tourism Circuits
+                                                        </div>
+                                                        <div className="desktopNavMega-list__list">
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-single-1.html">Tour single 1</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-single-2.html">Tour single 2</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-single-3.html">Tour single 3</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-single-4.html">Tour single 4</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-single-5.html">Tour single 5</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="desktopNavMega-list">
+                                                    <div className="desktopNavMega-list__item">
+                                                        <div className="desktopNavMega-list__title">
+                                                            Asian Tours
+                                                        </div>
+                                                        <div className="desktopNavMega-list__list">
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="booking-pages.html">Booking pages</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>                                            
                                         </div>
                                     </div>
                                 </div>
                                 <div className="desktopNav__item">
-                                    <a href="#">
-                                        Tour <i className="icon-chevron-down" />
+                                    <a href="#" className="desktopNav__item_a">
+                                        Experience <i className="icon-chevron-down" />
                                     </a>
                                     <div className="desktopNavMega">
                                         <div className="desktopNavMega__container">
@@ -186,100 +240,133 @@ export const Header = () => {
                                     </div>
                                 </div>
                                 <div className="desktopNav__item">
-                                    <a href="destinations.html">Destination</a>
-                                </div>
-                                <div className="desktopNav__item">
-                                    <a href="#">Activities</a>
-                                </div>
-                                <div className="desktopNav__item">
-                                    <a href="#">
-                                        Pages <i className="icon-chevron-down" />
+                                    <a href="#" className="desktopNav__item_a">
+                                        Packages <i className="icon-chevron-down" />
                                     </a>
-                                    <div className="desktopNavSubnav">
-                                        <div className="desktopNavSubnav__content">
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="#">
-                                                    Dashboard <i className="icon-chevron-right" />
-                                                </a>
-                                                <div className="desktopNavSubnav">
-                                                    <div className="desktopNavSubnav__content">
-                                                        <div className="desktopNavSubnav__item">
-                                                            <a href="db-main.html">Dashboard</a>
+                                    <div className="desktopNavMega">
+                                        <div className="desktopNavMega__container">
+                                            <div className="desktopNavMega__lists">
+                                                <div className="desktopNavMega-list">
+                                                    <div className="desktopNavMega-list__item">
+                                                        <div className="desktopNavMega-list__title">
+                                                            Tour List Style
                                                         </div>
-                                                        <div className="desktopNavSubnav__item">
-                                                            <a href="db-booking.html">Dashboard booking</a>
+                                                        <div className="desktopNavMega-list__list">
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-1.html">Tour list 1</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-2.html">Tour list 2</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-3.html">Tour list 3</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-4.html">Tour list 4</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-5.html">Tour list 5</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-6.html">Tour list 6</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-7.html">Tour list 7</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-8.html">Tour list 8</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-9.html">Tour list 9</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-list-10.html">Tour list 10</a>
+                                                            </div>
                                                         </div>
-                                                        <div className="desktopNavSubnav__item">
-                                                            <a href="db-listing.html">Dashboard listings</a>
+                                                    </div>
+                                                </div>
+                                                <div className="desktopNavMega-list">
+                                                    <div className="desktopNavMega-list__item">
+                                                        <div className="desktopNavMega-list__title">
+                                                            Tour Single Style
                                                         </div>
-                                                        <div className="desktopNavSubnav__item">
-                                                            <a href="db-add-tour.html">Dashboard add tour</a>
+                                                        <div className="desktopNavMega-list__list">
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-single-1.html">Tour single 1</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-single-2.html">Tour single 2</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-single-3.html">Tour single 3</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-single-4.html">Tour single 4</a>
+                                                            </div>
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="tour-single-5.html">Tour single 5</a>
+                                                            </div>
                                                         </div>
-                                                        <div className="desktopNavSubnav__item">
-                                                            <a href="db-favorites.html">Dashboard favorites</a>
+                                                    </div>
+                                                </div>
+                                                <div className="desktopNavMega-list">
+                                                    <div className="desktopNavMega-list__item">
+                                                        <div className="desktopNavMega-list__title">
+                                                            Booking Pages
                                                         </div>
-                                                        <div className="desktopNavSubnav__item">
-                                                            <a href="db-messages.html">Dashboard messages</a>
-                                                        </div>
-                                                        <div className="desktopNavSubnav__item">
-                                                            <a href="db-profile.html">Dashboard profile</a>
+                                                        <div className="desktopNavMega-list__list">
+                                                            <div className="desktopNavMega-list__link">
+                                                                <a href="booking-pages.html">Booking pages</a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="#">
-                                                    Blog <i className="icon-chevron-right" />
-                                                </a>
-                                                <div className="desktopNavSubnav">
-                                                    <div className="desktopNavSubnav__content">
-                                                        <div className="desktopNavSubnav__item">
-                                                            <a href="blog-list-1.html">Blog list 1</a>
+                                            <div className="desktopNavMega__info">
+                                                <div className="specialCardGrid row y-gap-30">
+                                                    <div className="col-12">
+                                                        <div className="specialCard">
+                                                            <div className="specialCard__image">
+                                                                <img src="/assets/img/cta/10/1.jpg" alt="image" />
+                                                            </div>
+                                                            <div className="specialCard__content">
+                                                                <div className="specialCard__subtitle">
+                                                                    Enjoy Upto
+                                                                </div>
+                                                                <h3 className="specialCard__title">60 % OFF</h3>
+                                                                <div className="specialCard__text">
+                                                                    on Your Booking
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div className="desktopNavSubnav__item">
-                                                            <a href="blog-list-2.html">Blog list 2</a>
-                                                        </div>
-                                                        <div className="desktopNavSubnav__item">
-                                                            <a href="blog-list-3.html">Blog list 3</a>
-                                                        </div>
-                                                        <div className="desktopNavSubnav__item">
-                                                            <a href="blog-single.html">Blog single</a>
+                                                    </div>
+                                                    <div className="col-12">
+                                                        <div className="specialCard">
+                                                            <div className="specialCard__image">
+                                                                <img src="/assets/img/cta/10/2.jpg" alt="image" />
+                                                            </div>
+                                                            <div className="specialCard__content">
+                                                                <div className="specialCard__subtitle">
+                                                                    80% Discount
+                                                                </div>
+                                                                <h3 className="specialCard__title">
+                                                                    Are You Ready
+                                                                    <br /> To Turkey Tour
+                                                                </h3>
+                                                                <div className="specialCard__text" />
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="destinations.html">Destinations</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="about.html">About</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="help-center.html">Help center</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="terms.html">Terms</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="login.html">Login</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="register.html">Register</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="404.html">404</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="invoice.html">Invoice</a>
-                                            </div>
-                                            <div className="desktopNavSubnav__item">
-                                                <a href="ui-elements.html">UI elements</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="desktopNav__item">
-                                    <a href="contact.html">Contact</a>
+                                    <a href="#" className="desktopNav__item_a">Blog</a>
+                                </div>
+                                <div className="desktopNav__item">
+                                    <a href="#" className="desktopNav__item_a">Contact Us</a>
                                 </div>
                             </div>
                         </div>
@@ -292,7 +379,7 @@ export const Header = () => {
                             <i className="icon-person text-18" />
                         </button>
                     </div>
-                    
+
                 </div>
             </header>
 

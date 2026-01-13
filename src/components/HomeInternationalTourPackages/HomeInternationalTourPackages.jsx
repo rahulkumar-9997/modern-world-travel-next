@@ -86,7 +86,7 @@ export const HomeInternationalTourPackages = () => {
                                 className="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 -hover-shadow"
                             >
                                 <div className="tourCard__header">
-                                    <div className="tourCard__image ratio ratio-28:20">
+                                    <div className="tourCard__image -hover-image-scale__image ratio ratio-28:20">
                                         <img
                                             src={tour.image}
                                             alt={tour.location}
@@ -103,10 +103,10 @@ export const HomeInternationalTourPackages = () => {
                                     <Heading
                                         level={5}
                                         text={tour.title}
-                                        className="ttourCard__title text-18 fw-500 mt-5 text-[#05073C]!"
+                                        className="ttourCard__title text-18 fw-500 mt-5"
                                     /> 
-                                    <div className="d-flex justify-between items-center border-1-top text-13 text-dark-1 pt-10 mt-10">
-                                        <div className="d-flex items-center">
+                                    <div className="d-flex justify-between items-center border-1-top text-13 text-dark-1 pt-10 mt-10 home-duration">
+                                        <div className="d-flex items-center duration-content">
                                             <i className="icon-clock text-16 mr-5" />
                                             {tour.duration}
                                         </div>

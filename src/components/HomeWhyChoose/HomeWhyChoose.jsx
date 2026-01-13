@@ -1,5 +1,6 @@
 import React from 'react'
 import { Heading } from '../Heading/Heading';
+import Link from 'next/link';
 export const HomeWhyChoose = () => {
     return (
         <section className="chooseus-section pt_100 pb_100">
@@ -51,11 +52,11 @@ export const HomeWhyChoose = () => {
                                     </li>
                                 </ul>
                                 <div className="mt-4">
-                                    <a 
-                                        href="" 
+                                    <Link 
+                                        href="/about-us" 
                                         className="py-2! px-5! inline-block tracking-wide align-middle duration-500 text-base text-center bg-logo-color1 text-white rounded-md hover:!text-white">
                                         About Us
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
