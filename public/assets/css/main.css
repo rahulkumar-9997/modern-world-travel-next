@@ -5977,7 +5977,7 @@ h1, h2, h3{
   width: 100%;
   height: 100%;
   border-radius: 12px;
-  background: linear-gradient(180deg, rgba(5, 7, 60, 0) 0%, rgba(5, 7, 60, 0.8) 100%);
+  background: linear-gradient(180deg, rgba(5, 7, 60, 0) 0%, rgb(5 7 60 / 98%) 100%);
   z-index: 1;
 }
 
@@ -6017,7 +6017,7 @@ h1, h2, h3{
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding: 30px;
+  padding: 20px;
 }
 
 .blogCard.-type-1 {
@@ -14207,6 +14207,9 @@ button.gm-ui-hover-effect::after {
     box-shadow: 0px 10px 70px 0px #0000001A;
     padding: 20px;
 }
-
+.destination-list-section .tourCard__title{
+  -webkit-text-fill-color: unset;
+  line-height: 28px;
+}
 
 /*Contact us*/

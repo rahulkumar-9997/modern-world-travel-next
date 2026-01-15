@@ -44,7 +44,7 @@ export const Header = () => {
                                                         </div>
                                                         <div className="desktopNavMega-list__list">
                                                             <div className="desktopNavMega-list__link">
-                                                                <a href="tour-list-1.html">Tour list 1</a>
+                                                                <a href="/destination">Tour list 1</a>
                                                             </div>
                                                             <div className="desktopNavMega-list__link">
                                                                 <a href="tour-list-2.html">Tour list 2</a>
