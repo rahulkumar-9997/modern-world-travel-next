@@ -8,7 +8,7 @@ window.App = {};
 App.config = {
   cursorFollower: {
     enabled: true,
-    disableBreakpoint: '992', // cursor will be disabled on this device width
+    disableBreakpoint: '992', 
   },
 }
 
@@ -37,7 +37,6 @@ function initialReveal() {
   }
 }
 
-// Reloads all scripts when navigating through pages
 function initComponents() {
   sectionSlider()
   testimonialsSlider_1()
