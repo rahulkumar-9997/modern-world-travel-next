@@ -379,7 +379,6 @@ export const Header = () => {
                             <i className="icon-person text-18" />
                         </button>
                     </div>
-
                 </div>
             </header>
 
