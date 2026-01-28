@@ -2376,7 +2376,7 @@ h1, h2, h3{
   opacity: 0;
 }
 
-@media (max-width: 1400px) {
+/* @media (max-width: 1400px) {
   .header .desktopNavMega {
     position: fixed;
     top: 50px;
@@ -2384,7 +2384,7 @@ h1, h2, h3{
     left: 50%;
     transform: translateX(-50%);
   }
-}
+} */
 
 .header .desktopNavMega__container {
   display: grid;

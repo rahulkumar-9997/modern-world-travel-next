@@ -24,7 +24,7 @@ export default function AboutUsPage() {
                     </div>
                     <div className="row y-gap-20 align-items-center">
                         <div className="col-md-6 is-in-view">
-                            <div className="bg-gradient-to-tr from-[#eb6605] via-[#eb6605] to-[#004d91] backdrop-blur-sm rounded-2xl p-4 border border-gray-700/50 p-4 rounded-2xl relative mt-6">
+                            <div className="bg-linear-to-tr from-[#eb6605] via-[#eb6605] to-[#004d91] backdrop-blur-sm rounded-2xl p-4 border border-gray-700/50 relative mt-6">
                                 <div className="absolute -top-4 left-8">
                                     <div className="bg-[#004d91] text-white p-3 rounded-lg shadow-lg">
                                         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -159,8 +159,6 @@ export default function AboutUsPage() {
                     </div>
                 </div>
             </section>
-
-
         </>
     )
 }

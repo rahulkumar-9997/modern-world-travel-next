@@ -23,7 +23,7 @@ const BreadcrumbHeader = ({
               className="absolute inset-0 w-full h-full object-cover block md:hidden"
             />
           )}
-          <div className={`absolute inset-0 bg-gradient-to-r from-black/60 to-black/30`}></div>
+          <div className={`absolute inset-0 bg-linear-to-r from-black/60 to-black/30`}></div>
         </div>
         {shapeImage && (
           <img 

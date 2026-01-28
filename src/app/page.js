@@ -7,20 +7,29 @@ import { HomeTourPackage } from "@/components/HomeTourPackage/HomeTourPackage";
 import { HomeWhyChoose } from "@/components/HomeWhyChoose/HomeWhyChoose";
 import { HomeInternationalTourPackages } from "@/components/HomeInternationalTourPackages/HomeInternationalTourPackages";
 import { Testimonials } from "@/components/Testimonials/Testimonials";
+import Spinner from "@/components/Loader/spinner";
 export default function Home() {
   return (
-  <>    
-    <Suspense>
-      <Banner /> 
-    </Suspense> 
-    <HomeAbout />
-    <Suspense>
-      <HomeTrendingDestinations/>
-    </Suspense>
-    <HomeTourPackage/> 
-    <HomeWhyChoose/>
-    <HomeInternationalTourPackages/>
-    <Testimonials/>
-  </>
+    <>
+      <Suspense fallback={<Spinner />}>
+        <Banner />
+      </Suspense>
+      <HomeAbout />
+      <Suspense fallback={<Spinner />}>
+        <HomeTrendingDestinations />
+      </Suspense>
+      <Suspense fallback={<Spinner />}>
+        <HomeTourPackage />
+      </Suspense>
+      <Suspense fallback={<Spinner />}>
+        <HomeWhyChoose />
+      </Suspense>
+      <Suspense fallback={<Spinner />}>
+        <HomeInternationalTourPackages />
+      </Suspense>
+      <Suspense fallback={<Spinner />}>
+        <Testimonials />
+      </Suspense>
+    </>
   );
 }
