@@ -14401,4 +14401,12 @@ button.gm-ui-hover-effect::after {
     position: sticky;
     top: 120px;
 }
+.main-img{
+  padding: 0px 10px 10px 0px;
+}
+.city-slug{
+  border-bottom: 2px solid #dee2e6;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+} 
 /*Contact us*/
