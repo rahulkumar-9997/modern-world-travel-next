@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect } from 'react'
 import { Heading } from '../Heading/Heading';
+import React from 'react'
 import {
     Carousel,
     CarouselContent,
@@ -9,6 +9,8 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
 export const HomeTrendingDestinations = () => {
     const destinations = [
@@ -52,6 +54,17 @@ export const HomeTrendingDestinations = () => {
     const plugin = React.useRef(
         Autoplay({ delay: 3000, stopOnInteraction: false })
     )
+
+    const { data, isLoading, isError, isFetching, error } = useQuery({
+        queryKey: ["nav-bar"],
+        queryFn: async () => {
+            const res = await axios.get('https://www.gdsons.co.in/draft/mwt/api/header-menu');
+            setMenuList(res.data?.data);
+            return res.data?.data;
+        },
+        retry: 1,
+        placeholderData: (old) => old,
+    });
 
     return (
         <section className="layout-pt-xl layout-pb-xl">

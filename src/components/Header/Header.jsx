@@ -94,9 +94,16 @@ export const Header = () => {
                                                                                         className="desktopNavMega-list__link"
                                                                                         key={idx}
                                                                                     >
-                                                                                        <a href={`/${item.url}`}>
+                                                                                        <a href={`/${item.url}`} className='text-sm! m-0! leading-tight'>
                                                                                             {item.name}
                                                                                         </a>
+                                                                                        {
+                                                                                            item.duration && (
+                                                                                                <span className="text-[10px] text-[#EB662B] leading-[2px] ">
+                                                                                                    {item.duration}
+                                                                                                </span>
+                                                                                            )
+                                                                                        }
                                                                                     </div>
                                                                                 ))}
                                                                         </div>
