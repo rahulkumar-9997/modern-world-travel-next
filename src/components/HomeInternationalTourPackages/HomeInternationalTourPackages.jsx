@@ -116,7 +116,7 @@ export const HomeInternationalTourPackages = () => {
                                         text={tour.title}
                                         className="ttourCard__title  fw-500 mt-5 leading-tight! "
                                     />
-                                    <p className='relative text-base! text-zinc-500 leading-tight! z-10! line-clamp-4 group-hover:text-white! transition-colors duration-200 ease-in-out'>
+                                    <p className='relative z-10! line-clamp-4 group-hover:text-white! transition-colors duration-200 ease-in-out'>
                                         {tour.description}
                                     </p>
                                     <div className="d-flex justify-between items-center border-1-top text-13 text-dark-1 pt-4! mt-2! home-duration">
