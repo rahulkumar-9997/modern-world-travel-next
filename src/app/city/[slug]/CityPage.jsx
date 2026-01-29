@@ -1,7 +1,8 @@
 import React from 'react';
 import BreadcrumbHeader from '@/components/BreadcrumbHeader/BreadcrumbHeader';
 import { Heading } from '@/components/Heading/Heading';
-export default function CityPage() {
+export default function CityPage({ initialData }) {
+    const { data: city, destinations } = initialData;
     return (
         <>
             <BreadcrumbHeader

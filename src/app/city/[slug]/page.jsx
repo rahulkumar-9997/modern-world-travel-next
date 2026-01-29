@@ -12,8 +12,7 @@ async function getCityDetails(slug) {
                 const res = await axios.get(
                     `https://www.gdsons.co.in/draft/mwt/api/city/${slug}`
                 );
-                console.log(res.data);
-                return res.data;
+                return res.data.data;
             },
         });
         return data;
@@ -27,8 +26,8 @@ export async function generateMetadata({ params }) {
     try {
         const resolvedParams = await params;
         const { slug } = resolvedParams;
-        
         const data = await getCityDetails(slug);
+        console.log(data);
         if (!data?.status) {
             return {
                 title: 'City not found',
