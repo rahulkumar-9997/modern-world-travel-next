@@ -22,6 +22,7 @@ async function getCityDetails(slug) {
     }
 }
 
+
 export async function generateMetadata({ params }) {
     try {
         const resolvedParams = await params;
