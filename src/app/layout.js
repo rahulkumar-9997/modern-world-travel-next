@@ -4,6 +4,7 @@ import { TopToBottomButton } from "@/components/TopToBottomButton/TopToBottomBut
 import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
 import Provider from "@/lib/provider";
+import HeaderWrapper from "@/components/Header/HeaderWrapper";
 export const metadata = {
   title: "Modern World Travel Packages for Varanasi, India, International",
   description:
@@ -44,7 +45,7 @@ export default function RootLayout({ children }) {
           <Suspense>
             <TopToBottomButton />
           </Suspense>
-          <Header />
+          <HeaderWrapper />
           <main>
             {children}
             <Footer />

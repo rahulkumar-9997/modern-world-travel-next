@@ -9,25 +9,13 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import Spinner from '../Loader/spinner';
-
-export const HomeTrendingDestinations = () => {
+export function HomeTrendingDestinations({ initialData }) {
 
     const plugin = React.useRef(
         Autoplay({ delay: 3000, stopOnInteraction: false })
-    )
-
-    const { data, isLoading, isError, isFetching, error } = useQuery({
-        queryKey: ["treanding-destinations"],
-        queryFn: async () => {
-            const res = await axios.get('https://www.gdsons.co.in/draft/mwt/api/home-trending-destinations');
-            return res.data;
-        },
-        retry: 1,
-        placeholderData: (old) => old,
-    });
+    )  
+    const isLoading = !initialData || initialData.length === 0;  
     return (
         <section className="layout-pt-xl layout-pb-xl">
             <div className="container animated">
@@ -65,7 +53,7 @@ export const HomeTrendingDestinations = () => {
                             <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 text-gray-800 border border-gray-300 shadow-xl hover:shadow-2xl transition-all duration-300 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center" />
 
                             <CarouselContent className="-ml-2 md:-ml-4">
-                                {data && data.map((destination) => (
+                                {initialData && initialData.map((destination) => (
                                     <CarouselItem
                                         key={destination.nid}
                                         className="min-w-0 shrink-0 grow-0 pl-1 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6"

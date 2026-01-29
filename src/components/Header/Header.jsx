@@ -1,37 +1,17 @@
 'use client';
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-
-export const Header = () => {
-    const [menuList, setMenuList] = useState([]);
+export function Header({ menuList }) {
     useEffect(() => {
         headerSticky()
         menuEvents()
         menuListBindEvents()
     }, [])
-
-    const { data, isLoading, isError, isFetching, error } = useQuery({
-        queryKey: ["nav-bar"],
-        queryFn: async () => {
-            const res = await axios.get('https://www.gdsons.co.in/draft/mwt/api/header-menu');
-            setMenuList(res.data?.data);
-            return res.data?.data;
-        },
-        retry: 1,
-        placeholderData: (old) => old,
-    });
-
+    const isLoading = !menuList || menuList.length === 0;
     return (
         <>
             <header className="header -type-3 -page-5 js-header">
-                <div className="header__container container">
-                    <div className="headerMobile__left">
-                        <button className="header__menuBtn js-menu-button">
-                            <i className="icon-main-menu" />
-                        </button>
-                    </div>
+                <div className="header__container container">                    
                     <div className="header__logo">
                         <Link href="/" className="header-logo-btn">
                             <img src="/assets/modern-img/logo-new.jpg" alt="logo icon" />
@@ -94,18 +74,21 @@ export const Header = () => {
                                                                                             className="desktopNavMega-list__link"
                                                                                             key={idx}
                                                                                         >
-                                                                                            <a
+                                                                                            <Link
                                                                                                 href={`${section.title === "Favourite Cities" ? "/city" : menu.title === "Packages" ? "/tour-package" : "/tours-location"}/${item.url}`}
-                                                                                                className='text-sm! m-0! leading-tight'>
+                                                                                                className='dropdown-link-a'>
                                                                                                 {item.name}
-                                                                                            </a>
-                                                                                            {
-                                                                                                item.duration && (
-                                                                                                    <span className="text-[10px] text-[#EB662B] leading-[2px] ">
-                                                                                                        {item.duration}
-                                                                                                    </span>
-                                                                                                )
-                                                                                            }
+                                                                                                {
+                                                                                                    item.duration && (
+                                                                                                        <>
+                                                                                                        <br /><span className="span-text-s">
+                                                                                                            {item.duration}
+                                                                                                        </span>
+                                                                                                        </>
+                                                                                                    )
+                                                                                                }
+                                                                                            </Link>
+                                                                                            
                                                                                         </div>
                                                                                     ))}
                                                                             </div>
@@ -130,330 +113,111 @@ export const Header = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="headerMobile__right">
-                        <button className="d-flex">
-                            <i className="icon-search text-18" />
+                    <div className="headerMobile__left">
+                        <button className="header__menuBtn js-menu-button">
+                            <i className="icon-main-menu" />
                         </button>
-                        <button className="d-flex ml-20">
-                            <i className="icon-person text-18" />
-                        </button>
-                    </div>
+                    </div>                    
                 </div>
             </header>
 
             <div className="menu js-menu">
                 <div className="menu__overlay js-menu-button"></div>
-
                 <div className="menu__container">
                     <div className="menu__header">
-                        <h4>Main Menu</h4>
-
+                        <h4>Menu</h4>
                         <button className="js-menu-button"><i className="icon-cross text-10"></i></button>
                     </div>
 
                     <div className="menu__content">
                         <ul className="menuNav js-navList">
-                            <li className="menuNav__item -has-submenu js-has-submenu">
-                                <a>
-                                    Home
-                                    <i className="icon-chevron-right"></i>
-                                </a>
-
-                                <ul className="submenu">
-                                    <li className="submenu__item js-nav-list-back">
-                                        <a>Back</a>
-                                    </li>
-
-
-                                    <li className="submenu__item">
-                                        <a href="index.html">Home 01</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="home-2.html">Home 02</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="home-3.html">Home 03</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="home-4.html">Home 04</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="home-5.html">Home 05</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="home-6.html">Home 06</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="home-7.html">Home 07</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="home-8.html">Home 08</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="home-9.html">Home 09</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="home-10.html">Home 10</a>
-                                    </li>
-
-                                </ul>
-                            </li>
-
-                            <li className="menuNav__item -has-submenu js-has-submenu">
-                                <a>
-                                    Tour
-                                    <i className="icon-chevron-right"></i>
-                                </a>
-
-                                <ul className="submenu">
-                                    <li className="submenu__item js-nav-list-back">
-                                        <a>Back</a>
-                                    </li>
-
-
-                                    <li className="submenu__item">
-                                        <a href="tour-list-1.html">Tour list 1</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="tour-list-2.html">Tour list 2</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="tour-list-3.html">Tour list 3</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="tour-list-4.html">Tour list 4</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="tour-list-5.html">Tour list 5</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="tour-list-6.html">Tour list 6</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="tour-list-7.html">Tour list 7</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="tour-list-8.html">Tour list 8</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="tour-list-9.html">Tour list 9</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="tour-list-10.html">Tour list 10</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="tour-single-1.html">Tour single 1</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="tour-single-2.html">Tour single 2</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="tour-single-3.html">Tour single 3</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="tour-single-4.html">Tour single 4</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="tour-single-5.html">Tour single 5</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="booking-pages.html">Booking</a>
-                                    </li>
-
-                                </ul>
-                            </li>
-
-                            <li className="menuNav__item -has-submenu js-has-submenu">
-                                <a>
-                                    Dashboard
-                                    <i className="icon-chevron-right"></i>
-                                </a>
-
-                                <ul className="submenu">
-                                    <li className="submenu__item js-nav-list-back">
-                                        <a>Back</a>
-                                    </li>
-
-
-                                    <li className="submenu__item">
-                                        <a href="db-main.html">Dashboard</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="db-booking.html">Booking</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="db-listing.html">Listing</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="db-add-tour.html">Add tour</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="db-favorites.html">Favorites</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="db-messages.html">Messages</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="db-profile.html">Profile</a>
-                                    </li>
-
-                                </ul>
-                            </li>
-
-                            <li className="menuNav__item -has-submenu js-has-submenu">
-                                <a>
-                                    Blog
-                                    <i className="icon-chevron-right"></i>
-                                </a>
-
-                                <ul className="submenu">
-                                    <li className="submenu__item js-nav-list-back">
-                                        <a>Back</a>
-                                    </li>
-
-
-                                    <li className="submenu__item">
-                                        <a href="blog-list-1.html">Blog list 1</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="blog-list-2.html">Blog list 2</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="blog-list-3.html">Blog list 3</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="blog-single.html">Blog single</a>
-                                    </li>
-
-                                </ul>
-                            </li>
-
-                            <li className="menuNav__item -has-submenu js-has-submenu">
-                                <a>
-                                    Pages
-                                    <i className="icon-chevron-right"></i>
-                                </a>
-
-                                <ul className="submenu">
-                                    <li className="submenu__item js-nav-list-back">
-                                        <a>Back</a>
-                                    </li>
-
-
-                                    <li className="submenu__item">
-                                        <a href="destinations.html">Destinations</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="about.html">About</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="contact.html">Contact</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="help-center.html">Help center</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="terms.html">Terms</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="login.html">Login</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="register.html">Register</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="404.html">404 Page</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="invoice.html">Invoice</a>
-                                    </li>
-
-                                    <li className="submenu__item">
-                                        <a href="ui-elements.html">UI elements</a>
-                                    </li>
-
-                                </ul>
-                            </li>
-
                             <li className="menuNav__item">
-                                <a href="contact.html">Contact</a>
+                                <Link href="/">Home</Link>
                             </li>
+                            <li className="menuNav__item">
+                                <Link href="/about-us">About Us</Link>
+                            </li>
+                            {!isLoading && menuList && menuList.map((menu, menuIndex) => (
+                                <li className={`menuNav__item ${menu.sections && menu.sections.length > 0 ? '-has-submenu js-has-submenu' : ''}`} key={menuIndex}>
+                                    {menu.sections && menu.sections.length > 0 && (
+                                        <>
+                                            <a>
+                                                {menu.title}
+                                                <i className="icon-chevron-right"></i>
+                                            </a>
+
+                                            <ul className="submenu">
+                                                <li className="submenu__item js-nav-list-back">
+                                                    <a>Back</a>
+                                                </li>
+                                                {menu.sections.map((section, sectionIndex) => (
+                                                    <React.Fragment key={sectionIndex}>
+                                                    <li className="submenu__item menu-head-se">
+                                                        <a className="submenu__item-title menu-head-t">{section.title}</a>
+                                                    </li>
+                                                    {section.items && section.items.map((item, itemIndex) => (
+                                                        <li className="submenu__item" key={`${sectionIndex}-${itemIndex}`}>
+                                                        <Link href=
+                                                        {`${section.title === "Favourite Cities" ? "/city" : menu.title === "Packages" ? "/tour-package" : "/tours-location"}/${item.url}`}
+                                                        >
+                                                            {item.name}
+                                                            {/* {item.duration && (
+                                                            <>
+                                                                <br />
+                                                                <span className="span-text-s">{item.duration}</span>
+                                                            </>
+                                                            )} */}
+                                                        </Link>
+                                                        </li>
+                                                    ))}
+                                                    </React.Fragment>
+                                                ))}
+                                                </ul>
+
+                                        </>
+                                    )}
+                                </li>
+                            ))}
+                            <li className="menuNav__item">
+                                <Link href="/blog">Blog</Link>
+                            </li>                            
+                            <li className="menuNav__item">
+                                <Link href="/contact-us">Contact Us</Link>
+                            </li>                            
                         </ul>
                     </div>
 
 
                     <div className="menu__footer">
-                        <i className="icon-headphone text-50"></i>
-
-                        <div className="text-20 lh-12 fw-500 mt-20">
-                            <div>Speak to our expert at</div>
-                            <div className="text-accent-1">1-800-453-6744</div>
+                        <i className="icon-headphone text-50 text-[white]"></i>
+                        <div className="text-20 lh-12 fw-500 mt-15">
+                            <div className='text-[white]'>Speak to our expert at</div>
+                            <div className="mt-6 text-[white]">1-800-453-6744</div>
                         </div>
 
                         <div className="d-flex items-center x-gap-10 pt-30">
 
                             <div>
-                                <a className="d-block">
-                                    <i className="icon-facebook"></i>
+                                <a className="d-block" href="" target="_blank">
+                                    <i className="icon-facebook text-[white]"></i>
                                 </a>
                             </div>
 
                             <div>
-                                <a className="d-block">
-                                    <i className="icon-twitter"></i>
+                                <a className="d-block" href="" target="_blank">
+                                    <i className="icon-twitter text-[white]"></i>
                                 </a>
                             </div>
 
                             <div>
-                                <a className="d-block">
-                                    <i className="icon-instagram"></i>
+                                <a className="d-block" href="" target="_blank">
+                                    <i className="icon-instagram text-[white]"></i>
                                 </a>
                             </div>
 
                             <div>
-                                <a className="d-block">
-                                    <i className="icon-linkedin"></i>
+                                <a className="d-block" href="" target="_blank">
+                                    <i className="icon-linkedin text-[white]"></i>
                                 </a>
                             </div>
 
@@ -477,8 +241,6 @@ function headerSticky() {
         }
     })
 }
-
-// Mobile menu variables
 let isMenuOpen = false
 let menuDeepLevel = 0
 let timeline
@@ -514,7 +276,6 @@ function menuOpen() {
                 }
             })
     } else {
-        // Fallback if GSAP is not available
         menu.classList.add("-is-active")
         document.body.classList.add("overflow-hidden")
         header.classList.add("-dark")
@@ -537,37 +298,28 @@ function menuClose() {
                 }
             })
     } else {
-        // Fallback if GSAP is not available
         menu.classList.remove("-is-active")
         document.body.classList.remove("overflow-hidden")
         header.classList.remove("-dark")
         menu.style.opacity = 0
     }
 }
-
-// Mobile menu submenu functionality
 function menuListBindEvents() {
     const listItems = document.querySelectorAll('.js-navList .js-has-submenu');
     const navList = document.querySelector('.js-navList');
     const navBtnListBack = document.querySelectorAll('.js-nav-list-back');
-
     if (!listItems.length) return;
-
-    // Initialize timeline
     if (window.gsap) {
         timeline = window.gsap.timeline();
     } else {
         timeline = {
             clear: () => { },
             to: (targets, config) => {
-                // Simple fallback animation
                 if (config.onStart) config.onStart();
                 if (config.onComplete) setTimeout(config.onComplete, config.duration * 1000 || 0);
             }
         };
     }
-
-    // Back button events
     navBtnListBack.forEach(el => {
         el.addEventListener('click', () => {
             const visibleList = navList.querySelector('ul.-is-active');
@@ -579,8 +331,6 @@ function menuListBindEvents() {
             menuListStepAnimate(visibleList, parentList, menuDeepLevel, navBtnListBack);
         })
     })
-
-    // Submenu item events
     listItems.forEach(el => {
         const parentLink = el.querySelector('li > a');
         if (parentLink) {
@@ -621,7 +371,6 @@ function menuListStepAnimate(hideList, showList, level, navBtnListBack) {
                 opacity: 0,
             })
         } else {
-            // Fallback
             navBtnListBack.forEach(btn => btn.style.opacity = 0);
         }
     }
@@ -656,7 +405,6 @@ function menuListStepAnimate(hideList, showList, level, navBtnListBack) {
             y: '0%',
         }, '>-0.6')
     } else {
-        // Fallback animation without GSAP
         showList.classList.add('-is-active');
         hideList.classList.remove('-is-active');
 

@@ -2423,6 +2423,7 @@ h1, h2, h3{
 
 .header .desktopNavMega .desktopNavMega-list__list {
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .header .desktopNavMega .desktopNavMega-list__link {
@@ -2431,7 +2432,7 @@ h1, h2, h3{
   line-height: 233.333%; */
   color: var(--color-third, #05073C);
   font-size: 17px;
-  line-height: 26px;
+  line-height: 16px;
   padding: 5px 0px 5px 7px;
 }
 
@@ -2588,10 +2589,13 @@ h1, h2, h3{
 
 .header.-type-3 .header__menuBtn {
   display: flex;
+  border: 1px solid #004d91;
+  border-radius: 5px;
 }
 
 .header.-type-3 .header__menuBtn i {
-  font-size: 20px;
+  font-size: 22px;  
+  padding: 5px;
 }
 
 .header.-type-3 .desktopNav > * {
@@ -7045,8 +7049,8 @@ h1, h2, h3{
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 40px;
-  background-color: white;
+  padding: 20px;
+  background-color: #eb6605;
   z-index: 1;
 }
 
@@ -7054,13 +7058,14 @@ h1, h2, h3{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
 }
 
 .menu__header h4 {
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 1.2;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
 }
 
 .menu__header button {
@@ -7092,7 +7097,7 @@ h1, h2, h3{
 }
 
 .menuNav > li:last-child a {
-  border-bottom: 0px solid #E7E6E6 !important;
+  border-bottom: 1px solid #E7E6E6 !important;
 }
 
 .menuNav ul > li a {
@@ -14409,4 +14414,39 @@ button.gm-ui-hover-effect::after {
   margin-bottom: 10px;
   padding-bottom: 20px;
 } 
+.header .desktopNav__item a.dropdown-link-a:before {
+    content: "\e90a";
+    position: absolute;
+    left: -5px;
+    font-family: "icomoon";
+    color: #eb6504;
+    font-size: 16px;
+    margin-top: 1px;
+}
+.header .desktopNav__item a.dropdown-link-a{
+  font-weight: 500;
+  padding: 2px 0px 4px 15px;
+  line-height: 20px;
+  font-size: 16px;
+  position: relative;
+  display: block;
+}
+
+.header .desktopNav__item .span-text-s{
+    color: #eb6504;
+    font-size: 14px;
+}
+@media screen and (max-width: 991px) {
+  .menuNav__item a.menu-head-t{
+    padding: 10px 0;
+    color: #004d91;
+    font-weight: 600;
+  }
+  .menuNav__item a{
+    font-size: 18px;
+    padding: 10px 0;
+    color: #ffff;
+  }
+  
+}
 /*Contact us*/

@@ -8,6 +8,8 @@ import { HomeWhyChoose } from "@/components/HomeWhyChoose/HomeWhyChoose";
 import { HomeInternationalTourPackages } from "@/components/HomeInternationalTourPackages/HomeInternationalTourPackages";
 import { Testimonials } from "@/components/Testimonials/Testimonials";
 import Spinner from "@/components/Loader/spinner";
+import HomeTrendingDestinationsWrapper from "@/components/HomeTrendingDestinations/HomeTrendingDestinationsWrapper";
+import HomeInternationalTourPackagesWrapper from "@/components/HomeInternationalTourPackages/HomeInternationalTourPackagesWrapper";
 export default function Home() {
   return (
     <>
@@ -16,7 +18,7 @@ export default function Home() {
       </Suspense>
       <HomeAbout />
       <Suspense fallback={<Spinner />}>
-        <HomeTrendingDestinations />
+        <HomeTrendingDestinationsWrapper />
       </Suspense>
       <Suspense fallback={<Spinner />}>
         <HomeTourPackage />
@@ -25,7 +27,7 @@ export default function Home() {
         <HomeWhyChoose />
       </Suspense>
       <Suspense fallback={<Spinner />}>
-        <HomeInternationalTourPackages />
+        <HomeInternationalTourPackagesWrapper />
       </Suspense>
       <Suspense fallback={<Spinner />}>
         <Testimonials />

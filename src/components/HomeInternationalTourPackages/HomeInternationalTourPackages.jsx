@@ -1,76 +1,8 @@
 'use client';
 import React from 'react'
 import { Heading } from '../Heading/Heading';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-export const HomeInternationalTourPackages = () => {
-    const tourPackages = [
-        {
-            id: 1,
-            image: "/assets/modern-img/Prayagraj.jpg",
-            location: "Paris, France",
-            title: "Centipede Tour - Guided Arizona Desert Tour by ATV",
-            duration: "4 days 3 Night"
-        },
-        {
-            id: 2,
-            image: "/assets/modern-img/lucknow.jpg",
-            location: "New York, USA",
-            title: "Molokini and Turtle Town Snorkeling Adventure Aboard",
-            duration: "4 days 3 Night"
-        },
-        {
-            id: 3,
-            image: "/assets/modern-img/Prayagraj.jpg",
-            location: "Tokyo, Japan",
-            title: "Tokyo City Lights and Traditional Temples Tour",
-            duration: "5 days 4 Night"
-        },
-        {
-            id: 4,
-            image: "/assets/modern-img/varanasi-sarnath.jpg",
-            location: "Rome, Italy",
-            title: "Ancient Rome and Vatican City Exploration",
-            duration: "6 days 5 Night"
-        },
-        {
-            id: 5,
-            image: "/assets/modern-img/Vrindavan.jpg",
-            location: "Dubai, UAE",
-            title: "Desert Safari and Burj Khalifa Experience",
-            duration: "4 days 3 Night"
-        },
-        {
-            id: 6,
-            image: "/assets/modern-img/Varanasi.jpg",
-            location: "Sydney, Australia",
-            title: "Great Barrier Reef and Sydney Opera House Tour",
-            duration: "7 days 6 Night"
-        },
-        {
-            id: 7,
-            image: "/assets/modern-img/Ram-Mandir-Ayodhya.jpg",
-            location: "Bangkok, Thailand",
-            title: "Thai Culture and Island Hopping Adventure",
-            duration: "5 days 4 Night"
-        },
-        {
-            id: 8,
-            image: "/assets/modern-img/Mathura.jpg",
-            location: "London, UK",
-            title: "Royal London and British Museum Tour",
-            duration: "4 days 3 Night"
-        }
-    ];
-    const { data, isLoading, isError, isFetching, error } = useQuery({
-        queryKey: ["International-Tour-Packages"],
-        queryFn: async () => {
-            const res = await axios.get('https://www.gdsons.co.in/draft/mwt/api/home-international-tour');
-            return res.data;
-        },
-        retry: 1,
-        placeholderData: (old) => old,
-    });
+export function HomeInternationalTourPackages({ initialData }) {
+    const isLoading = !initialData || initialData.length === 0;      
     return (
         <section className="layout-pt-xl layout-pb-xl international-tour-container">
             <div className="container">
@@ -90,7 +22,7 @@ export const HomeInternationalTourPackages = () => {
                     </div>
                 </div>
                 <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 mobile-css-slider -w-300 gap-5 mt-8!">
-                    {data && data.map((tour) => (
+                    {initialData && initialData.map((tour) => (
                         <div key={tour.nid} className="w-full h-full">
                             <a
                                 href={tour.url}
