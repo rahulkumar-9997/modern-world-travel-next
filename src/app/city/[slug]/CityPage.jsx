@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import BreadcrumbHeader from '@/components/BreadcrumbHeader/BreadcrumbHeader';
 import { Heading } from '@/components/Heading/Heading';
