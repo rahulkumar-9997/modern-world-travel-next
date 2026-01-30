@@ -5683,8 +5683,11 @@ h1, h2, h3{
 .sidebar.-type-2 {
   max-width: 100%;
   border-radius: 12px;
-  border: 1px solid var(--border, #E7E6E6);
+  background-color: #F8F8F8;
+  border-bottom: 3px solid #eb6605;
+  margin-bottom: 50px;
   padding: 18px 18px;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 991px) {
@@ -14435,6 +14438,16 @@ button.gm-ui-hover-effect::after {
 .header .desktopNav__item .span-text-s{
     color: #eb6504;
     font-size: 14px;
+}
+.tour-cover-a{
+  /* margin-bottom: 15px; */
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.package-price {
+    background-color: #004d91;
+    padding: 3px 8px 3px 8px;
+    border-radius: 10px;
 }
 @media screen and (max-width: 991px) {
   .menuNav__item a.menu-head-t{

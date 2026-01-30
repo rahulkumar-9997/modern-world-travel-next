@@ -1,113 +1,74 @@
-import React from 'react'
-import BreadcrumbHeader from '@/components/BreadcrumbHeader/BreadcrumbHeader';
-import { Heading } from '@/components/Heading/Heading';
-export default function DestinationListPage() {
-    return (
-        <>
-            <BreadcrumbHeader
-                desktopImage="/assets/img/hero/1.png"
-                mobileImage="/assets/img/hero/1.png"
-                shapeImage="/assets/img/hero/1/shape.svg"
-                title="Aadhyatmik Circuit"
-                subtitle=""
-            />
-            <section className="layout-pt-xl layout-pb-xl destination-list-section">
-                <div className="container animated">                    
-                    <div className="row y-gap-30 pt-40 sm:pt-20">
-                        <div className="col-lg-4 col-sm-6 is-in-view">
-                            <a href="/destination/slug" className="tourCard -type-3 -hover-image-scale">
-                                <div className="tourCard__image ratio ratio-41:45 rounded-12 -hover-image-scale__image">
-                                    <img
-                                        src="/assets/modern-img/Prayagraj.jpg"
-                                        alt="image"
-                                        className="img-ratio rounded-12"
-                                    />
-                                </div>
-                                <div className="tourCard__wrap">
-                                    <div className="tourCard__header d-flex justify-between items-center text-13 text-white">
-                                        <div className="d-flex items-center">
-                                            <i className="icon-clock text-16 mr-5" />4 days
-                                        </div>                                       
-                                    </div>
-                                    <div className="tourCard__content">
-                                        <div>
-                                            <Heading
-                                                level={3}
-                                                text="Centipede Tour - Guided Arizona Desert Tour by ATV"
-                                                className="tourCard__title text-20 text-white fw-500 mt-5"
-                                            />   
-                                            
-                                        </div>
-                                        {/* <div className="text-right text-white">
-                                            <div className="text-13 lh-14">From</div>
-                                            <div className="text-18 fw-500">$189,25</div>
-                                        </div> */}
-                                    </div>
-                                </div>
-                            </a>
+import React from 'react';
+import TourLocationPage from './TourLocationPage';
+import axios from "axios";
+async function getTourLocationDetails(slug) {
+    try {
+        const { data: response } = await axios.get(
+            `https://www.gdsons.co.in/draft/mwt/api/tour-location/${slug}`
+        );
+        return response.data;
+
+    } catch (error) {
+        console.error("Error fetching tour location details:", error);
+        return null;
+    }
+}
+export async function generateMetadata({ params }) {
+    const { slug } = await params;
+    try {
+        const data = await getTourLocationDetails(slug);        
+        if (!data?.status) {
+            return {
+                title: 'Tour Location not found - Modern World Travel',
+                description: 'Tour location details not found',
+            };
+        }
+        return {
+            title:
+                data.meta_title ||
+                `${data.title || "Tour Location"} - Modern World Travel`,
+
+            description:
+                data.meta_description ||
+                `Explore ${data.title || "this tour location"} with Modern World Travel`,
+        };
+
+    } catch (error) {
+        return {
+            title: 'Modern World Travel',
+            description: 'Explore tour packages',
+        };
+    }
+}
+
+export default async function Page({ params }) {
+    const { slug } = await params;
+    try {
+        const placeData = await getTourLocationDetails(slug);
+        //console.log("tour location", slug);
+        if (!placeData?.status) {
+            return (
+                <div className="section-blog-details padding-t-50 padding-b-100">
+                    <div className="container">
+                        <div className="text-center py-5">
+                            <h4>Tour Location Not Found</h4>
+                            <p>The requested tour location could not be found.</p>
                         </div>
-                        <div className="col-lg-4 col-sm-6 is-in-view">
-                            <a href="/destination/slug" className="tourCard -type-3 -hover-image-scale">
-                                <div className="tourCard__image ratio ratio-41:45 rounded-12 -hover-image-scale__image">
-                                    <img
-                                        src="/assets/modern-img/chitrakoot.jpg"
-                                        alt="image"
-                                        className="img-ratio rounded-12"
-                                    />
-                                </div>
-                                <div className="tourCard__wrap">
-                                    <div className="tourCard__header d-flex justify-between items-center text-13 text-white">
-                                        <div className="d-flex items-center">
-                                            <i className="icon-clock text-16 mr-5" />4 days
-                                        </div>
-                                        
-                                    </div>
-                                    <div className="tourCard__content">
-                                        <div>
-                                            <Heading
-                                                level={3}
-                                                text="Centipede Tour - Guided Arizona Desert Tour by ATV"
-                                                className="tourCard__title text-20 text-white fw-500 mt-5"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col-lg-4 col-sm-6 is-in-view">
-                            <a href="/destination/slug" className="tourCard -type-3 -hover-image-scale">
-                                <div className="tourCard__image ratio ratio-41:45 rounded-12 -hover-image-scale__image">
-                                    <img
-                                        src="/assets/modern-img/chitrakoot.jpg"
-                                        alt="image"
-                                        className="img-ratio rounded-12"
-                                    />
-                                </div>
-                                <div className="tourCard__wrap">
-                                    <div className="tourCard__header d-flex justify-between items-center text-13 text-white">
-                                        <div className="d-flex items-center">
-                                            <i className="icon-clock text-16 mr-5" />4 days
-                                        </div>
-                                        
-                                    </div>
-                                    <div className="tourCard__content">
-                                        <div>
-                                            <Heading
-                                                level={3}
-                                                text="Centipede Tour - Guided Arizona Desert Tour by ATV"
-                                                className="tourCard__title text-20 text-white fw-500 mt-5"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>    
-                                            
                     </div>
                 </div>
-            </section>
-
-
-        </>
-    )
+            );
+        }
+        return <TourLocationPage initialData={placeData} slug={slug} />;
+    } catch (error) {
+        return (
+            <div className="section-blog-details padding-t-50 padding-b-100">
+                <div className="container">
+                    <div className="text-center text-danger py-5">
+                        <h4>Error Loading Page</h4>
+                        <p>There was a problem loading the page. Please try again.</p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 }

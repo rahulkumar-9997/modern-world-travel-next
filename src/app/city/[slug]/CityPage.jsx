@@ -2,15 +2,17 @@
 import React from 'react';
 import BreadcrumbHeader from '@/components/BreadcrumbHeader/BreadcrumbHeader';
 import { Heading } from '@/components/Heading/Heading';
+import Image from 'next/image';
+import Link from 'next/link';
 export default function CityPage({ initialData }) {
-    const { data: city, destinations } = initialData;
+    const { city, destinations = [], tour_cover =[] } = initialData;
     return (
         <>
             <BreadcrumbHeader
-                desktopImage="/assets/img/hero/1.png"
-                mobileImage="/assets/img/hero/1.png"
+                desktopImage={city.banner_img || "/assets/img/hero/1.png"}
+                mobileImage={city.banner_img || "/assets/img/hero/1.png"}
                 shapeImage="/assets/img/hero/1/shape.svg"
-                title="Varanasi Sarnath City Destinations & Packages"
+                title={city.title}
                 subtitle=""
             />
             <section className="tour_package_section">
@@ -19,156 +21,93 @@ export default function CityPage({ initialData }) {
                         <div className="row justify-content-md-center">
                             <div className="col-lg-8">
                                 <div className="single-tour-inner">
-                                    <p className="">
-                                        Experience the spiritual essence of Varanasi, including its famous
-                                        ghats and temples. Explore Prayagraj and witness the sacred
-                                        confluence of the Ganges, Yamuna, and Saraswati rivers. Discover the
-                                        historical and religious significance of Ayodhya, the legendary
-                                        birthplace of Lord Rama. Enjoy guided tours with insights into the
-                                        cultural and spiritual heritage of each city.
-                                    </p>
-                                    <div className="city-slug city_inner destination-table">
-                                        <h3>Destinations</h3>
-                                        <hr></hr>
-                                        <div className="grid grid-cols-1 gap-3">
-                                            <div>
-                                                <h4 className='text-20 md:text-2xl font-semibold text-20 text-[#004d91]! fw-600'>
-                                                    Kashi Vishwanath Temple
-                                                </h4>
-                                            </div>
-                                            <a href="">
-                                                <div className="text">
-                                                    <div className='float-left! inline main-img'>
-                                                        <img
-                                                            src="/assets/modern-img/Vrindavan.jpg"
-                                                            alt="image"
-                                                            className="img-cover w-56! h-auto!   object-contain object-center rounded-lg!"
-                                                        />
-                                                    </div>
-                                                    <p>
-                                                        nsdfdsn sdios fsdfss id oasodj asdas dsadoi asdas dasdioas dasdasiodasd Experience the spiritual essence of Varanasi, including its famous ghats and temples. Explore Prayagraj and witness the sacred confluence of the Ganges, Yamuna, and Saraswati rivers. Discover the historical and religious significance of Ayodhya, the legendary birthplace of Lord Rama. Enjoy guided tours with insights into the cultural and spiritual heritage of each city.
-                                                        Experience the spiritual essence of Varanasi, including its famous ghats and temples. Explore Prayagraj and witness the sacred confluence of the Ganges, Yamuna, and Saraswati rivers. Discover the historical and religious significance of Ayodhya, the legendary birthplace of Lord Rama. Enjoy guided tours with insights into the cultural and spiritual heritage of each city.
-                                                        Experience the spiritual essence of Varanasi, including its famous ghats and temples. Explore Prayagraj and witness the sacred confluence of the Ganges, Yamuna, and Saraswati rivers. Discover the historical and religious significance of Ayodhya, the legendary birthplace of Lord Rama. Enjoy guided tours with insights into the cultural and spiritual heritage of each city.
-                                                    </p>
-                                                </div>
-                                                <div className="destination-time-title mt-4">
-                                                    <h4 className="text-xl md:text-2xl font-semibold text-20 text-white fw-500 table-title">Important Timings</h4>
-                                                </div>
-                                                <div className="table-format">
-										            <table>
-                                                        <thead>
-                                                            <tr>
-                                                                <th>
-                                                               <strong>Activity</strong> 
-                                                                </th>
-                                                                <th>
-                                                                <strong>Timings</strong>
-                                                                </th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                <p>Temple Opens</p>
-                                                                </td>
-                                                                <td>
-                                                                <p>3:00 AM</p>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                <p>Mangala Aarti</p>
-                                                                </td>
-                                                                <td>
-                                                                <p>3:00 AM – 4:00 AM</p>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                <p>General Darshan</p>
-                                                                </td>
-                                                                <td>
-                                                                <p>4:00 AM – 11:00 AM &amp; 12:30 PM – 7:00 PM</p>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                <p>Evening Aarti</p>
-                                                                </td>
-                                                                <td>
-                                                                <p>7:00 PM – 8:30 PM</p>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                <p>Shayan Aarti (Night)</p>
-                                                                </td>
-                                                                <td>
-                                                                <p>10:30 PM</p>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </a>
+                                    {city.city_details && (
+                                        <div className="city-description mb-5">
+                                            <p className="text-lg" dangerouslySetInnerHTML={{ __html: city.city_details }} />
                                         </div>
-                                        
-                                    </div>
+                                    )}
+                                    {destinations.length > 0 && (
+                                        <div className="city_inner destination-table">
+                                            <h3>Destinations</h3>
+                                            <hr/>
+                                            {destinations.map((destination, index) => (
+                                                <div className="grid grid-cols-1 gap-3 city-slug"  key={destination.nid || index}>
+                                                    <div>
+                                                        <h4 className='text-20 md:text-2xl font-semibold text-20 text-[#004d91]! fw-600'>
+                                                           {destination.title}
+                                                        </h4>
+                                                    </div>
+                                                    <Link href={`/destination/${city.city_url}/${destination.url}`}>
+                                                        <div className="text destination-content">
+                                                            {destination.image && (
+                                                                <div className='float-left! inline main-img'>
+                                                                    <img
+                                                                        src={destination.image}
+                                                                        alt={destination.title}
+                                                                        className="img-cover w-56! h-auto!  object-contain object-center rounded-lg!"
+                                                                    />
+                                                                </div>
+                                                            )}
+
+                                                            {destination.description && (
+                                                                <div 
+                                                                    className="mb-4"
+                                                                    dangerouslySetInnerHTML={{ __html: destination.description }}
+                                                                />
+                                                            )}
+                                                        </div>
+                                                        {destination.timings && destination.timings.length > 0 && (
+                                                        <>
+                                                            <div className="destination-time-title mt-4">
+                                                                <h4 className="text-xl md:text-2xl font-semibold text-20 text-white fw-500 table-title">Important Timings</h4>
+                                                            </div>
+                                                            <div className="table-format">
+                                                                <div dangerouslySetInnerHTML={{ __html: destination.timings }}
+                                                                />
+                                                            </div>
+                                                        </>
+                                                        )}
+                                                    </Link>
+                                                </div>
+                                            ))}                                            
+                                        </div>
+                                    )}
                                 </div>
                             </div>
-                            <div className="col-lg-4 relative">
+                            <div className="col-lg-4 relative tour-cover-section">
                                 <div className="sticky top-20">
                                     <div className="sidebar -type-2">
-                                        <div className="sidebar__item">
-                                            <h3 className="text-24 fw-600 mb-20">Tours Covering Varanasi Sarnath</h3>
-                                            <div className="d-flex y-gap-20 flex-column">
-                                                <a href="#" className="d-flex align-center">
-                                                    <div className="size-70 overflow-hidden rounded-12">
-                                                        <img
-                                                            src="/assets/modern-img/Vrindavan.jpg"
-                                                            alt="image"
-                                                            className="img-cover"
-                                                        />
-                                                    </div>
-                                                    <div className="ml-20">
-                                                        <h5 className="text-15 lh-14 fw-500">
-                                                            10 of the Best Solo Travel Destinations for Women
-                                                        </h5>
+                                        {tour_cover?.length > 0 && (
+                                            <div className="sidebar__item">
+                                                <h3 className="text-24 fw-600 mb-20">Tours Covering {city.title}</h3>
+                                                <div className="d-flex y-gap-20 flex-column">
+                                                    {tour_cover.map((tour, index) => (
+                                                        <Link key={tour.nid || index} 
+                                                        href={`/tour-package/${tour.url}`} className="d-flex align-center tour-cover-a">
+                                                            <div className="size-70 overflow-hidden rounded-12">
+                                                                <Image
+                                                                    src={tour.image || "/assets/modern-img/Vrindavan.jpg"}
+                                                                    alt={tour.title}
+                                                                    className="img-cover"
+                                                                    width={300}
+                                                                    height={300}
+                                                                />
+                                                            </div>
+                                                            <div className="ml-20">
+                                                                <h5 className="text-15 lh-14 fw-500">
+                                                                    {tour.title}
+                                                                    <br/>
+                                                                    <span className='text-sm mt-2 text-[#eb6605]'>
+                                                                        {tour.duration}
+                                                                    </span>
+                                                                </h5>
 
-                                                    </div>
-                                                </a>
-                                                <a href="#" className="d-flex align-center">
-                                                    <div className="size-70 overflow-hidden rounded-12">
-                                                        <img
-                                                            src="/assets/modern-img/Vrindavan.jpg"
-                                                            alt="image"
-                                                            className="img-cover"
-                                                        />
-                                                    </div>
-                                                    <div className="ml-20">
-                                                        <h5 className="text-15 lh-14 fw-500">
-                                                            10 of the Best Solo Travel Destinations for Women
-                                                        </h5>
-
-                                                    </div>
-                                                </a>
-                                                <a href="#" className="d-flex align-center">
-                                                    <div className="size-70 overflow-hidden rounded-12">
-                                                        <img
-                                                            src="/assets/modern-img/Vrindavan.jpg"
-                                                            alt="image"
-                                                            className="img-cover"
-                                                        />
-                                                    </div>
-                                                    <div className="ml-20">
-                                                        <h5 className="text-15 lh-14 fw-500">
-                                                            10 of the Best Solo Travel Destinations for Women
-                                                        </h5>
-
-                                                    </div>
-                                                </a>
+                                                            </div>
+                                                        </Link>
+                                                    ))}
+                                                </div>
                                             </div>
-                                        </div>
+                                        )}
                                     </div>
                                     
                                 </div>

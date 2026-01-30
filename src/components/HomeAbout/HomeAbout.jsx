@@ -32,13 +32,13 @@ export const HomeAbout = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="absolute bottom-0 start-1/3 -z-1">
+                {/* <div className="absolute bottom-0 start-1/3 -z-1">
                     <img
-                        src="assets/images/map-plane-big.png"
+                        src="/assets/images/map-plane-big.png"
                         className="lg:w-[600px] w-96"
                         alt=""
                     />
-                </div>
+                </div> */}
             </div>
         </div>
 
