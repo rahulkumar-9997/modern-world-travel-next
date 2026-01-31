@@ -14480,6 +14480,21 @@ button.gm-ui-hover-effect::after {
   color: #eb6605;
   font-size: 20px;
 }
+.experience-section .exp-h2{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: justify;
+}
+.exp-time-section .destination-time-title{
+  margin-bottom: 20px;
+}
+.exp-time-section .table-formatulli{
+  margin-top: 0px;
+}
+.padding-bottom {
+    padding-bottom: 30px;
+}
 @media screen and (max-width: 991px) {
   .menuNav__item a.menu-head-t{
     padding: 10px 0;

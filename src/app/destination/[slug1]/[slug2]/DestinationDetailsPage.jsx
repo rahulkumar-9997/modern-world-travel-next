@@ -27,7 +27,7 @@ export default function DestinationDetailsPage({ initialData }) {
                             )}
                             <div className="single-tour-inner blog-section">
                                 {initialData.destination_content && (
-                                    <div
+                                    <p
                                         dangerouslySetInnerHTML={{
                                             __html: initialData.destination_content
                                         }}

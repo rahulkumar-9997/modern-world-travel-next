@@ -74,20 +74,20 @@ export function Header({ menuList }) {
                                                                                             className="desktopNavMega-list__link"
                                                                                             key={idx}
                                                                                         >
-                                                                                            <Link
-                                                                                                href={`${section.title === "Favourite Cities" ? "/city" : menu.title === "Packages" ? "/tour-package" : "/tours-location"}/${item.url}`}
-                                                                                                className='dropdown-link-a'>
-                                                                                                {item.name}
-                                                                                                {
-                                                                                                    item.duration && (
-                                                                                                        <>
-                                                                                                        <br /><span className="span-text-s">
-                                                                                                            {item.duration}
-                                                                                                        </span>
-                                                                                                        </>
-                                                                                                    )
-                                                                                                }
-                                                                                            </Link>
+<Link
+    href={`${section.title === "Favourite Cities" ? "/city" : menu.title === "Packages" ? "/tour-package" :menu.title === "Experience" ? "/experience" : "/tours-location"}/${item.url}`}
+    className='dropdown-link-a'>
+    {item.name}
+    {
+        item.duration && (
+            <>
+            <br /><span className="span-text-s">
+                {item.duration}
+            </span>
+            </>
+        )
+    }
+</Link>
                                                                                             
                                                                                         </div>
                                                                                     ))}

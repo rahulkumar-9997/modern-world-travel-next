@@ -50,10 +50,9 @@ export default function CityPage({ initialData }) {
                                                             )}
 
                                                             {destination.description && (
-                                                                <div 
-                                                                    className="mb-4"
-                                                                    dangerouslySetInnerHTML={{ __html: destination.description }}
-                                                                />
+                                                                <div className="mb-4">
+                                                                    <p dangerouslySetInnerHTML={{ __html: destination.description }}/>
+                                                                </div>
                                                             )}
                                                         </div>
                                                         {destination.timings && destination.timings.length > 0 && (
