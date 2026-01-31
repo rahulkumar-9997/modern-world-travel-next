@@ -51,7 +51,7 @@ export default function CityPage({ initialData }) {
 
                                                             {destination.description && (
                                                                 <div className="mb-4">
-                                                                    <p dangerouslySetInnerHTML={{ __html: destination.description }}/>
+                                                                    <div dangerouslySetInnerHTML={{ __html: destination.description }}/>
                                                                 </div>
                                                             )}
                                                         </div>
