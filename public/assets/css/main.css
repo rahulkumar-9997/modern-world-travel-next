@@ -3406,7 +3406,7 @@ h1, h2, h3{
   font-size: 70px;
   font-weight: 600;
   line-height: 1.2;
-  color: white;
+  color: #004d91;
   -webkit-text-fill-color: unset;
 }
 
@@ -3423,8 +3423,9 @@ h1, h2, h3{
 }
 
 .hero.-type-1 .hero__text {
-  color: white;
+  color: #004d91;
   margin-top: 10px;
+  font-weight: 600;
 }
 
 .hero.-type-1.-min {

@@ -38,7 +38,7 @@ export const Banner = () => {
     return (
         <section className="hero -type-1">
             <div className="hero__bg">
-                <img src="/assets/img/hero/1/1.png" alt="image" />
+                <img src="/assets/modern-img/banner-img.png" alt="image" />
                 <img src="/assets/img/hero/1/shape.svg" alt="image" />
             </div>
             <div className="container">
