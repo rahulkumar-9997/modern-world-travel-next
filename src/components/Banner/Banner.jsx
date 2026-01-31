@@ -47,7 +47,7 @@ export const Banner = () => {
                         <div className="hero__content">
                             <h1 className="hero__title">Your world of joy</h1>
                             <p className="hero__text">
-                                From local escapes to far-flung adventures, find what makes you
+                                From local escapes to far-flung adventures find what,<br/> makes you
                                 happy anytime, anywhere
                             </p>
                             <div className="mt-60 md:mt-35">
