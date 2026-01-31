@@ -76,8 +76,8 @@ export default function CityPage({ initialData }) {
                             </div>
                             <div className="col-lg-4 relative tour-cover-section">
                                 <div className="sticky top-20">
-                                    <div className="sidebar -type-2">
-                                        {tour_cover?.length > 0 && (
+                                    {tour_cover?.length > 0 && (
+                                        <div className="sidebar -type-2">
                                             <div className="sidebar__item">
                                                 <h3 className="text-24 fw-600 mb-20">Tours Covering {city.title}</h3>
                                                 <div className="d-flex y-gap-20 flex-column">
@@ -106,10 +106,9 @@ export default function CityPage({ initialData }) {
                                                         </Link>
                                                     ))}
                                                 </div>
-                                            </div>
-                                        )}
-                                    </div>
-                                    
+                                            </div>                                       
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>

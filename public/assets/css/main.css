@@ -5389,8 +5389,9 @@ h1, h2, h3{
 
 .pageHeader.-type-1 {
   position: relative;
-  padding-top: 190px;
-  padding-bottom: 200px;
+  /* padding-top: 190px;
+  padding-bottom: 200px; */
+  padding: 350px 0 150px;
   margin-top: 88px;
 }
 
@@ -5448,17 +5449,34 @@ h1, h2, h3{
 }
 
 .pageHeader.-type-1 .pageHeader__content {
-  position: relative;
+  /* position: relative;
   text-align: center;
-  z-index: 1;
+  z-index: 1; */
+    display: inline-block;
+    padding: 10px 20px;
+    color: #081b2a;
+    background-color: #FFF;
+    margin: 0px;
+    border-radius: 10px 10px 0px 0px;
+    /* border-radius: 38px 38px 0px 0px; */
+    box-shadow: 0px -10px 25px rgba(0 0 0 / 0%);
 }
 
 .pageHeader.-type-1 .pageHeader__title {
-  font-size: 45px;
+  font-size: 22px;
   font-weight: 600;
-  line-height: 1.2;
-  color: white;
+  line-height: 25px;
+  color: #eb6605;
   -webkit-text-fill-color: unset;
+  margin-bottom: 0px;
+}
+.bread-positin{
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    margin: 0px auto;
+    text-align: center;
 }
 
 @media (max-width: 991px) {
@@ -5474,8 +5492,10 @@ h1, h2, h3{
 }
 
 .pageHeader.-type-1 .pageHeader__text {
-  color: white;
-  margin-top: 10px;
+  color: #004d91;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 500;
 }
 
 .pageHeader.-type-2 {
@@ -12525,7 +12545,7 @@ h1, h2, h3{
 }
 table {
     color: #737373;
-    margin: 0 0 1.5em;
+    margin: 0 0 5px;
     border-collapse: separate;
     border-spacing: 0;
     border-width: 1px 0 0 1px;
@@ -14448,6 +14468,17 @@ button.gm-ui-hover-effect::after {
     background-color: #004d91;
     padding: 3px 8px 3px 8px;
     border-radius: 10px;
+}
+.city-description p,
+.city-slug p{
+  text-align: justify;
+}
+.destination-tour-cover{
+  margin-top: 30px;
+}
+.destination-tour-cover .main-title{
+  color: #eb6605;
+  font-size: 20px;
 }
 @media screen and (max-width: 991px) {
   .menuNav__item a.menu-head-t{

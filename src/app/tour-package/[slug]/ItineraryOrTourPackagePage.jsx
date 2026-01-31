@@ -121,9 +121,10 @@ export default function ItineraryOrTourPackagePage({initialData}) {
                                                                 />
                                                             </div>
                                                             <div className="ml-20">
-                                                                <h5 className="text-16 lh-14 fw-500">
+                                                                <h5 className="text-[#eb6605]! text-18 lh-14 fw-500">
                                                                     {city.title}
                                                                 </h5>
+                                                                <p className="text-xs md:text-sm">{city.city_details?.slice(0, 30)}...</p>
                                                             </div>
                                                         </Link>
                                                     ))}

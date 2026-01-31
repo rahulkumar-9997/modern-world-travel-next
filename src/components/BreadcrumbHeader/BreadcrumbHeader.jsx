@@ -23,23 +23,23 @@ const BreadcrumbHeader = ({
               className="absolute inset-0 w-full h-full object-cover block md:hidden"
             />
           )}
-          <div className={`absolute inset-0 bg-linear-to-r from-black/60 to-black/30`}></div>
+          <div className={`absolute inset-0 bg-linear-to-r from-black/40 to-black/30`}></div>
         </div>
-        {shapeImage && (
+        {/* {shapeImage && (
           <img 
             src={shapeImage} 
             alt="shape" 
             className="absolute bottom-0 left-0 z-10 w-full md:w-auto"
           />
-        )}
+        )} */}
       </div>      
-      <div className="container relative z-20">
+      <div className="container z-20 bread-positin">
         <div className="row justify-center">
           <div className="col-12">
             <div className="pageHeader__content">
               <h1 className="pageHeader__title text-white">{title}</h1>
               {subtitle && (
-                <p className="pageHeader__text text-white/90 mt-2">
+                <p className="pageHeader__text">
                   {subtitle}
                 </p>
               )}
