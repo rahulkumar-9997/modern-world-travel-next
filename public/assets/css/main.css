@@ -14170,13 +14170,20 @@ button.gm-ui-hover-effect::after {
 .tourCard h5{
   color: #eb6605;
 }
-.international-tour-card{
+.international-tour-section{
   padding: 10px 10px 0 10px;
 }
-.home-duration{
+.international-tour-section-in{
+  background-color: #004d91;
+  padding: 5px 10px 5px 10px;
+}
+.international-tour-section-in .duration-content{
+  color: #ffff;
+}
+/* .home-duration{
   padding-top: 5px;
   padding-bottom: 5px;
-}
+} */
 .international-tour-card {
     position: relative;
     box-shadow: inset 0 0 0 0 #aa833f;

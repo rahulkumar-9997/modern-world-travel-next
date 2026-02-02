@@ -55,8 +55,8 @@ export const Banner = () => {
                                     <div className="searchForm__form">
                                         <div className="searchFormItem js-select-control js-form-dd">
                                             <div className="searchFormItem__button">
-                                                <div className="searchFormItem__icon size-50 rounded-12 border-1 flex-center">
-                                                    <User className="text-20" />
+                                                <div className="searchFormItem__icon size-40 rounded-12 border-1 flex-center">
+                                                    <User className="text-18" />
                                                 </div>
                                                 <div className="searchFormItem__content">
                                                     <h5>Name</h5>
@@ -76,7 +76,7 @@ export const Banner = () => {
                                         {/* Phone/Email Field */}
                                         <div className="searchFormItem js-select-control js-form-dd">
                                             <div className="searchFormItem__button">
-                                                <div className="searchFormItem__icon size-50 rounded-12 border-1 flex-center">
+                                                <div className="searchFormItem__icon size-40 rounded-12 border-1 flex-center">
                                                     <Phone className="text-20" />
                                                 </div>
                                                 <div className="searchFormItem__content">
@@ -97,7 +97,7 @@ export const Banner = () => {
                                         {/* Destination Field */}
                                         <div className="searchFormItem js-select-control js-form-dd">
                                             <div className="searchFormItem__button">
-                                                <div className="searchFormItem__icon size-50 rounded-12 border-1 flex-center">
+                                                <div className="searchFormItem__icon size-40 rounded-12 border-1 flex-center">
                                                     <MapPin className="text-20" />
                                                 </div>
                                                 <div className="searchFormItem__content">
@@ -118,7 +118,7 @@ export const Banner = () => {
                                         {/* Date Picker Field */}
                                         <div className="searchFormItem js-select-control js-form-dd">
                                             <div className="searchFormItem__button">
-                                                <div className="searchFormItem__icon size-50 rounded-12 border-1 flex-center">
+                                                <div className="searchFormItem__icon size-40 rounded-12 border-1 flex-center">
                                                     <CalendarIcon className="text-20" />
                                                 </div>
                                                 <div className="searchFormItem__content">
@@ -127,7 +127,7 @@ export const Banner = () => {
                                                         <PopoverTrigger asChild>
                                                             <Button
                                                                 variant="outline"
-                                                                className="w-full justify-start text-left font-normal px-3 py-2 rounded"
+                                                                className="w-full justify-start text-left font-normal px-0 py-2 rounded"
                                                             >
                                                                 <span className="truncate">
                                                                     {date ? format(date, "PPP") : "Select Date"}
