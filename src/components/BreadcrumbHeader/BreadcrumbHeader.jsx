@@ -14,13 +14,13 @@ const BreadcrumbHeader = ({
           <img 
             src={desktopImage} 
             alt="background" 
-            className="absolute inset-0 w-full h-full object-cover hidden md:block"
+            className="desktop-banner-img absolute inset-0 w-full h-full object-cover hidden md:block"
           />
           {mobileImage && (
             <img 
               src={mobileImage} 
               alt="background" 
-              className="absolute inset-0 w-full h-full object-cover block md:hidden"
+              className="mobile-banner-im absolute inset-0 w-full h-full object-cover block md:hidden"
             />
           )}
           <div className={`absolute inset-0 bg-linear-to-r from-black/40 to-black/30`}></div>
