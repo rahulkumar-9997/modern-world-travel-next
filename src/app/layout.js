@@ -5,6 +5,7 @@ import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
 import Provider from "@/lib/provider";
 import HeaderWrapper from "@/components/Header/HeaderWrapper";
+import FooterWrapper from "@/components/Footer/FooterWrapper";
 export const metadata = {
   title: "Modern World Travel Packages for Varanasi, India, International",
   description:
@@ -48,7 +49,7 @@ export default function RootLayout({ children }) {
           <HeaderWrapper />
           <main>
             {children}
-            <Footer />
+            <FooterWrapper />
           </main>
         </Provider>
         <script src="/assets/js/vendors.js"></script>

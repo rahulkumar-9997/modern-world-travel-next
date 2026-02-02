@@ -1,7 +1,11 @@
-import React from 'react'
+'use client';
+import React, { useEffect, useState } from 'react';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
-import { FaWhatsapp } from 'react-icons/fa6';
-export const Footer = () => {
+import Link from 'next/link';
+export function Footer({ initialData }) {
+    const destinations = Array.isArray(initialData)
+    ? initialData.slice(0, 6)
+    : [];
     return (
         <footer className="footer -type-1 -dark text-white">
             <div className="footer__main bg-dark-1">
@@ -58,39 +62,35 @@ export const Footer = () => {
                             <div className="col-lg-auto col-6">
                                 <h4 className="text-20 fw-500">Modern Word Travel</h4>
                                 <div className="y-gap-10 mt-20">
-                                    <a className="d-block fw-500" href="#">
+                                    <Link className="d-block fw-500" href="/about-us">
                                         About Us
-                                    </a>
+                                    </Link>
                                     
-                                    <a className="d-block fw-500" href="#">
+                                    <Link className="d-block fw-500" href="/international-tour-package">
                                         International Tour Packages
-                                    </a>
-                                    <a className="d-block fw-500" href="#">
+                                    </Link>
+                                    <Link className="d-block fw-500" href="#">
                                         Tour Packages in Varanasi
-                                    </a>
-                                    <a className="d-block fw-500" href="#">
+                                    </Link>
+                                    <Link className="d-block fw-500" href="/blog">
                                         Blog
-                                    </a>
-                                    <a className="d-block fw-500" href="#">
+                                    </Link>
+                                    <Link className="d-block fw-500" href="/contact-us">
                                         Contact Us
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="col-lg-auto col-6">
                                 <h4 className="text-20 fw-500">Top Destination</h4>
                                 <div className="y-gap-10 mt-20">
-                                    <a className="d-block fw-500" href="#">
-                                        agara
-                                    </a>
-                                    <a className="d-block fw-500" href="#">
-                                        Varansi
-                                    </a>
-                                    <a className="d-block fw-500" href="#">
-                                        Ayodhya
-                                    </a>
-                                    <a className="d-block fw-500" href="#">
-                                        Prayagraj
-                                    </a>
+                                    {destinations.map((item) => (
+                                        <Link
+                                            key={item.nid}
+                                            href={`/city/${item.url}`}
+                                            className="d-block fw-500"                                        >
+                                            {item.name}
+                                        </Link>
+                                    ))}
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-6">

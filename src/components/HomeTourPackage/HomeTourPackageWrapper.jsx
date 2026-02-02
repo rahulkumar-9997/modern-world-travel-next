@@ -13,7 +13,6 @@ export default async function HomeTourPackageWrapper() {
                 return res.data;
             },
         });
-
         return (
             <HomeTourPackage
                 initialData={response}
