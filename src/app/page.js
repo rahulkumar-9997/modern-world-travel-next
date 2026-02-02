@@ -10,6 +10,7 @@ import { Testimonials } from "@/components/Testimonials/Testimonials";
 import Spinner from "@/components/Loader/spinner";
 import HomeTrendingDestinationsWrapper from "@/components/HomeTrendingDestinations/HomeTrendingDestinationsWrapper";
 import HomeInternationalTourPackagesWrapper from "@/components/HomeInternationalTourPackages/HomeInternationalTourPackagesWrapper";
+import HomeTourPackageWrapper from "@/components/HomeTourPackage/HomeTourPackageWrapper";
 export default function Home() {
   return (
     <>
@@ -21,7 +22,7 @@ export default function Home() {
         <HomeTrendingDestinationsWrapper />
       </Suspense>
       <Suspense fallback={<Spinner />}>
-        <HomeTourPackage />
+        <HomeTourPackageWrapper />
       </Suspense>
       <Suspense fallback={<Spinner />}>
         <HomeWhyChoose />

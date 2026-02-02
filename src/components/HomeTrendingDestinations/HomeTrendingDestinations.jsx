@@ -28,12 +28,12 @@ export function HomeTrendingDestinations({ initialData }) {
                             className="text-30 mb-0"
                         />
                     </div>
-                    <div className="col-auto">
+                    {/* <div className="col-auto">
                         <button className="buttonArrow d-flex items-center ">
                             <span className="text-xl">See all</span>
                             <i className="icon-arrow-top-right text-16 ml-10" />
                         </button>
-                    </div>
+                    </div> */}
                 </div>
                 {
                     isLoading && <Spinner />

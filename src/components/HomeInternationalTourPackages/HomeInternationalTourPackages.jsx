@@ -23,7 +23,7 @@ export function HomeInternationalTourPackages({ initialData }) {
                         </button>
                     </div>
                 </div>
-                <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 mobile-css-slider -w-300 gap-5 mt-8!">
+                <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 mobile-css-slider -w-300 gap-3 mt-8!">
                     {initialData && initialData.map((tour) => (
                         <div key={tour.nid} className="w-full h-full">
                             <Link href=
@@ -33,7 +33,7 @@ export function HomeInternationalTourPackages({ initialData }) {
                                 <div className="tourCard__header">
                                     <div className="tourCard__image -hover-image-scale__image ratio ratio-28:20">
                                         <Image
-                                            src={tour.image}
+                                            src={tour.image ?? "/assets/modern-img/varanasi-sarnath.jpg"}
                                             alt={tour.title}
                                             className="img-ratio"
                                             width={200}
@@ -42,7 +42,7 @@ export function HomeInternationalTourPackages({ initialData }) {
                                     </div>
 
                                 </div>
-                                <div className="tourCard__content px-10 py-10 international-tour-card flex! flex-col! justify-between! gap-2!">
+                                <div className="tourCard__content international-tour-card flex! flex-col! justify-between! gap-2!">
                                     {/* <div className="tourCard__location d-flex items-center text-13 text-light-2">
                                         <i className="icon-pin d-flex text-16 text-light-2 mr-5" />
                                         {tour.location}
