@@ -20,8 +20,8 @@ export default function experienceDetailsPage({ initialData }) {
     return (
         <>
             <BreadcrumbHeader
-                desktopImage={initialData?.image || "/assets/img/hero/1.png"}
-                mobileImage={initialData?.image || "/assets/img/hero/1.png"}
+                desktopImage={initialData?.desktop_banner_image || "/assets/img/hero/1.png"}
+                mobileImage={initialData?.mobile_banner_image || "/assets/img/hero/1.png"}
                 shapeImage="/assets/img/hero/1/shape.svg"
                 title={initialData?.title}
                 subtitle=""

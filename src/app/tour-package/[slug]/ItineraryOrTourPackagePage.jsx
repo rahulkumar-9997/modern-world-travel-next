@@ -3,12 +3,12 @@ import BreadcrumbHeader from '@/components/BreadcrumbHeader/BreadcrumbHeader';
 import { Heading } from '@/components/Heading/Heading';
 import Link from 'next/link';
 export default function ItineraryOrTourPackagePage({initialData}) {
-     const {title, duration, image, meta_title, meta_desc, highlights, inclusions, exclusions,  for_daywise = [], cover_city = []} = initialData;
+     const {title, duration, desktop_banner_image, mobile_banner_image, meta_title, meta_desc, highlights, inclusions, exclusions,  for_daywise = [], cover_city = []} = initialData;
     return (
         <>
             <BreadcrumbHeader
-                desktopImage={image || "/assets/img/hero/1.png"}
-                mobileImage={image || "/assets/img/hero/1.png"}
+                desktopImage={desktop_banner_image || "/assets/img/hero/1.png"}
+                mobileImage={mobile_banner_image || "/assets/img/hero/1.png"}
                 shapeImage="/assets/img/hero/1/shape.svg"
                 title={title}
                 subtitle={duration}

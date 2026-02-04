@@ -59,7 +59,7 @@ export const Banner = () => {
                                                     <User className="text-18" />
                                                 </div>
                                                 <div className="searchFormItem__content">
-                                                    <h5>Name</h5>
+                                                    {/* <h5>Name</h5> */}
                                                     <input
                                                         type="text"
                                                         name="name"
@@ -80,7 +80,7 @@ export const Banner = () => {
                                                     <Phone className="text-20" />
                                                 </div>
                                                 <div className="searchFormItem__content">
-                                                    <h5>Phone/Email</h5>
+                                                    {/* <h5>Phone/Email</h5> */}
                                                     <input
                                                         type="text"
                                                         name="phoneEmail"
@@ -101,7 +101,7 @@ export const Banner = () => {
                                                     <MapPin className="text-20" />
                                                 </div>
                                                 <div className="searchFormItem__content">
-                                                    <h5>Destination</h5>
+                                                    {/* <h5>Destination</h5> */}
                                                     <input
                                                         type="text"
                                                         name="destination"
@@ -122,7 +122,7 @@ export const Banner = () => {
                                                     <CalendarIcon className="text-20" />
                                                 </div>
                                                 <div className="searchFormItem__content">
-                                                    <h5>Select Date</h5>
+                                                    {/* <h5>Select Date</h5> */}
                                                     <Popover open={open} onOpenChange={setOpen}>
                                                         <PopoverTrigger asChild>
                                                             <Button

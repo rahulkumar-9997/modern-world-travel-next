@@ -4559,7 +4559,8 @@ h1, h2, h3{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
-  padding: 5px 10px;
+  /* padding: 5px 10px; */
+  align-items: center;
 }
 
 @media (max-width: 767px) {
@@ -4599,6 +4600,7 @@ h1, h2, h3{
   align-items: center;
   text-align: left;
   width: 100%;
+  padding: 5px;
 }
 
 @media (max-width: 767px) {
@@ -4609,6 +4611,7 @@ h1, h2, h3{
 
 .searchForm.-type-1 .searchFormItem__content {
   margin-left: 10px;
+  width: 100%;
 }
 
 .searchForm.-type-1 .searchFormItem__content > h5 {

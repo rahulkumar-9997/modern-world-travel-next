@@ -9,8 +9,8 @@ export default function CityPage({ initialData }) {
     return (
         <>
             <BreadcrumbHeader
-                desktopImage={city.banner_img || "/assets/img/hero/1.png"}
-                mobileImage={city.banner_img || "/assets/img/hero/1.png"}
+                desktopImage={city.desktop_banner_image || "/assets/img/hero/1.png"}
+                mobileImage={city.mobile_banner_image || "/assets/img/hero/1.png"}
                 shapeImage="/assets/img/hero/1/shape.svg"
                 title={city.title}
                 subtitle=""

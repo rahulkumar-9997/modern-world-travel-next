@@ -7,14 +7,15 @@ export default function BlogDetailsPage({ initialData }) {
     const {
         title,
         intro,
-        banner_image,
+        desktop_banner_image,
+        mobile_banner_image,
         sections
     } = initialData;
     return (
         <>
             <BreadcrumbHeader
-                desktopImage={banner_image || "/assets/img/hero/1.png"}
-                mobileImage={banner_image || "/assets/img/hero/1.png"}
+                desktopImage={desktop_banner_image || "/assets/img/hero/1.png"}
+                mobileImage={mobile_banner_image || "/assets/img/hero/1.png"}
                 shapeImage="/assets/img/hero/1/shape.svg"
                 title={title || "Blog Details"}
                 subtitle=""
