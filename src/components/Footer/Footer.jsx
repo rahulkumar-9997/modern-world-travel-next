@@ -9,9 +9,9 @@ export function Footer({ initialData }) {
     return (
         <footer className="footer -type-1 -dark text-white">
             <div className="footer__main bg-dark-1">
-                <div className="footer__bg">
+                {/* <div className="footer__bg">
                     <img src="/assets/img/footer/1/bg.svg" alt="image" />
-                </div>
+                </div> */}
                 <div className="container">
                     <div className="footer__info">
                         <div className="row y-gap-20 justify-between">

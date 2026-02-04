@@ -6,18 +6,21 @@ import Image from 'next/image';
 export function HomeInternationalTourPackages({ initialData }) {
     const isLoading = !initialData || initialData.length === 0;      
     return (
-        <section className="layout-pt-xl layout-pb-xl international-tour-container">
+        <section className="layout-pt-xl layout-pb-xl international-tour-container relative bg-blue-40">
+            <div className="sectionBg">
+                <img src="/assets/modern-img/international_bg.webp" alt="image" className="img-ratio"/>
+            </div>
             <div className="container">
                 <div className="row justify-between items-end y-gap-10 items-center">
                     <div className="col-auto">
                         <Heading
                             level={2}
                             text="International Tour Packages"
-                            className="text-30 md:text-24 mb-0"
+                            className="text-30 md:text-24 mb-0 int-title"
                         />
                     </div>
                     <div className="col-auto">
-                        <Link href="/international-tour-package" className="buttonArrow d-flex items-center">
+                        <Link href="/international-tour-package" className="buttonArrow d-flex items-center see-all-text">
                             <span className="text-xl">See all</span>
                             <i className="icon-arrow-top-right text-16 ml-10" />
                         </Link>

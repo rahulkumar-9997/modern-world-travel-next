@@ -3,7 +3,7 @@ import { Heading } from '../Heading/Heading';
 import Link from 'next/link';
 export const HomeAbout = () => {
     return (
-        <div className="container relative md:mt-20 mt-16">
+        <div className="container relative about-home-section">
             <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-6 relative">
                 <div className="md:col-span-5">
                     <div className="relative">

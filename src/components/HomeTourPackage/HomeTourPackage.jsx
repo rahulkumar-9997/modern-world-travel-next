@@ -7,7 +7,7 @@ export const HomeTourPackage = ({ initialData }) => {
         ? initialData.data
         : [];
     return (
-        <section className="layout-pb-xl pt-2">
+        <section className="layout-pb-xl home-tour-package">
             <div className="container">
                 <div className="row justify-between items-end y-gap-10">
                     <div className="col-auto">
