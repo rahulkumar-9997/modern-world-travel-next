@@ -39,17 +39,17 @@ export const Banner = () => {
         <section className="hero -type-1">
             <div className="hero__bg">
                 <img src="/assets/modern-img/banner-img.png" alt="image" />
-                <img src="/assets/img/hero/1/shape.svg" alt="image" />
+                {/* <img src="/assets/img/hero/1/shape.svg" alt="image" /> */}
             </div>
             <div className="container">
                 <div className="row justify-center">
                     <div className="col-xl-10 col-lg-10">
                         <div className="hero__content">
-                            <h1 className="hero__title">Your world of joy</h1>
+                            {/* <h1 className="hero__title">Your world of joy</h1>
                             <p className="hero__text">
                                 From local escapes to far-flung adventures find what,<br/> makes you
                                 happy anytime, anywhere
-                            </p>
+                            </p> */}
                             <div className="mt-60 md:mt-35">
                                 <form onSubmit={handleSubmit} className="searchForm -type-1">
                                     <div className="searchForm__form">

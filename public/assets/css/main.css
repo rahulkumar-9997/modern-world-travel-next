@@ -2525,7 +2525,8 @@ h1, h2, h3{
 }
 
 .header.-type-3 {
-  position: fixed;
+  /* position: fixed; */
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -2536,6 +2537,7 @@ h1, h2, h3{
 
 .header.-type-3.-is-sticky {
   background-color: white;
+  position: sticky;
 }
 
 .header.-type-3 .header__container {
@@ -3339,11 +3341,12 @@ h1, h2, h3{
     color: var(--color-logo-1);
 }
 .hero.-type-1 {
+  /* position: relative; */
   position: relative;
   padding-top: 220px;
   padding-bottom: 220px;
   /* margin-top: 88px; */
-  margin-top: 93px;
+  /* margin-top: 93px; */
   z-index: 5;
 }
 
@@ -4546,6 +4549,7 @@ h1, h2, h3{
   padding: 10px;
   border-radius: 12px;
   height: 80px;
+  box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.08);
 }
 
 @media (max-width: 767px) {
@@ -5400,7 +5404,7 @@ h1, h2, h3{
   /* padding-top: 190px;
   padding-bottom: 200px; */
   padding: 350px 0 150px;
-  margin-top: 88px;
+  /* margin-top: 88px; */
 }
 
 @media (max-width: 767px) {
