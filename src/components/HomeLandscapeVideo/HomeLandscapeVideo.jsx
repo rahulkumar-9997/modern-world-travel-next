@@ -1,158 +1,113 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel"
+
+import React from 'react'
 import Autoplay from "embla-carousel-autoplay"
-import { Heading } from '../Heading/Heading';
-import { ChevronLeft, ChevronRight} from 'lucide-react';
-import '@fancyapps/ui/dist/fancybox/fancybox.css';
-import { Fancybox } from '@fancyapps/ui';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { Heading } from '../Heading/Heading'
+import { ChevronLeft, ChevronRight, Play } from 'lucide-react'
 
 export const HomeLandscapeVideo = () => {
-    const carouselRef = useRef(null);
-    useEffect(() => {
-        Fancybox.bind("[data-fancybox]", {
-            Thumbs: {
-                autoStart: true,
-            },
-            Toolbar: {
-                display: {
-                    left: ["infobar"],
-                    middle: [
-                        "zoomIn",
-                        "zoomOut",
-                        "toggle1to1",
-                        "rotateCCW",
-                        "rotateCW",
-                        "flipX",
-                        "flipY"
-                    ],
-                    right: ["slideshow", "fullscreen", "close"],
-                },
-            },
-        });
 
-        return () => {
-            Fancybox.destroy();
-        };
-    }, []);
+  const landscapeVideos = [
+    { id: 1, videoUrl: "/assets/modern-img/landscape-video/landscape-video-1.mp4" },
+    { id: 2, videoUrl: "/assets/modern-img/landscape-video/landscape-video-2.mp4" },
+    { id: 3, videoUrl: "/assets/modern-img/landscape-video/landscape-video-3.mp4" },
+    { id: 4, videoUrl: "/assets/modern-img/landscape-video/landscape-video-2.mp4" },
+    { id: 5, videoUrl: "/assets/modern-img/landscape-video/landscape-video-1.mp4" },
+    { id: 6, videoUrl: "/assets/modern-img/landscape-video/landscape-video-3.mp4" },
+  ]
 
-    const landscapeImages = [
-        {
-            id: 1,
-            image: "/assets/modern-img/varanasi-sarnath.jpg",
+  return (
+    <section className="relative layout-pt-xl layout-pb-xl bg-gradient-to-b from-gray-50 to-white home-landscape-img-se">
+      <div className="container relative z-20">
 
-        },
-        {
-            id: 2,
-            image: "/assets/modern-img/varanasi-sarnath.jpg",
+        {/* Heading */}
+        <div className="row justify-center text-center">
+          <div className="col-auto">
+            <Heading
+              level={2}
+              text="Journeys Our Travelers Will Never Forget"
+              className="text-30 md:text-24"
+            />
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+              Memories created, moments cherished, and trips made truly special.
+            </p>
+          </div>
+        </div>
 
-        },
-        {
-            id: 3,
-            image: "/assets/modern-img/varanasi-sarnath.jpg",
+        {/* Carousel */}
+        <div className="row justify-center pt-20 md:pt-20">
+          <div className="col-xl-12 col-lg-12">
 
-        },
-        {
-            id: 4,
-            image: "/assets/modern-img/varanasi-sarnath.jpg",
+            <Carousel
+              className="w-full"
+              plugins={[
+                // Autoplay({
+                //   delay: 4000,
+                //   stopOnInteraction: false,
+                // }),
+              ]}
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+            >
+              <CarouselContent className="-ml-4">
 
-        },
-        {
-            id: 5,
-            image: "/assets/modern-img/varanasi-sarnath.jpg",
+                {landscapeVideos.map((item) => (
+                  <CarouselItem
+                    key={item.id}
+                    className="pl-4 basis-1/2 md:basis-1/4"
+                  >
+                    <div className="group relative overflow-hidden rounded-2xl shadow-lg">
 
-        },
-        {
-            id: 6,
-            image: "/assets/modern-img/varanasi-sarnath.jpg",
+                      <div className="relative h-48 md:h-64 overflow-hidden rounded-2xl">
 
-        }
-    ];
-
-    return (
-        <section className="relative layout-pt-xl layout-pb-xl bg-gradient-to-b from-gray-50 to-white home-landscape-img-se">
-            <div className="container relative z-20">
-                <div className="row justify-center text-center">
-                    <div className="col-auto">
-                        <Heading
-                            level={2}
-                            text="Journeys Our Travelers Will Never Forget"
-                            className="text-30 md:text-24"
+                        {/* ✅ AUTOPLAY VIDEO */}
+                        <video
+                          src={item.videoUrl}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          preload="metadata"
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         />
-                        <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
-                            Memories created, moments cherished, and trips made truly special.
-                        </p>
+                        
+                      </div>
+
                     </div>
-                </div>
+                  </CarouselItem>
+                ))}
 
-                {/* Carousel Section */}
-                <div className="row justify-center pt-20 md:pt-20">
-                    <div className="col-xl-12 col-lg-12">
-                        <Carousel
-                            ref={carouselRef}
-                            className="w-full"
-                            plugins={[
-                                Autoplay({
-                                    delay: 4000,
-                                    stopOnInteraction: false,
-                                }),
-                            ]}
-                            opts={{
-                                align: "start",
-                                loop: true,
-                                slidesToScroll: 1,
-                            }}
-                        >
-                            <CarouselContent className="-ml-2 md:-ml-4">
-                                {landscapeImages.map((item) => (
-                                    <CarouselItem
-                                        key={item.id}
-                                        className="pl-8 md:pl-4 basis-1/2 md:basis-1/4"
-                                    >
-                                        <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 box-sd">
-                                            <div className="relative h-80 overflow-hidden">
-                                                <a
-                                                    href={item.image}
-                                                    data-fancybox="gallery">
-                                                    <img
-                                                        src={item.image}
-                                                        alt={item.id}
-                                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                                    />
-                                                </a>
+              </CarouselContent>
 
-                                            </div>
+              <CarouselPrevious
+                className="absolute left-3 top-1/2 -translate-y-1/2 bg-white text-black border-none h-12 w-12 rounded-full shadow-lg z-10"
+                size="icon"
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </CarouselPrevious>
 
-                                        </div>
-                                    </CarouselItem>
-                                ))}
-                            </CarouselContent>
-                            <CarouselPrevious
-                                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-white text-black border-none h-12 w-12 rounded-full shadow-lg z-10"
-                                size="icon"
-                            >
-                                <ChevronLeft className="h-6 w-6" />
-                            </CarouselPrevious>
-                            <CarouselNext
-                                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-white text-black border-none h-12 w-12 rounded-full shadow-lg z-10"
-                                size="icon"
-                            >
-                                <ChevronRight className="h-6 w-6" />
-                            </CarouselNext>
+              <CarouselNext
+                className="absolute right-3 top-1/2 -translate-y-1/2 bg-white text-black border-none h-12 w-12 rounded-full shadow-lg z-10"
+                size="icon"
+              >
+                <ChevronRight className="h-6 w-6" />
+              </CarouselNext>
 
-                        </Carousel>
-                    </div>
-                </div>
+            </Carousel>
 
-            </div>
+          </div>
+        </div>
 
-
-        </section>
-    )
+      </div>
+    </section>
+  )
 }
