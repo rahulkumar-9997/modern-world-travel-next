@@ -3343,8 +3343,8 @@ h1, h2, h3{
 .hero.-type-1 {
   /* position: relative; */
   position: relative;
-  padding-top: 220px;
-  padding-bottom: 220px;
+  padding-top: 120px;
+  padding-bottom: 120px;
   /* margin-top: 88px; */
   /* margin-top: 93px; */
   z-index: 5;
@@ -14666,6 +14666,7 @@ button.gm-ui-hover-effect::after {
     bottom: -7px;
     background-color: #ddd;
 }
+
 @media screen and (max-width: 991px) {
   .menuNav__item a.menu-head-t{
     padding: 10px 0;

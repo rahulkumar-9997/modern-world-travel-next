@@ -11,6 +11,8 @@ import Spinner from "@/components/Loader/spinner";
 import HomeTrendingDestinationsWrapper from "@/components/HomeTrendingDestinations/HomeTrendingDestinationsWrapper";
 import HomeInternationalTourPackagesWrapper from "@/components/HomeInternationalTourPackages/HomeInternationalTourPackagesWrapper";
 import HomeTourPackageWrapper from "@/components/HomeTourPackage/HomeTourPackageWrapper";
+import { HomeLandscapeImage } from "@/components/HomeLandscapeImage/HomeLandscapeImage";
+import { HomeLandscapeVideo } from "@/components/HomeLandscapeVideo/HomeLandscapeVideo";
 export default function Home() {
   return (
     <>
@@ -18,9 +20,11 @@ export default function Home() {
         <Banner />
       </Suspense>
       <HomeAbout />
+      <HomeLandscapeImage/>
       <Suspense fallback={<Spinner />}>
         <HomeTrendingDestinationsWrapper />
       </Suspense>
+      <HomeLandscapeVideo/>
       <Suspense fallback={<Spinner />}>
         <HomeTourPackageWrapper />
       </Suspense>
