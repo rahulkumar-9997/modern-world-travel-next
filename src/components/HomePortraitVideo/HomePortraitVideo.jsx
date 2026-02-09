@@ -11,9 +11,8 @@ import {
 } from "@/components/ui/carousel"
 import { Heading } from '../Heading/Heading'
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react'
-
-export const HomeLandscapeVideo = ({ initialData, sectionInfo }) => {
-    const landscapeVideos = initialData && Array.isArray(initialData) && initialData.length > 0
+export const HomePortraitVideo = ({ initialData, sectionInfo }) => {
+  const portraitVideos = initialData && Array.isArray(initialData) && initialData.length > 0
     ? initialData.map(item => ({
       id: item.id || Math.random().toString(),
       videoUrl: item.video_url,
@@ -21,6 +20,7 @@ export const HomeLandscapeVideo = ({ initialData, sectionInfo }) => {
       external_url: item.external_url
     }))
     : [];
+
   if (!initialData) {
     return (
       <section className="relative layout-pt-xl layout-pb-xl bg-gradient-to-b from-gray-50 to-white">
@@ -28,9 +28,9 @@ export const HomeLandscapeVideo = ({ initialData, sectionInfo }) => {
           <div className="row justify-center pt-20 md:pt-20">
             <div className="col-xl-12 col-lg-12">
               <div className="flex -ml-4 overflow-hidden">
-                {[...Array(3)].map((_, index) => (
-                  <div key={index} className="pl-4 basis-1/2 md:basis-1/3">
-                    <div className="h-56 md:h-64 bg-gray-300 rounded-2xl animate-pulse"></div>
+                {[...Array(4)].map((_, index) => (
+                  <div key={index} className="pl-4 basis-1/2 md:basis-1/4">
+                    <div className="aspect-[9/16] bg-gray-300 rounded-2xl animate-pulse"></div>
                   </div>
                 ))}
               </div>
@@ -43,7 +43,6 @@ export const HomeLandscapeVideo = ({ initialData, sectionInfo }) => {
   return (
     <section className="relative layout-pt-xl layout-pb-xl bg-gradient-to-b from-gray-50 to-white home-landscape-img-se">
       <div className="container relative z-20">
-        {/* Heading */}
         <div className="row justify-center text-center">
           <div className="col-auto">
             <Heading
@@ -58,11 +57,8 @@ export const HomeLandscapeVideo = ({ initialData, sectionInfo }) => {
             )}
           </div>
         </div>
-
-        {/* Carousel */}
         <div className="row justify-center pt-20 md:pt-20">
           <div className="col-xl-12 col-lg-12">
-
             <Carousel
               className="w-full"
               plugins={[
@@ -77,15 +73,14 @@ export const HomeLandscapeVideo = ({ initialData, sectionInfo }) => {
               }}
             >
               <CarouselContent className="-ml-4">
-
-                {landscapeVideos.map((item) => (
+                {portraitVideos.map((item, index) => (
                   <CarouselItem
-                    key={item.id}
-                    className="pl-4 basis-1/2 md:basis-1/3">
+                    key={item.id || index}
+                    className="pl-4 basis-1/2 md:basis-1/4">
                     <div className="group relative overflow-hidden rounded-2xl shadow-lg">
-                      <div className="relative h-56 md:h-64 overflow-hidden rounded-2xl">
+                      <div className="relative aspect-[9/16] overflow-hidden rounded-2xl">
                         <video
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                           autoPlay
                           muted
                           playsInline
@@ -98,6 +93,7 @@ export const HomeLandscapeVideo = ({ initialData, sectionInfo }) => {
                         </video>
                       </div>
                     </div>
+
                   </CarouselItem>
                 ))}
               </CarouselContent>

@@ -1,42 +1,43 @@
 import Image from "next/image";
 import { Suspense } from "react";
-import { Banner } from "@/components/Banner/Banner";
 import { HomeAbout } from "@/components/HomeAbout/HomeAbout";
-import { HomeTrendingDestinations } from "@/components/HomeTrendingDestinations/HomeTrendingDestinations";
-import { HomeTourPackage } from "@/components/HomeTourPackage/HomeTourPackage";
 import { HomeWhyChoose } from "@/components/HomeWhyChoose/HomeWhyChoose";
-import { HomeInternationalTourPackages } from "@/components/HomeInternationalTourPackages/HomeInternationalTourPackages";
 import { Testimonials } from "@/components/Testimonials/Testimonials";
 import Spinner from "@/components/Loader/spinner";
 import HomeTrendingDestinationsWrapper from "@/components/HomeTrendingDestinations/HomeTrendingDestinationsWrapper";
 import HomeInternationalTourPackagesWrapper from "@/components/HomeInternationalTourPackages/HomeInternationalTourPackagesWrapper";
 import HomeTourPackageWrapper from "@/components/HomeTourPackage/HomeTourPackageWrapper";
-import { HomeLandscapeImage } from "@/components/HomeLandscapeImage/HomeLandscapeImage";
-import { HomeLandscapeVideo } from "@/components/HomeLandscapeVideo/HomeLandscapeVideo";
+import HomeLandscapeImageWrapper from "@/components/HomeLandscapeImage/HomeLandscapeImageWrapper";
+import HomeLandscapeVideoWrapper from "@/components/HomeLandscapeVideo/HomeLandscapeVideoWrapper";
+import HomePortraitImageWrapper from "@/components/HomePortraitImage/HomePortraitImageWrapper";
+import BannerWrapper from "@/components/Banner/BannerWrapper";
+import HomePortraitVideoWrapper from "@/components/HomePortraitVideo/HomePortraitVideoWrapper";
 export default function Home() {
   return (
     <>
       <Suspense fallback={<Spinner />}>
-        <Banner />
+        <BannerWrapper />
       </Suspense>
       <HomeAbout />
-      <HomeLandscapeImage/>
+      <HomeLandscapeImageWrapper/>
       <Suspense fallback={<Spinner />}>
         <HomeTrendingDestinationsWrapper />
       </Suspense>
-      <HomeLandscapeVideo/>
+      <HomeLandscapeVideoWrapper/>
       <Suspense fallback={<Spinner />}>
         <HomeTourPackageWrapper />
       </Suspense>
+      <HomePortraitImageWrapper/>
       <Suspense fallback={<Spinner />}>
         <HomeWhyChoose />
       </Suspense>
       <Suspense fallback={<Spinner />}>
         <HomeInternationalTourPackagesWrapper />
       </Suspense>
-      <Suspense fallback={<Spinner />}>
+      <HomePortraitVideoWrapper/>
+      {/* <Suspense fallback={<Spinner />}>
         <Testimonials />
-      </Suspense>
+      </Suspense> */}
     </>
   );
 }

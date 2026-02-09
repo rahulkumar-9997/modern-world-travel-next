@@ -11,7 +11,7 @@ export function Header({ menuList }) {
     return (
         <>
             <header className="header -type-3 -page-5 js-header">
-                <div className="header__container container">                    
+                <div className="header__container container">
                     <div className="header__logo">
                         <Link href="/" className="header-logo-btn">
                             <img src="/assets/modern-img/logo-new.jpg" alt="logo icon" />
@@ -74,21 +74,21 @@ export function Header({ menuList }) {
                                                                                             className="desktopNavMega-list__link"
                                                                                             key={idx}
                                                                                         >
-<Link
-    href={`${section.title === "Favourite Cities" ? "/city" : menu.title === "Packages" ? "/tour-package" :menu.title === "Experience" ? "/experience" : "/tours-location"}/${item.url}`}
-    className='dropdown-link-a'>
-    {item.name}
-    {
-        item.duration && (
-            <>
-            <br /><span className="span-text-s">
-                {item.duration}
-            </span>
-            </>
-        )
-    }
-</Link>
-                                                                                            
+                                                                                            <Link
+                                                                                                href={`${section.title === "Favourite Cities" ? "/city" : menu.title === "Packages" ? "/tour-package" : menu.title === "Experience" ? "/experience" : "/tours-location"}/${item.url}`}
+                                                                                                className='dropdown-link-a'>
+                                                                                                {item.name}
+                                                                                                {
+                                                                                                    item.duration && (
+                                                                                                        <>
+                                                                                                            <br /><span className="span-text-s">
+                                                                                                                {item.duration}
+                                                                                                            </span>
+                                                                                                        </>
+                                                                                                    )
+                                                                                                }
+                                                                                            </Link>
+
                                                                                         </div>
                                                                                     ))}
                                                                             </div>
@@ -117,7 +117,7 @@ export function Header({ menuList }) {
                         <button className="header__menuBtn js-menu-button">
                             <i className="icon-main-menu" />
                         </button>
-                    </div>                    
+                    </div>
                 </div>
             </header>
 
@@ -152,27 +152,27 @@ export function Header({ menuList }) {
                                                 </li>
                                                 {menu.sections.map((section, sectionIndex) => (
                                                     <React.Fragment key={sectionIndex}>
-                                                    <li className="submenu__item menu-head-se">
-                                                        <a className="submenu__item-title menu-head-t">{section.title}</a>
-                                                    </li>
-                                                    {section.items && section.items.map((item, itemIndex) => (
-                                                        <li className="submenu__item" key={`${sectionIndex}-${itemIndex}`}>
-                                                        <Link href=
-                                                        {`${section.title === "Favourite Cities" ? "/city" : menu.title === "Packages" ? "/tour-package" : "/tours-location"}/${item.url}`}
-                                                        >
-                                                            {item.name}
-                                                            {/* {item.duration && (
+                                                        <li className="submenu__item menu-head-se">
+                                                            <a className="submenu__item-title menu-head-t">{section.title}</a>
+                                                        </li>
+                                                        {section.items && section.items.map((item, itemIndex) => (
+                                                            <li className="submenu__item" key={`${sectionIndex}-${itemIndex}`}>
+                                                                <Link href=
+                                                                    {`${section.title === "Favourite Cities" ? "/city" : menu.title === "Packages" ? "/tour-package" : "/tours-location"}/${item.url}`}
+                                                                >
+                                                                    {item.name}
+                                                                    {/* {item.duration && (
                                                             <>
                                                                 <br />
                                                                 <span className="span-text-s">{item.duration}</span>
                                                             </>
                                                             )} */}
-                                                        </Link>
-                                                        </li>
-                                                    ))}
+                                                                </Link>
+                                                            </li>
+                                                        ))}
                                                     </React.Fragment>
                                                 ))}
-                                                </ul>
+                                            </ul>
 
                                         </>
                                     )}
@@ -180,10 +180,10 @@ export function Header({ menuList }) {
                             ))}
                             <li className="menuNav__item">
                                 <Link href="/blog">Blog</Link>
-                            </li>                            
+                            </li>
                             <li className="menuNav__item">
                                 <Link href="/contact-us">Contact Us</Link>
-                            </li>                            
+                            </li>
                         </ul>
                     </div>
 
