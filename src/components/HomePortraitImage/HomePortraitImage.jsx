@@ -87,8 +87,6 @@ export const HomePortraitImage = ({ initialData, sectionInfo }) => {
                         )}
                     </div>
                 </div>
-
-                {/* Carousel Section */}
                 <div className="row justify-center pt-20 md:pt-20">
                     <div className="col-xl-12 col-lg-12">
                         <Carousel
@@ -151,6 +149,13 @@ export const HomePortraitImage = ({ initialData, sectionInfo }) => {
                                                         />
                                                     </a>
                                                 )}
+                                                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent pointer-events-none">
+                                                    {item.title && item.title.trim() && (
+                                                        <div className="text-white font-semibold text-center mb-1 truncate text-18">
+                                                            {item.title} 
+                                                        </div>
+                                                    )}
+                                                </div>
                                             </div>
                                         </div>
                                     </CarouselItem>
@@ -169,6 +174,17 @@ export const HomePortraitImage = ({ initialData, sectionInfo }) => {
                                 <ChevronRight className="h-6 w-6" />
                             </CarouselNext>
                         </Carousel>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="btn-wrap text-center mt-30">
+                            <a
+                                href={`/gallery/${sectionInfo?.slug}`}
+                                className="py-2! px-5! inline-block tracking-wide align-middle duration-500 text-base text-center bg-logo-color1 text-white rounded-md hover:!text-white"                            >
+                                View all Gallery
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -77,7 +77,7 @@ export const HomePortraitVideo = ({ initialData, sectionInfo }) => {
                   <CarouselItem
                     key={item.id || index}
                     className="pl-4 basis-1/2 md:basis-1/4">
-                    <div className="group relative overflow-hidden rounded-2xl shadow-lg">
+                    <div className="group relative overflow-hidden rounded-2xl shadow-lg mb-3">
                       <div className="relative aspect-[9/16] overflow-hidden rounded-2xl">
                         <video
                           className="w-full h-full object-cover transition-transform duration-700"
@@ -92,6 +92,13 @@ export const HomePortraitVideo = ({ initialData, sectionInfo }) => {
                           Your browser does not support the video tag.
                         </video>
                       </div>
+                    </div>
+                    <div className="text-center px-2">
+                        {item.title && item.title.trim() && (
+                          <h6 className="text-[#555555] text-18 font-semibold mb-1 truncate">
+                            {item.title}
+                          </h6>
+                        )}                                                
                     </div>
 
                   </CarouselItem>
@@ -112,6 +119,17 @@ export const HomePortraitVideo = ({ initialData, sectionInfo }) => {
               </CarouselNext>
             </Carousel>
           </div>
+        </div>
+        <div className="row">
+            <div className="col-lg-12">
+                <div className="btn-wrap text-center mt-30">
+                    <a
+                        href={`/gallery/${sectionInfo?.slug}`}
+                        className="py-2! px-5! inline-block tracking-wide align-middle duration-500 text-base text-center bg-logo-color1 text-white rounded-md hover:!text-white"                            >
+                        View all Video
+                    </a>
+                </div>
+            </div>
         </div>
       </div>
     </section>

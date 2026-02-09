@@ -3343,11 +3343,14 @@ h1, h2, h3{
 .hero.-type-1 {
   /* position: relative; */
   position: relative;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  /* padding-top: 120px;
+  padding-bottom: 120px; */
   /* margin-top: 88px; */
   /* margin-top: 93px; */
   z-index: 5;
+}
+.home-enqiry-from{
+  margin-top: -45px;
 }
 
 @media (max-width: 767px) {

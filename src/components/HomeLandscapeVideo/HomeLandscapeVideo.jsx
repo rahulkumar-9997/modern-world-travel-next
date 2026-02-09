@@ -13,7 +13,7 @@ import { Heading } from '../Heading/Heading'
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react'
 
 export const HomeLandscapeVideo = ({ initialData, sectionInfo }) => {
-    const landscapeVideos = initialData && Array.isArray(initialData) && initialData.length > 0
+  const landscapeVideos = initialData && Array.isArray(initialData) && initialData.length > 0
     ? initialData.map(item => ({
       id: item.id || Math.random().toString(),
       videoUrl: item.video_url,
@@ -21,6 +21,7 @@ export const HomeLandscapeVideo = ({ initialData, sectionInfo }) => {
       external_url: item.external_url
     }))
     : [];
+
   if (!initialData) {
     return (
       <section className="relative layout-pt-xl layout-pb-xl bg-gradient-to-b from-gray-50 to-white">
@@ -40,10 +41,10 @@ export const HomeLandscapeVideo = ({ initialData, sectionInfo }) => {
       </section>
     );
   }
+
   return (
     <section className="relative layout-pt-xl layout-pb-xl bg-gradient-to-b from-gray-50 to-white home-landscape-img-se">
       <div className="container relative z-20">
-        {/* Heading */}
         <div className="row justify-center text-center">
           <div className="col-auto">
             <Heading
@@ -56,60 +57,72 @@ export const HomeLandscapeVideo = ({ initialData, sectionInfo }) => {
                 {sectionInfo.sub_heading}
               </p>
             )}
+            {sectionInfo?.caption && sectionInfo.caption.trim() !== '' && (
+              <p className="text-gray-500 mt-2 text-sm max-w-3xl mx-auto">
+                {sectionInfo.caption}
+              </p>
+            )}
           </div>
         </div>
 
-        {/* Carousel */}
         <div className="row justify-center pt-20 md:pt-20">
           <div className="col-xl-12 col-lg-12">
-
             <Carousel
               className="w-full"
-              plugins={[
-                // Autoplay({
-                //   delay: 4000,
-                //   stopOnInteraction: false,
-                // }),
-              ]}
+              plugins={[]}
               opts={{
                 align: "start",
                 loop: true,
               }}
             >
               <CarouselContent className="-ml-4">
-
                 {landscapeVideos.map((item) => (
                   <CarouselItem
                     key={item.id}
-                    className="pl-4 basis-1/2 md:basis-1/3">
-                    <div className="group relative overflow-hidden rounded-2xl shadow-lg">
-                      <div className="relative h-56 md:h-64 overflow-hidden rounded-2xl">
-                        <video
-                          className="w-full h-full object-cover transition-transform duration-700"
-                          autoPlay
-                          muted
-                          playsInline
-                          preload="none"
-                          controls
-                          controlsList="nodownload"
-                        >
-                          <source src={item.videoUrl} type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
+                    className="pl-4 basis-1/2 md:basis-1/3"
+                  >
+                    <div className="group">
+                      <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 mb-3">
+                        <div className="relative h-56 md:h-64 overflow-hidden rounded-2xl bg-black">
+                          <video
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            preload="none"
+                            controls
+                            controlsList="nodownload"
+                            onError={(e) => {
+                              console.error('Video failed to load:', item.videoUrl);
+                            }}
+                          >
+                            <source src={item.videoUrl} type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                      </div>
+                      <div className="text-center px-2">
+                        {item.title && item.title.trim() && (
+                          <h6 className="text-[#555555] text-18 font-semibold mb-1 truncate">
+                            {item.title}
+                          </h6>
+                        )}                                                
                       </div>
                     </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
+
               <CarouselPrevious
-                className="absolute left-3 top-1/2 -translate-y-1/2 bg-white text-black border-none h-12 w-12 rounded-full shadow-lg z-10"
+                className="absolute left-3 top-1/2 -translate-y-1/2 bg-white text-black border-none h-12 w-12 rounded-full shadow-lg z-10 hover:bg-gray-100 transition-colors"
                 size="icon"
               >
                 <ChevronLeft className="h-6 w-6" />
               </CarouselPrevious>
 
               <CarouselNext
-                className="absolute right-3 top-1/2 -translate-y-1/2 bg-white text-black border-none h-12 w-12 rounded-full shadow-lg z-10"
+                className="absolute right-3 top-1/2 -translate-y-1/2 bg-white text-black border-none h-12 w-12 rounded-full shadow-lg z-10 hover:bg-gray-100 transition-colors"
                 size="icon"
               >
                 <ChevronRight className="h-6 w-6" />
@@ -117,7 +130,20 @@ export const HomeLandscapeVideo = ({ initialData, sectionInfo }) => {
             </Carousel>
           </div>
         </div>
+        {sectionInfo?.slug && (
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="btn-wrap text-center mt-30">
+                <a
+                  href={`/gallery/${sectionInfo.slug}`}
+                  className="py-2! px-5! inline-block tracking-wide align-middle duration-500 text-base text-center bg-logo-color1 text-white rounded-md hover:!text-white"                            >
+                  View all Video
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
-  )
+  );
 }

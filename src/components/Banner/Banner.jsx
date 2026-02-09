@@ -1,8 +1,9 @@
 'use client';
+import dynamic from "next/dynamic";
 import React, { useState } from 'react';
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
-import { BannerForm } from '../BannerForm/BannerForm';
+// import { BannerForm } from '../BannerForm/BannerForm';
 import {
     Calendar as CalendarIcon,
     ChevronLeft,
@@ -15,7 +16,10 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from '@/components/ui/carousel'
-
+const BannerForm = dynamic(
+  () => import("../BannerForm/BannerForm").then(m => m.BannerForm),
+  { ssr: false }
+);
 export function Banner({ initialData }) {
 
     const autoplay = useRef(
@@ -29,55 +33,53 @@ export function Banner({ initialData }) {
             caption: item.caption,
             url: item.url
         }))
-        : [
-            {
-                src: "/assets/modern-img/banner-img.png",
-                alt: "Beautiful beach destination",
-                mobileSrc: "/assets/modern-img/banner-img.png"
-            }
-        ];
+        : [];
     return (
-        <section className="hero -type-1 relative">
-            <div className="hero__bg absolute inset-0">
-                <Carousel className="w-full h-full"
-                    plugins={[autoplay.current]}
-                    opts={{ loop: true }}>
-                    <CarouselContent>
-                        {carouselImages.map((image, index) => (
-                            <CarouselItem key={index}>
-                                <div className="relative w-full h-full">
-                                    <img
-                                        src={image.src}
-                                        alt={image.alt}
-                                        className="w-full h-full object-cover min-h-[600px]"
-                                        loading={index === 0 ? 'eager' : 'lazy'}
-                                    />
-                                    <img
-                                        src={image.mobileSrc}
-                                        alt={image.alt}
-                                        className="w-full h-full object-cover min-h-[400px] block md:hidden"
-                                        loading={index === 0 ? 'eager' : 'lazy'}
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-                                </div>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                    <CarouselPrevious
-                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 border-none h-12 w-12 rounded-full shadow-lg z-10"
-                        size="icon"
-                    >
-                        <ChevronLeft className="h-6 w-6" />
-                    </CarouselPrevious>
-                    <CarouselNext
-                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 border-none h-12 w-12 rounded-full shadow-lg z-10"
-                        size="icon"
-                    >
-                        <ChevronRight className="h-6 w-6" />
-                    </CarouselNext>
-                </Carousel>
-            </div>
+        <>
+            <section className="hero -type-1 relative h-[520px] md:h-[500px]">
+                <div className="hero__bg absolute inset-0 h-full">
+                    <Carousel className="w-full h-full"
+                        plugins={[autoplay.current]}
+                        opts={{ loop: true }}>
+                        <CarouselContent>
+                            {carouselImages.map((image, index) => (
+                                <CarouselItem key={index}>
+                                    <div className="relative w-full h-full">
+                                        <img
+                                            src={image.src}
+                                            alt={image.alt}
+                                            className="w-full h-full object-cover min-h-[500px]"
+                                            loading={index === 0 ? 'eager' : 'lazy'}
+                                        />
+                                        <img
+                                            src={image.mobileSrc}
+                                            alt={image.alt}
+                                            className="w-full h-full object-cover min-h-[400px] block md:hidden"
+                                            loading={index === 0 ? 'eager' : 'lazy'}
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious
+                            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-white text-black border-none h-12 w-12 rounded-full shadow-lg z-10"
+                            size="icon"
+                        >
+                            <ChevronLeft className="h-6 w-6" />
+                        </CarouselPrevious>
+                        <CarouselNext
+                            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-white text-black border-none h-12 w-12 rounded-full shadow-lg z-10"
+                            size="icon"
+                        >
+                            <ChevronRight className="h-6 w-6" />
+                        </CarouselNext>
+                    </Carousel>
+                </div>
+                
+            </section>
             <BannerForm />
-        </section>
+        </>
+        
     )
 }
