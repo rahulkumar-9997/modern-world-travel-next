@@ -80,7 +80,7 @@ export const HomePortraitVideo = ({ initialData, sectionInfo }) => {
                     <div className="group relative overflow-hidden rounded-2xl shadow-lg">
                       <div className="relative aspect-[9/16] overflow-hidden rounded-2xl">
                         <video
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          className="w-full h-full object-cover transition-transform duration-700"
                           autoPlay
                           muted
                           playsInline
