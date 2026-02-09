@@ -1,7 +1,7 @@
 'use client'
-
 import React from 'react'
-import Autoplay from "embla-carousel-autoplay"
+import Autoplay from "embla-carousel-autoplay";
+import Link from 'next/link';
 import {
   Carousel,
   CarouselContent,
@@ -134,11 +134,11 @@ export const HomeLandscapeVideo = ({ initialData, sectionInfo }) => {
           <div className="row">
             <div className="col-lg-12">
               <div className="btn-wrap text-center mt-30">
-                <a
+                <Link
                   href={`/gallery/${sectionInfo.slug}`}
                   className="py-2! px-5! inline-block tracking-wide align-middle duration-500 text-base text-center bg-logo-color1 text-white rounded-md hover:!text-white"                            >
                   View all Video
-                </a>
+                </Link>
               </div>
             </div>
           </div>
