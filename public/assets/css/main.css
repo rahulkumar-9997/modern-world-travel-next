@@ -3352,6 +3352,9 @@ h1, h2, h3{
 .home-enqiry-from{
   margin-top: -45px;
 }
+.mb-24 {
+    margin-bottom: 24px;
+}
 
 @media (max-width: 767px) {
   .hero.-type-1 {
