@@ -5419,7 +5419,7 @@ h1, h2, h3{
 
 @media (max-width: 767px) {
   .pageHeader.-type-1 {
-    margin-top: 57px;
+    margin-top: 0px;
   }
 }
 
@@ -5503,13 +5503,17 @@ h1, h2, h3{
 
 @media (max-width: 991px) {
   .pageHeader.-type-1 .pageHeader__title {
-    font-size: 60px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    line-height: 25px;;
   }
 }
 
 @media (max-width: 767px) {
   .pageHeader.-type-1 .pageHeader__title {
-    font-size: 40px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    line-height: 25px;
   }
 }
 
@@ -14467,7 +14471,10 @@ button.gm-ui-hover-effect::after {
     top: 120px;
 }
 .main-img{
-  padding: 0px 10px 10px 0px;
+  padding: 0px 15px 15px 0px;
+}
+.destination-content .main-img{
+    float: left;
 }
 .city-slug{
   border-bottom: 2px solid #dee2e6;
@@ -14694,6 +14701,7 @@ button.gm-ui-hover-effect::after {
 .about-text p{
   text-align: justify;
 }
+
 @media screen and (max-width: 991px) {
   .home-enqiry-from {
       margin-top: 20px;
@@ -14741,6 +14749,22 @@ button.gm-ui-hover-effect::after {
   }
   .mobile_menu_section li{
     margin: 0px;
+  }
+  .pageHeader.-type-1{
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 100px 0 145px;
+  }
+  .single-tour-section {
+    padding-top: 50px;
+    padding-bottom: 80px;
+  }
+  .single-tour-inner .destination-content .main-img{
+    float: unset!important;
+    width: 100%!important;
+  }
+  .single-tour-inner .destination-content .main-img img{
+    width: 100%!important;
   }
 }
 /*Contact us*/

@@ -40,11 +40,11 @@ export default function CityPage({ initialData }) {
                                                     <Link href={`/destination/${city.city_url}/${destination.url}`}>
                                                         <div className="text destination-content">
                                                             {destination.image && (
-                                                                <div className='float-left! inline main-img'>
+                                                                <div className='float-image inline main-img'>
                                                                     <img
                                                                         src={destination.image}
                                                                         alt={destination.title}
-                                                                        className="img-cover w-56! h-auto!  object-contain object-center rounded-lg!"
+                                                                        className="img-cover w-56 h-auto!  object-contain object-center rounded-lg!"
                                                                     />
                                                                 </div>
                                                             )}

@@ -9,7 +9,7 @@ export default function AboutUsPage() {
                 mobileImage="/assets/img/pageHeader/1.jpg"
                 shapeImage="/assets/img/hero/1/shape.svg"
                 title="About Us"
-                subtitle="A tropical paradise made for animal lovers replete with monkey caves, dog foundations, and dolphins in the wild."
+                subtitle=""
             />
             <section className="layout-pt-lg layout-pb-lg">
                 <div className="container animated">
@@ -18,7 +18,7 @@ export default function AboutUsPage() {
                             <Heading
                                 level={2}
                                 text="About Modern World Travel <br/> Experience Excellence in Travel"
-                                className="text-30 fw-700"
+                                className="text-30 md:text-24 fw-700"
                             />
                         </div>
                     </div>
@@ -55,7 +55,7 @@ export default function AboutUsPage() {
                                 <Heading
                                     level={3}
                                     text=" Our Philosophy"
-                                    className="text-30 lh-13"
+                                    className="text-30 md:text-24 lh-13"
                                 />
                                 <p className="mt-10">
                                     “Our approach as a travel company is to treat all clients as individuals, providing a personal service that reflects our customer’s interest, preferences, time - frame and budget. It has been our Main Principle from the beginning that Modern World Travel should not simply book and print tour itineraries, and robotically distribute pre - printed brochures; personalized services and innovation make us a leader in the travel market. Modern World Travel goes further and deals with the entire range of potential travel services. Our Travel Advisors answer even those questions clients have not yet thought to ask; our aim is to assist with the most useful advice, ideas, and information possible. Our young, dynamic professionals are a vital part of the organization who are providing our professional services and are committed to ensuring that our customers enjoy the personal attention that they deserve.”
@@ -84,7 +84,7 @@ export default function AboutUsPage() {
                                 <Heading
                                     level={3}
                                     text="Why Choose Morden World Travel ?"
-                                    className="text-30 lh-13"
+                                    className="text-30 md:text-24 lh-13"
                                 />
                                 <p>
                                     “The purpose of our organization is simple; helping our customers get exactly what they want at the best value available. Consequently, we are capable of providing an exceptionally complex range of products and integrated services for both individual and corporate clients.”
@@ -92,12 +92,12 @@ export default function AboutUsPage() {
                             </div>
                         </div>
                     </div>
-                    <div className="row md:x-gap-20 pt-20 sm:pt-20 mobile-css-slider -w-280 is-in-view"
+                    <div className="row"
                     >
-                        <div className="col-lg-3 col-sm-6">
-                            <div className="featureIcon -type-1 pr-40 md:pr-0">
-                                <div className="featureIcon__icon">
-                                    <img src="/assets/img/icons/1/ticket.svg" alt="icon" />
+                        <div className="col-lg-3 col-sm-6 mb-10">
+                            <div className="featureIcon h-full -type-1 shadow-2xl bg-amber-100 text-center p-3 rounded">
+                                <div className="featureIcon__icon text-center">
+                                    <img src="/assets/img/icons/1/ticket.svg" alt="icon" className='d-block mx-auto' />
                                 </div>
                                 <Heading
                                     level={4}
@@ -110,10 +110,10 @@ export default function AboutUsPage() {
                                 </p>
                             </div>
                         </div>
-                        <div className="col-lg-3 col-sm-6">
-                            <div className="featureIcon -type-1 pr-40 md:pr-0">
-                                <div className="featureIcon__icon">
-                                    <img src="/assets/img/icons/1/hot-air-balloon.svg" alt="icon" />
+                        <div className="col-lg-3 col-sm-6 mb-10">
+                            <div className="featureIcon h-full -type-1 shadow-2xl bg-amber-100 text-center p-3 rounded">
+                                <div className="featureIcon__icon text-center">
+                                    <img src="/assets/img/icons/1/hot-air-balloon.svg" alt="icon" className='d-block mx-auto' />
                                 </div>
                                 <Heading
                                     level={4}
@@ -126,10 +126,10 @@ export default function AboutUsPage() {
                                 </p>
                             </div>
                         </div>
-                        <div className="col-lg-3 col-sm-6">
-                            <div className="featureIcon -type-1 pr-40 md:pr-0">
-                                <div className="featureIcon__icon">
-                                    <img src="/assets/img/icons/1/diamond.svg" alt="icon" />
+                        <div className="col-lg-3 col-sm-6 mb-10">
+                            <div className="featureIcon h-full -type-1 shadow-2xl bg-amber-100 text-center p-3 rounded">
+                                <div className="featureIcon__icon text-center">
+                                    <img src="/assets/img/icons/1/diamond.svg" alt="icon" className='d-block mx-auto'/>
                                 </div>
                                 <Heading
                                     level={4}
@@ -141,10 +141,10 @@ export default function AboutUsPage() {
                                 </p>
                             </div>
                         </div>
-                        <div className="col-lg-3 col-sm-6">
-                            <div className="featureIcon -type-1 pr-40 md:pr-0">
-                                <div className="featureIcon__icon">
-                                    <img src="/assets/img/icons/1/medal.svg" alt="icon" />
+                        <div className="col-lg-3 col-sm-6 mb-10">
+                            <div className="featureIcon h-full -type-1 shadow-2xl bg-amber-100 text-center p-3 rounded">
+                                <div className="featureIcon__icon text-center">
+                                    <img src="/assets/img/icons/1/medal.svg" alt="icon" className='d-block mx-auto'/>
                                 </div>
                                 <Heading
                                     level={4}

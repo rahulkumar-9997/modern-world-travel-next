@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
 export function Header({ menuList }) {
     useEffect(() => {
+        if (!menuList || menuList.length === 0) return;
         headerSticky()
         menuEvents()
         menuListBindEvents()
-        menuCloseOnLinkClick() 
-    }, [])
+        menuCloseOnLinkClick()
+    }, [menuList]);
     const isLoading = !menuList || menuList.length === 0;
     return (
         <>
@@ -161,7 +162,7 @@ export function Header({ menuList }) {
                                                         {section.items && section.items.map((item, itemIndex) => (
                                                             <li className="submenu__item" key={`${sectionIndex}-${itemIndex}`}>
                                                                 <Link href=
-                                                                    {`${section.title === "Favourite Cities" ? "/city" : menu.title === "Packages" ? "/tour-package" : "/tours-location"}/${item.url}`}
+                                                                    {`${section.title === "Favourite Cities" ? "/city" : menu.title === "Packages" ? "/tour-package" : menu.title === "Experience" ? "/experience" : "/tours-location"}/${item.url}`}
                                                                 >
                                                                     {item.name}
                                                                     {/* {item.duration && (
@@ -371,7 +372,7 @@ function menuListStepAnimate(hideList, showList, level, navBtnListBack) {
             window.gsap.to(navBtnListBack, {
                 ease: "quart.inOut",
                 duration: 0.6,
-                opacity: 0,
+                opacity: 1,
             })
         } else {
             navBtnListBack.forEach(btn => btn.style.opacity = 0);
@@ -418,7 +419,7 @@ function menuListStepAnimate(hideList, showList, level, navBtnListBack) {
             });
         } else {
             navBtnListBack.forEach(btn => {
-                btn.style.opacity = 0;
+                btn.style.opacity = 1;
             });
         }
     }
@@ -428,13 +429,11 @@ function menuCloseOnLinkClick() {
     const menuLinks = document.querySelectorAll('.menu__content a[href]');
     menuLinks.forEach(link => {
         link.addEventListener('click', () => {
-            if (link.closest('.js-has-submenu') && !link.classList.contains('js-nav-list-back')) {
-                const li = link.closest('.js-has-submenu');
-                if (li && li.contains(link) && li.querySelector('.submenu')) return;
-            }
             menuClose();
             isMenuOpen = false;
             menuDeepLevel = 0;
         });
     });
 }
+
+
