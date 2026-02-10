@@ -11,7 +11,7 @@ export function HomeInternationalTourPackages({ initialData }) {
                 <img src="/assets/modern-img/international_bg.webp" alt="image" className="img-ratio"/>
             </div>
             <div className="container">
-                <div className="row justify-between items-end y-gap-10 items-center">
+                <div className="row justify-between md:justify-center items-end y-gap-10 items-center">
                     <div className="col-auto">
                         <Heading
                             level={2}

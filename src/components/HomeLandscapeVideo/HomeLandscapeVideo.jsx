@@ -79,7 +79,7 @@ export const HomeLandscapeVideo = ({ initialData, sectionInfo }) => {
                 {landscapeVideos.map((item) => (
                   <CarouselItem
                     key={item.id}
-                    className="pl-4 basis-1/2 md:basis-1/3"
+                    className="pl-3 lg:pl-4 basis-1/2 md:basis-1/3"
                   >
                     <div className="group">
                       <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 mb-3">

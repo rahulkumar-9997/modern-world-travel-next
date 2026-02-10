@@ -29,17 +29,17 @@ export default function AboutUsPage() {
                                                 text="Phone Number"
                                                 className="text-24 fw-700 mb-2"
                                             />
-                                            <p>
+                                            <p className='mb-1'>
                                                 <a href="tel:5424108953" className="">
                                                     +91 542 4108953
                                                 </a>
                                             </p>
-                                            <p>
+                                            <p className='mb-1'>
                                                 <a href="tel:+919839901531" className="">
                                                     +91 98399 01531
                                                 </a>
                                             </p>
-                                            <p>
+                                            <p className='mb-1'>
                                                 <a href="tel:+919451311551" className="">
                                                     +91 94513 11551
                                                 </a>
@@ -59,25 +59,25 @@ export default function AboutUsPage() {
                                                 text="Email Address"
                                                 className="text-24 fw-700 mb-2"
                                             />
-                                            <p>
+                                            <p className='mb-1'>
                                                 <a href="mailto:info@modernworldtravel.com"
                                                     className="">
                                                     info@modernworldtravel.com
                                                 </a>
                                             </p>
-                                            <p>
+                                            <p className='mb-1'>
                                                 <a href="mailto:modernworldtravel@gmail.com"
                                                     className="">
                                                     modernworldtravel@gmail.com
                                                 </a>
                                             </p>
-                                            <p>
+                                            <p className='mb-1'>
                                                 <a href="mailto:sales@modernworldtravel.com"
                                                     className="">
                                                     sales@modernworldtravel.com
                                                 </a>
                                             </p>
-                                            <p>
+                                            <p className='mb-1'>
                                                 <a href="mailto:mwt@modernworldtravel.in"
                                                     className="">
                                                     mwt@modernworldtravel.in
@@ -87,7 +87,6 @@ export default function AboutUsPage() {
                                             <p className="text-sm text-black! mt-1">We respond within 24 hours</p>
                                         </div>
                                     </div>
-
                                     {/* Location */}
                                     <div className="flex items-start space-x-3 p-3 bg-white rounded-xl shadow-sm border border-[#eb6605] hover:shadow-md transition-shadow duration-300">
                                         <div className="flex-shrink-0 w-12 h-12 bg-[#004d91] rounded-lg flex items-center justify-center">

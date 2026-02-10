@@ -36,7 +36,7 @@ export function Banner({ initialData }) {
         : [];
     return (
         <>
-            <section className="hero -type-1 relative h-[520px] md:h-[500px]">
+            <section className="hero -type-1 relative lg:h-[520] h-[400px] md:h-[400px] overflow-hidden ">
                 <div className="hero__bg absolute inset-0 h-full">
                     <Carousel className="w-full h-full"
                         plugins={[autoplay.current]}
@@ -48,13 +48,13 @@ export function Banner({ initialData }) {
                                         <img
                                             src={image.src}
                                             alt={image.alt}
-                                            className="w-full h-full object-cover min-h-[500px]"
+                                            className="w-full h-full object-cover min-h-[500px] hidden lg:block"
                                             loading={index === 0 ? 'eager' : 'lazy'}
                                         />
                                         <img
                                             src={image.mobileSrc}
                                             alt={image.alt}
-                                            className="w-full h-full object-cover min-h-[400px] block md:hidden"
+                                            className="w-full h-full object-cover min-h-[400px] block lg:hidden"
                                             loading={index === 0 ? 'eager' : 'lazy'}
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>

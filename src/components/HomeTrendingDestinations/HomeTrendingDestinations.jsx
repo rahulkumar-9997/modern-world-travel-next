@@ -25,7 +25,7 @@ export function HomeTrendingDestinations({ initialData }) {
                         <Heading
                             level={2}
                             text="Trending destinations"
-                            className="text-30 mb-0 int-title"
+                            className="text-30 md:text-24 mb-0 int-title"
                         />
                     </div>
                     {/* <div className="col-auto">
@@ -57,7 +57,7 @@ export function HomeTrendingDestinations({ initialData }) {
                                 {initialData && initialData.map((destination) => (
                                     <CarouselItem
                                         key={destination.nid}
-                                        className="min-w-0 shrink-0 grow-0 pl-1 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6"
+                                        className="min-w-0 shrink-0 grow-0 pl-4 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6"
                                     >
                                         <Link href={`/city/${destination.url}`} className="featureCard -type-2 -hover-image-scale block bg-white shadow rounded-xl">
                                             <div className="featureCard__image ratio ratio-19:22 rounded-xl -hover-image-scale__image">

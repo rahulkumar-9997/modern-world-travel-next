@@ -6,6 +6,7 @@ export function Header({ menuList }) {
         headerSticky()
         menuEvents()
         menuListBindEvents()
+        menuCloseOnLinkClick() 
     }, [])
     const isLoading = !menuList || menuList.length === 0;
     return (
@@ -121,12 +122,14 @@ export function Header({ menuList }) {
                 </div>
             </header>
 
-            <div className="menu js-menu">
+            <div className="menu js-menu mobile_menu_section">
                 <div className="menu__overlay js-menu-button"></div>
                 <div className="menu__container">
                     <div className="menu__header">
                         <h4>Menu</h4>
-                        <button className="js-menu-button"><i className="icon-cross text-10"></i></button>
+                        <button className="js-menu-button">
+                            <i className="icon-cross text-10"></i>
+                        </button>
                     </div>
 
                     <div className="menu__content">
@@ -419,4 +422,19 @@ function menuListStepAnimate(hideList, showList, level, navBtnListBack) {
             });
         }
     }
+}
+
+function menuCloseOnLinkClick() {
+    const menuLinks = document.querySelectorAll('.menu__content a[href]');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (link.closest('.js-has-submenu') && !link.classList.contains('js-nav-list-back')) {
+                const li = link.closest('.js-has-submenu');
+                if (li && li.contains(link) && li.querySelector('.submenu')) return;
+            }
+            menuClose();
+            isMenuOpen = false;
+            menuDeepLevel = 0;
+        });
+    });
 }

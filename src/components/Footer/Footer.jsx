@@ -16,12 +16,12 @@ export function Footer({ initialData }) {
                     <div className="footer__info">
                         <div className="row y-gap-20 justify-between">
                             <div className="col-auto">
-                                <div className="row y-gap-20 items-center">
+                                <div className="row items-center">
                                     <div className="col-auto">
-                                        <i className="icon-headphone text-50" />
+                                        <i className="icon-headphone text-50 md:text-22" />
                                     </div>
-                                    <div className="col-auto">
-                                        <div className="text-20 fw-500">
+                                    <div className="col-auto speak-area">
+                                        <div className="text-20 md:text-18 fw-500">
                                             Speak to our expert at
                                             <span className="">
                                                 <a href="tel:+91-9839901531">
@@ -45,10 +45,10 @@ export function Footer({ initialData }) {
                             </div>
                         </div>
                     </div>
-                    <div className="footer__content">
+                    <div className="footer__content footer-logo-section">
                         <div className="row y-gap-40 justify-between">
                             <div className="col-lg-4 col-md-6">
-                                <div className="y-gap-10 mt-20">
+                                <div className="y-gap-10 mt-20 footer-mt">
                                     <div className="footer-logo">
                                         <a>
                                             <img src="/assets/modern-img/logo-new.jpg" className="w-1/4" />
@@ -60,7 +60,7 @@ export function Footer({ initialData }) {
                                 </div>
                             </div>
                             <div className="col-lg-auto col-6">
-                                <h4 className="text-20 fw-500">Modern Word Travel</h4>
+                                <h4 className="text-20 md:text-18 fw-500">Modern Word Travel</h4>
                                 <div className="y-gap-10 mt-20">
                                     <Link className="d-block fw-500" href="/about-us">
                                         About Us
@@ -81,7 +81,7 @@ export function Footer({ initialData }) {
                                 </div>
                             </div>
                             <div className="col-lg-auto col-6">
-                                <h4 className="text-20 fw-500">Top Destination</h4>
+                                <h4 className="text-20 fw-500 md:text-18">Top Destination</h4>
                                 <div className="y-gap-10 mt-20">
                                     {destinations.map((item) => (
                                         <Link
@@ -94,14 +94,14 @@ export function Footer({ initialData }) {
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-6">
-                                <h4 className="text-20 fw-500 mb-4">GET IN TOUCH</h4>
+                                <h4 className="text-20 fw-500 mb-4 md:text-18">Get in Touch</h4>
 
                                 <ul className="space-y-3">
                                     <li className="flex items-start mb-4">
                                         <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#eb6605] flex items-center justify-center mr-3">
                                             <FaMapMarkerAlt className="text-white text-sm" />
                                         </div>
-                                        <span className="text-white">
+                                        <span className="text-white text-16 md:text-16">
                                             Varanasi (Head Office)<br />
                                             Mumukshu Bhawan,<br />
                                             Assi, Varanasi - 221005
@@ -170,14 +170,9 @@ export function Footer({ initialData }) {
                 <div className="border-b border-gray-300 w-full h-px w-0.5"></div>
                 <div className="container">
                     <div className="footer__bottom">
-                        <div className="row justify-between items-center">
+                        <div className="row justify-center items-center">                           
                             <div className="col-auto">
-                                <div className="text-gray-400 text-sm">
-                                    © Copyright Morden World Travel {new Date().getFullYear()}
-                                </div>
-                            </div>
-                            <div className="col-auto">
-                                <div className="footer__links d-flex items-center gap-4">
+                                <div className="footer__links d-flex items-center gap-1 lg:gap-4 md:gap-1">
                                     <a href="/privacy-policy" className="text-gray-400! text-sm transition-colors">
                                         Privacy Policy
                                     </a>

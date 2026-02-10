@@ -63,10 +63,10 @@ export const HomePortraitVideo = ({ initialData, sectionInfo }) => {
             <Carousel
               className="w-full"
               plugins={[
-                // Autoplay({
-                //   delay: 4000,
-                //   stopOnInteraction: false,
-                // }),
+                Autoplay({
+                  delay: 4000,
+                  stopOnInteraction: false,
+                }),
               ]}
               opts={{
                 align: "start",
@@ -77,7 +77,7 @@ export const HomePortraitVideo = ({ initialData, sectionInfo }) => {
                 {portraitVideos.map((item, index) => (
                   <CarouselItem
                     key={item.id || index}
-                    className="pl-4 basis-1/2 md:basis-1/4">
+                    className="pl-3 lg:pl-4 basis-1/2 md:basis-1/4">
                     <div className="group relative overflow-hidden rounded-2xl shadow-lg mb-3">
                       <div className="relative aspect-[9/16] overflow-hidden rounded-2xl">
                         <video

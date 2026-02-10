@@ -14,7 +14,7 @@ export const HomeWhyChoose = () => {
                                     <Heading
                                         level={2}
                                         text="Why Choose Morden World Travel ?"
-                                        className="text-30 mb-1"
+                                        className="text-30 md:text-24 mb-1"
                                     /> 
                                     <p>
                                        “The purpose of our organization is simple; helping our customers get exactly what they want at the best value available. Consequently, we are capable of providing an exceptionally complex range of products and integrated services for both individual and corporate clients. We are convinced that besides being sensitive to prices, people tend to choose their Travel Agency on the basis of reliability.

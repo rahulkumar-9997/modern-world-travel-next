@@ -120,10 +120,10 @@ export const HomeLandscapeImage = ({ initialData, sectionInfo }) => {
                                     {landscapeImages.map((item) => (
                                         <CarouselItem
                                             key={item.id}
-                                            className="pl-8 md:pl-4 basis-1/2 md:basis-1/4"
+                                            className="pl-3 lg:pl-4 basis-1/2 md:basis-1/4"
                                         >
                                             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
-                                                <div className="relative h-80 overflow-hidden">
+                                                <div className="relative lg:h-80 md:h-60 h-60 overflow-hidden">
                                                     {item.external_url && item.external_url.trim() && item.external_url !== " " ? (
                                                         <a
                                                             href={item.external_url}

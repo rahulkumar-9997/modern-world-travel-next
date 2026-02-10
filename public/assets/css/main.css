@@ -1752,6 +1752,9 @@ h1, h2, h3{
   .md\:text-20 {
     font-size: var(--text-20) !important;
   }
+  .md\:text-22 {
+    font-size: 22px!important;
+  }
   .md\:text-24 {
     font-size: var(--text-24) !important;
   }
@@ -2549,7 +2552,7 @@ h1, h2, h3{
 
 @media (max-width: 767px) {
   .header.-type-3 .header__container {
-    height: 57px;
+    height: 75px;
   }
 }
 
@@ -3171,7 +3174,7 @@ h1, h2, h3{
 
 @media (max-width: 767px) {
   .footer.-type-1 .footer__main {
-    padding-top: 60px;
+    padding-top: 30px;
   }
 }
 
@@ -3213,8 +3216,8 @@ h1, h2, h3{
 
 @media (max-width: 767px) {
   .footer.-type-1 .footer__info {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }
 
@@ -3225,8 +3228,8 @@ h1, h2, h3{
 
 @media (max-width: 767px) {
   .footer.-type-1 .footer__content {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 30px;
   }
 }
 
@@ -3265,8 +3268,8 @@ h1, h2, h3{
 
 @media (max-width: 767px) {
   .footer.-type-1 .footerSocials {
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
+    /* flex-direction: column; */
   }
 }
 
@@ -3283,8 +3286,9 @@ h1, h2, h3{
 @media (max-width: 767px) {
   .footer.-type-1 .footerSocials__icons {
     position: relative;
-    left: -12px;
-    margin-top: 8px;
+    left: 12px;
+    /* margin-top: 8px; */
+    margin-top: -6px;
   }
 }
 
@@ -3358,7 +3362,7 @@ h1, h2, h3{
 
 @media (max-width: 767px) {
   .hero.-type-1 {
-    margin-top: 57px;
+    margin-top: 0px;
   }
 }
 
@@ -12036,7 +12040,7 @@ h1, h2, h3{
     max-width: 160px;
   }
   .mobile-css-slider.-w-300 > * {
-    max-width: 300px;
+    max-width: 100%;
   }
 }
 
@@ -14225,6 +14229,7 @@ button.gm-ui-hover-effect::after {
 .tourCard:hover .tourCard__location,
 .tourCard:hover .tourCard__location i,
 .tourCard:hover h5,
+.tourCard:hover p,
 .tourCard:hover .home-duration .duration-content
 {
   color: #FFFFFF!important;
@@ -14685,5 +14690,57 @@ button.gm-ui-hover-effect::after {
     color: #ffff;
   }
   
+}
+.about-text p{
+  text-align: justify;
+}
+@media screen and (max-width: 991px) {
+  .home-enqiry-from {
+      margin-top: 20px;
+  }
+  .searchForm.-type-1{
+    box-shadow: 15px 15px 25px 25px rgba(0, 0, 0, 0.08);
+  }
+  .about-home-content{
+    margin-top: 30px;
+  }
+  .chooseus-section {
+    padding-top: 30px;
+  }
+  .chooseus-section {
+    padding-bottom: 0px;
+  }
+  .chooseus-section .offer-box {
+    padding: 70px 0px;
+  }
+  .chooseus-section .offer-box {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .content_block_one .content-box {
+    margin-right: 0px;
+  }
+  .content_block_two .content-box h3{
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .speak-area{
+    margin-top: -10px;
+  }
+  .footer-logo-section .footer-mt{
+    margin-top: 0px !important;
+  }
+
+  .header.-type-3.-is-sticky .header-logo-btn img {
+    margin-top: 70px;
+    width: 100px;
+  }
+  .mobile_menu_section .menuNav__item a:hover{
+    color: #FFFFFF;
+  }
+  .mobile_menu_section li{
+    margin: 0px;
+  }
 }
 /*Contact us*/

@@ -9,12 +9,12 @@ export const HomeTourPackage = ({ initialData }) => {
     return (
         <section className="layout-pb-xl home-tour-package">
             <div className="container">
-                <div className="row justify-between items-end y-gap-10">
+                <div className="row justify-center items-end y-gap-10">
                     <div className="col-auto">
                         <Heading
                             level={2}
                             text={initialData?.title || 'Tour Packages in Varanasi'}
-                            className="text-30 mb-1"
+                            className="text-30 md:text-24 mb-1"
                         />                        
                     </div>
                     {/* <div className="col-auto">
@@ -25,9 +25,9 @@ export const HomeTourPackage = ({ initialData }) => {
                     </div> */}
                 </div>
                 {initialData?.details && (
-                    <div className="row">
+                    <div className="row justify-center">
                         <div className="col-md-6">
-                            <div className="head-title">
+                            <div className="head-title text-center">
                                 <p>{initialData.details}</p>
                             </div>
                         </div>

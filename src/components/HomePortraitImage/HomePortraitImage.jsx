@@ -109,7 +109,7 @@ export const HomePortraitImage = ({ initialData, sectionInfo }) => {
                                 {portraitImages.map((item, index) => (
                                     <CarouselItem
                                         key={item.id}
-                                        className="pl-8 md:pl-4 basis-1/2 md:basis-1/4"
+                                        className="pl-3 lg:pl-4 basis-1/2 md:basis-1/4"
                                     >
                                         <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 box-sd">
                                             <div className="relative aspect-[3/4] overflow-hidden">
