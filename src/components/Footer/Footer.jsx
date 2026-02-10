@@ -173,15 +173,15 @@ export function Footer({ initialData }) {
                         <div className="row justify-center items-center">                           
                             <div className="col-auto">
                                 <div className="footer__links d-flex items-center gap-1 lg:gap-4 md:gap-1">
-                                    <a href="/privacy-policy" className="text-gray-400! text-sm transition-colors">
+                                    <a href="/privacy-policy" className="text-gray-400! text-16 transition-colors">
                                         Privacy Policy
                                     </a>
                                     <span className="text-white">|</span>
-                                    <a href="/terms-conditions" className="text-gray-400!  hover:text-white text-sm transition-colors">
+                                    <a href="/terms-conditions" className="text-gray-400!  hover:text-white text-16 transition-colors">
                                         Terms & Conditions
                                     </a>
                                     <span className="text-white">|</span>
-                                    <a href="/refund-policy" className="text-gray-400!  text-sm transition-colors">
+                                    <a href="/refund-policy" className="text-gray-400!  text-16 transition-colors">
                                         Return / Refund
                                     </a>
                                 </div>
