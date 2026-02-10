@@ -7,11 +7,8 @@ async function getInternationalPackages() {
             'https://www.gdsons.co.in/draft/mwt/api/international-tour-package',
             { cache: 'no-store' }
         );
-
         if (!res.ok) return null;
-
         return await res.json();
-
     } catch (error) {
         console.error('Error fetching international packages:', error);
         return null;

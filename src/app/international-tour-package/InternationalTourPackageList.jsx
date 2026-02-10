@@ -39,28 +39,30 @@ export function InternationalTourPackageList({ initialData }) {
                                         </div>
 
                                     </div>
-                                    <div className="international-tour-card">
-                                        <div className="international-tour-section">
-                                            <div className="tourCard__content flex! flex-col! justify-between! gap-2!">
-                                                {/* <div className="tourCard__location d-flex items-center text-13 text-light-2">
-                                                    <i className="icon-pin d-flex text-16 text-light-2 mr-5" />
-                                                    {tour.location}
-                                                </div> */}
-                                                <Heading
-                                                    level={5}
-                                                    text={tour.title}
-                                                    className="ttourCard__title  fw-500 mt-5 leading-tight! "
-                                                />
-                                                <p className='relative z-10! line-clamp-4 group-hover:text-white! transition-colors'>
-                                                    {tour.description}
-                                                </p>
+                                    <div className="international-tour-card w-full h-full">
+                                        <div className="flex! flex-col! justify-between! w-full h-full">
+                                            <div className="international-tour-section">
+                                                <div className="tourCard__content flex! flex-col! justify-between! gap-2!">
+                                                    {/* <div className="tourCard__location d-flex items-center text-13 text-light-2">
+                                                        <i className="icon-pin d-flex text-16 text-light-2 mr-5" />
+                                                        {tour.location}
+                                                    </div> */}
+                                                    <Heading
+                                                        level={5}
+                                                        text={tour.title}
+                                                        className="ttourCard__title  fw-500 mt-5 leading-tight! "
+                                                    />
+                                                    <p className='relative z-10! line-clamp-4 group-hover:text-white! transition-colors'>
+                                                        {tour.description}
+                                                    </p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className='international-tour-section-in'>
-                                            <div className="d-flex justify-between items-center home-duration">
-                                                <div className="d-flex items-center duration-content">
-                                                    <i className="icon-clock text-16 mr-5" />
-                                                    {tour.duration}
+                                            <div className='international-tour-section-in'>
+                                                <div className="d-flex justify-between items-center home-duration">
+                                                    <div className="d-flex items-center duration-content">
+                                                        <i className="icon-clock text-16 mr-5" />
+                                                        {tour.duration}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
