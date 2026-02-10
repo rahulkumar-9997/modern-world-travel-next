@@ -85,7 +85,7 @@ export default function experienceDetailsPage({ initialData }) {
                                                                         : "col-lg-12 pagedata table-formatulli"
                                                                 }
                                                             >
-                                                                <div
+                                                                <div className='mb-10'
                                                                     dangerouslySetInnerHTML={{
                                                                         __html: item?.content || ''
                                                                     }}
