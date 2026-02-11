@@ -7074,13 +7074,14 @@ h1, h2, h3{
 .menu {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   bottom: 0;
-  width: 470px;
+  width: 350px;
   max-width: 100%;
   z-index: 1000;
   pointer-events: none;
   opacity: 0;
+  display: none;
 }
 
 .menu__overlay {
@@ -7102,7 +7103,9 @@ h1, h2, h3{
   padding: 20px;
   background-color: #eb6605;
   z-index: 1;
+  overflow-y: auto;
 }
+
 
 .menu__header {
   display: flex;
@@ -7136,6 +7139,7 @@ h1, h2, h3{
 
 .menu.-is-active {
   pointer-events: auto !important;
+  display: block;
 }
 
 .menu .-is-active {
