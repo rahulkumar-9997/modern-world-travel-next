@@ -33,7 +33,7 @@ const BreadcrumbHeader = ({
           />
         )} */}
       </div>      
-      <div className="container z-20 bread-positin">
+      <div className="container bread-positin">
         <div className="row justify-center">
           <div className="col-12">
             <div className="pageHeader__content">
