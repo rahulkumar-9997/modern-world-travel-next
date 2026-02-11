@@ -1,7 +1,6 @@
 export const dynamic = 'force-dynamic';
 import React from 'react';
 import { InternationalTourPackageList } from './InternationalTourPackageList';
-
 async function getInternationalPackages() {
     try {
         const res = await fetch(
