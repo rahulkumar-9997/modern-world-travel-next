@@ -1,4 +1,5 @@
 import React from 'react';
+export const dynamic = 'force-dynamic';
 import BlogDetailsPage from './BlogDetailsPage';
 
 async function getBlogDetails(slug) {
