@@ -136,9 +136,9 @@ export default function ItineraryOrTourPackagePage({initialData}) {
                                             </div>
                                         </div>
                                     )}
-                                    <div className="book-this-tour mt-3 bg-white rounded-xl shadow-lg border border-gray-100 p-2 md:p-2">
+                                    <div className="book-this-tour bg-white rounded-xl shadow-lg border border-gray-100 p-2 md:p-2">
                                         
-                                        <div className="book_form">
+                                        <div className="book_form_section">
                                             <div className="contactForm">
                                                 <div className="row y-gap-15">
                                                     <div className="col-12">
