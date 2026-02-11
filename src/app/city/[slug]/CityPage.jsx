@@ -78,7 +78,7 @@ export default function CityPage({ initialData }) {
                                     {tour_cover?.length > 0 && (
                                         <div className="sidebar -type-2">
                                             <div className="sidebar__item">
-                                                <h3 className="text-24 fw-600 mb-20">Tours Covering {city.title}</h3>
+                                                <h3 className="text-24 md:text-22 fw-600 mb-20">Tours Covering {city.title}</h3>
                                                 <div className="d-flex y-gap-20 flex-column">
                                                     {tour_cover.map((tour, index) => (
                                                         <Link key={tour.nid || index} 
