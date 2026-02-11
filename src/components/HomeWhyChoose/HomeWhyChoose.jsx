@@ -86,9 +86,9 @@ export const HomeWhyChoose = () => {
                             allowHTML={true}
                         />
                         <div className="btn-box mt-3">
-                            <a href="#" className="py-2! px-5! inline-block tracking-wide align-middle duration-500 text-base text-center bg-logo-color1 text-white rounded-md hover:!text-white">
-                                Book Now
-                            </a>
+                            <Link href="/contact-us" className="py-2! px-5! inline-block tracking-wide align-middle duration-500 text-base text-center bg-logo-color1 text-white rounded-md hover:!text-white">
+                                Enquire Now
+                            </Link>
                         </div>
                     </div>
                 </div>

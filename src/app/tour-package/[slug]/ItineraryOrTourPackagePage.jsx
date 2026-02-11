@@ -1,9 +1,13 @@
-import React from 'react';
+"use client";
+import React, { useEffect, useState } from 'react';
 import BreadcrumbHeader from '@/components/BreadcrumbHeader/BreadcrumbHeader';
 import { Heading } from '@/components/Heading/Heading';
+import EnquiryModal from '@/components/EnquiryModal/EnquiryModal';
 import Link from 'next/link';
 export default function ItineraryOrTourPackagePage({initialData}) {
-     const {title, duration, desktop_banner_image, mobile_banner_image, meta_title, meta_desc, highlights, inclusions, exclusions,  for_daywise = [], cover_city = []} = initialData;
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedTour, setSelectedTour] = useState(null);
+    const {title, duration, desktop_banner_image, mobile_banner_image, meta_title, meta_desc, highlights, inclusions, exclusions,  for_daywise = [], cover_city = []} = initialData;
     return (
         <>
             <BreadcrumbHeader
@@ -86,7 +90,7 @@ export default function ItineraryOrTourPackagePage({initialData}) {
                                     <div className="page-content inclusions-exclusions space-y-6">
                                         {inclusions && (
                                             <div>
-                                                <h5 className="text-24 text-[#eb6605]! fw-600 mb-5">
+                                                <h5 className="text-24 md:text-22 text-[#eb6605]! fw-600 mb-5">
                                                     Inclusions
                                                 </h5>
                                                 <div className="list-disc list-inside space-y-1" dangerouslySetInnerHTML={{ __html: inclusions }} />                                                
@@ -94,7 +98,7 @@ export default function ItineraryOrTourPackagePage({initialData}) {
                                         )}
                                         {exclusions && (
                                             <div>
-                                                <h6 className="text-24 text-[#eb6605]! fw-600 mb-5">
+                                                <h6 className="text-24 md:text-22 text-[#eb6605]! fw-600 mb-5">
                                                     Exclusions
                                                 </h6>
                                                 <div className="list-disc list-inside space-y-1" dangerouslySetInnerHTML={{ __html: exclusions }} />  
@@ -133,31 +137,21 @@ export default function ItineraryOrTourPackagePage({initialData}) {
                                         </div>
                                     )}
                                     <div className="book-this-tour mt-3 bg-white rounded-xl shadow-lg border border-gray-100 p-2 md:p-2">
-                                        <div className="book-tour-header">
-                                            <div className="py-3 md:py-2 text-center">
-                                                <h3 className="text-24 text-[#eb6605]! fw-600 mb-5">
-                                                    Book This Tour
-                                                </h3>
-                                            </div>
-                                        </div>
+                                        
                                         <div className="book_form">
                                             <div className="contactForm">
                                                 <div className="row y-gap-15">
-                                                    <div className="col-md-12">
-                                                        <input type="text" placeholder="Name" />
-                                                    </div>
-                                                    <div className="col-md-12">
-                                                        <input type="text" placeholder="Phone" />
-                                                    </div>
                                                     <div className="col-12">
-                                                        <input type="text" placeholder="Email" />
-                                                    </div>
-                                                    <div className="col-12">
-                                                        <textarea placeholder="Message" rows={6} defaultValue={""} />
-                                                    </div>
-                                                    <div className="col-12">
-                                                        <button className="button -md -dark-1 bg-accent-1 text-white col-12">
-                                                            Send Enquiry
+                                                        <button
+                                                        onClick={() => {
+                                                            setSelectedTour({
+                                                                title: title,
+                                                                duration: duration,
+                                                            });
+                                                            setIsModalOpen(true);
+                                                        }}
+                                                        className="button -md -dark-1 bg-accent-1 text-white col-12">
+                                                            Book This Tour
                                                         </button>
                                                     </div>
                                                 </div>
@@ -171,6 +165,12 @@ export default function ItineraryOrTourPackagePage({initialData}) {
                     </div>
                 </div>
             </section>
+            <EnquiryModal
+                isOpen={isModalOpen}
+                title={selectedTour?.title}
+                duration={selectedTour?.duration}
+                onClose={() => setIsModalOpen(false)}
+            />
         </>
     )
 }
