@@ -23,7 +23,7 @@ const BreadcrumbHeader = ({
               className="mobile-banner-im absolute inset-0 w-full h-full object-cover block md:hidden"
             />
           )}
-          <div className={`absolute inset-0 bg-linear-to-r from-black/40 to-black/30`}></div>
+          <div className={`absolute inset-0 bg-linear-to-r from-black/40 to-[#004d91]/30`}></div>
         </div>
         {/* {shapeImage && (
           <img 
