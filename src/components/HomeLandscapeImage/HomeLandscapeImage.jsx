@@ -55,7 +55,7 @@ export const HomeLandscapeImage = ({ initialData, sectionInfo }) => {
     if (isLoading) {
         return (
             <section className="relative layout-pt-xl layout-pb-xl bg-gradient-to-b from-gray-50 to-white home-landscape-img-se">
-                <div className="container relative z-20">
+                <div className="container relative">
                     <div className="row justify-center pt-20 md:pt-20">
                         <div className="col-xl-12 col-lg-12">
                             <div className="relative">
@@ -84,7 +84,7 @@ export const HomeLandscapeImage = ({ initialData, sectionInfo }) => {
     if (landscapeImages.length > 0) {
         return (
             <section className="relative layout-pt-xl layout-pb-xl bg-gradient-to-b from-gray-50 to-white home-landscape-img-se">
-                <div className="container relative z-20">
+                <div className="container relative">
                     <div className="row justify-center text-center">
                         <div className="col-auto">
                             <Heading

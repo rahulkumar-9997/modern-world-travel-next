@@ -54,7 +54,7 @@ export const HomePortraitImage = ({ initialData, sectionInfo }) => {
     if (!initialData) {
         return (
             <section className="relative layout-pt-xl layout-pb-xl bg-gradient-to-b from-gray-50 to-white home-landscape-img-se">
-                <div className="container relative z-20">
+                <div className="container relative">
                     <div className="row justify-center pt-20 md:pt-20">
                         <div className="col-xl-12 col-lg-12">
                             <div className="flex -ml-2 md:-ml-4 overflow-hidden">
@@ -73,7 +73,7 @@ export const HomePortraitImage = ({ initialData, sectionInfo }) => {
 
     return (
         <section className="relative layout-pt-xl layout-pb-xl bg-gradient-to-b from-gray-50 to-white home-landscape-img-se">
-            <div className="container relative z-20">
+            <div className="container relative">
                 <div className="row justify-center text-center">
                     <div className="col-auto">
                         <Heading
