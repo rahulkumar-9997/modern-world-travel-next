@@ -5504,7 +5504,7 @@ h1, h2, h3{
 
 @media (max-width: 991px) {
   .pageHeader.-type-1 .pageHeader__title {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 5px;
     line-height: 25px;;
   }
@@ -5512,7 +5512,7 @@ h1, h2, h3{
 
 @media (max-width: 767px) {
   .pageHeader.-type-1 .pageHeader__title {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 5px;
     line-height: 25px;
   }
@@ -14810,5 +14810,23 @@ button.gm-ui-hover-effect::after {
     font-size: 20px;
     line-height: 25px;
   }
+  .destination-table table p {
+    margin: 0 0 0px;
+    line-height: 17px;
+    font-size: 13px;
+  }
+  .destination-table th, .destination-table td {
+    padding: 3px;
+    font-size: 13px;
+  }
+  .table-formatulli ul li{
+    text-align: unset;
+  }
+  .destination-time-title .table-title{
+    font-size: 18px!important;
+  }
+  .city_section .sub-heading{
+    text-align: unset;
+  } 
 }
 /*Contact us*/

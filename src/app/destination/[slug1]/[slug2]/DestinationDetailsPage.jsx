@@ -21,7 +21,7 @@ export default function DestinationDetailsPage({ initialData }) {
                                     <Heading
                                         level={3}
                                         text={initialData.dest_sub_heading || ''}
-                                        className="text-26 text-white fw-500 mb-10"
+                                        className="text-24 md:text-22 text-white fw-500 mb-10"
                                     />
                                 </div>
                             )}
