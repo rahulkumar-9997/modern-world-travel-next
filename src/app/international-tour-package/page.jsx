@@ -1,4 +1,5 @@
 import React from 'react';
+export const dynamic = 'force-dynamic';
 import { InternationalTourPackageList } from './InternationalTourPackageList';
 
 async function getInternationalPackages() {
