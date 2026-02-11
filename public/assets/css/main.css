@@ -14782,6 +14782,31 @@ button.gm-ui-hover-effect::after {
     line-height: 25px;
   }
   .paragraph-content .blog-de-h2 {
+    font-size: 22px;
+    line-height: 25px;
+  }
+  .blog_details_page h1{
+    font-size: 22px;
+  }
+  .blog_details_page h2{
+    font-size: 22px;
+  }
+  .blog_details_page h3{
+    font-size: 20px;
+  }
+  .blog_details_page h4{
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .blog_details_page h5{
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .blog_details_page h6{
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .blog-list-container .blog-list-title{
     font-size: 20px;
     line-height: 25px;
   }
