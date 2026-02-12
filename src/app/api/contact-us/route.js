@@ -33,6 +33,7 @@ export async function POST(request) {
       html: emailHtml,
     });
     if (error) {
+      console.error("Resend error:", error.message);
       return Response.json({ error: "Failed to send email" }, { status: 500 });
     }
     return Response.json({
@@ -40,6 +41,7 @@ export async function POST(request) {
       message: "Message sent successfully",
     });
   } catch (error) {
+    console.error("Resend error:", error.message);
     return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

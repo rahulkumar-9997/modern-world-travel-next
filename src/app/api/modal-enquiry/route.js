@@ -38,12 +38,10 @@ export async function POST(request) {
       subject: `New Enquiry Modal Form - ${name}`,
       html: emailHtml,
     });
-
     if (error) {
-      console.error("Resend error:", error);
+      console.error("Resend error:", error.message);
       return Response.json({ error: "Failed to send email" }, { status: 500 });
     }
-
     return Response.json({
       success: true,
       message: "Enquiry sent successfully",
