@@ -32,7 +32,7 @@ export async function POST(request) {
       />,
     );
     const { error } = await resend.emails.send({
-      from: "Modern World Travel <modernworldtravel.com>",
+      from: "Modern World Travel <seo@modernworldtravel.com>",
       to: ["info@modernworldtravel.com", "modernworldtravel@gmail.com"],
       replyTo: email || undefined,
       subject: `New Enquiry Modal Form - ${name}`,

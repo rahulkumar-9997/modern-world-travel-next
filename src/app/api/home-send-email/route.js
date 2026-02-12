@@ -30,7 +30,7 @@ export async function POST(request) {
       }),
     );
     const { data, error } = await resend.emails.send({
-      from: "Modern World Travel <modernworldtravel.com>",
+      from: "Modern World Travel <seo@modernworldtravel.com>",
       to: ["info@modernworldtravel.com", "modernworldtravel@gmail.com"],
       subject: `Modern World Travel Home Enquiry from ${name}`,
       html: emailHtml,
