@@ -38,7 +38,7 @@ export async function POST(request) {
 
     if (error) {
       console.error("Resend error:", error.message);
-      return Response.json({ error: error}, { status: 500 });
+      return Response.json({ error: JSON.stringify(error)}, { status: 500 });
     }
 
     return Response.json({
