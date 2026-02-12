@@ -26,7 +26,7 @@ export async function POST(request) {
       />,
     );
     const { error } = await resend.emails.send({
-      from: "Modern World Travel <seo@modernworldtravel.com>",
+      from: "Modern World Travel <modernworldtravel.com>",
       to: ["info@modernworldtravel.com", "modernworldtravel@gmail.com"],
       replyTo: email,
       subject: `New Contact Form Submission - ${name}`,
