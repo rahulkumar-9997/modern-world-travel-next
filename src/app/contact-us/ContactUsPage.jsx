@@ -244,6 +244,7 @@ export default function ContactUsPage() {
                                                             value={formData.phone}
                                                             onChange={handleInputChange}
                                                             placeholder="Phone *"
+                                                            maxLength={10}
                                                             className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#004d91] transition-all ${errors.phone ? 'border-red-500!' : 'border-gray-300'
                                                                 }`}
                                                         />

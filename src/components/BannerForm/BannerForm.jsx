@@ -94,7 +94,6 @@ export const BannerForm = () => {
                 },
                 body: JSON.stringify({
                     ...formData,
-                    selectedDate: format(date, 'yyyy-MM-dd'),
                     formattedDate: format(date, 'PPP'),
                 }),
             });
@@ -195,7 +194,7 @@ export const BannerForm = () => {
                                                             name="phoneEmail"
                                                             value={formData.phoneEmail}
                                                             onChange={handleInputChange}
-                                                            placeholder="Phone or Email"
+                                                            placeholder="Phone"
                                                             className={`w-full border-0 bg-transparent focus:outline-none ${errors.phoneEmail ? 'placeholder-red-500' : ''}`}
                                                         />
                                                     </div>

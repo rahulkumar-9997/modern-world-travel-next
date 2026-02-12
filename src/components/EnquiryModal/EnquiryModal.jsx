@@ -7,7 +7,7 @@ const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
         title: '',
         name: '',
         email: '',
-        subject: '',
+        phone: '',
         message: ''
     });
 
@@ -22,7 +22,7 @@ const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
                 title: title || '',
                 name: '',
                 email: '',
-                subject: '',
+                phone: '',
                 message: ''
             });
             setErrors({});
@@ -48,29 +48,25 @@ const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
     const validateForm = () => {
         const newErrors = {};
         if (!formData.name.trim()) {
-            newErrors.name = 'Name is required';
+        newErrors.name = 'Name is required';
         } else if (formData.name.trim().length < 3) {
             newErrors.name = 'Name must be at least 3 characters';
         } else if (formData.name.trim().length > 100) {
             newErrors.name = 'Name cannot exceed 100 characters';
         }
-        if (!formData.email.trim()) {
-            newErrors.email = 'Email is required';
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-            newErrors.email = 'Please enter a valid email address';
-        } else if (formData.email.length > 150) {
-            newErrors.email = 'Email cannot exceed 150 characters';
+        if (!formData.phone.trim()) {
+        newErrors.phone = 'Phone number is required';
+        } else if (!/^\d{10}$/.test(formData.phone.trim())) {
+            newErrors.phone = 'Phone number must be 10 digits';
         }
-        if (!formData.subject.trim()) {
-            newErrors.subject = 'Subject is required';
-        } else if (formData.subject.trim().length < 3) {
-            newErrors.subject = 'Subject must be at least 3 characters';
-        } else if (formData.subject.trim().length > 150) {
-            newErrors.subject = 'Subject cannot exceed 150 characters';
+        if (formData.email.trim()) {
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+                newErrors.email = 'Please enter a valid email address';
+            } else if (formData.email.length > 150) {
+                newErrors.email = 'Email cannot exceed 150 characters';
+            }
         }
-        if (!formData.message.trim()) {
-            newErrors.message = 'Message is required';
-        } else if (formData.message.trim().length < 10) {
+        if (formData.message.trim() && formData.message.trim().length < 10) {
             newErrors.message = 'Message must be at least 10 characters';
         }
         if (formData.title && formData.title.trim().length > 100) {
@@ -89,9 +85,9 @@ const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
         setSubmitStatus(null);
         setServerError('');
 
-        try {            
-            // Send email via Resend
-            const emailResponse = await fetch('/api/contact-us', {
+        try {    
+
+            const response = await fetch('/api/modal-enquiry', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -100,20 +96,19 @@ const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
                     title: formData.title || '',
                     name: formData.name.trim(),
                     email: formData.email.trim(),
-                    subject: formData.subject.trim(),
+                    phone: formData.phone.trim(),
                     message: formData.message.trim(),
                     source: 'Enquiry Modal'
                 })
             });
 
-            const emailResult = await emailResponse.json();
-
-            if (backendResponse.ok && backendResult.status === true && emailResponse.ok) {
+            const result = await response.json();
+            if (response.ok) {
                 setFormData({
                     title: title || '',
                     name: '',
                     email: '',
-                    subject: '',
+                    phone: '',
                     message: ''
                 });
                 setSubmitStatus('success');
@@ -122,30 +117,11 @@ const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
                     onClose();
                 }, 3000);
             } else {
-                if (backendResult.errors) {
-                    const serverErrors = {};
-                    Object.keys(backendResult.errors).forEach(key => {
-                        serverErrors[key] = backendResult.errors[key][0];
-                    });
-                    setErrors(serverErrors);
-                    setSubmitStatus('error');
-                    setServerError('Please correct the errors below.');
-                } else if (!emailResponse.ok) {
-                    setSubmitStatus('error');
-                    setServerError(emailResult.error || 'Failed to send notification email.');
-                    toast.error('Failed to send notification email.');
-                } else {
-                    setSubmitStatus('error');
-                    setServerError(backendResult.message || 'Failed to submit enquiry. Please try again.');
-                    toast.error(backendResult.message || 'Failed to submit enquiry. Please try again.');
-                }
+                throw new Error(result.error || 'Failed to send message');
             }
-
         } catch (error) {
-            console.error('Enquiry submission error:', error);
-            setSubmitStatus('error');
-            setServerError('Network error. Please check your connection and try again.');
-            toast.error('Network error. Please check your connection and try again.');
+            console.error('Error submitting form:', error);
+            toast.error(error.message || 'Something went wrong. Please try again.');
         } finally {
             setIsSubmitting(false);
         }
@@ -226,7 +202,7 @@ const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
                             </div>
                         )}
                         {submitStatus === 'error' && serverError && (
-                            <div className="mb-6 p-4 bg-red-500/20 border border-red-500/30 rounded-lg animate-fadeIn">
+                            <div className="mb-3 p-2 bg-red-500/20 border border-red-500/30 rounded-lg animate-fadeIn">
                                 <div className="flex items-center">
                                     <div className="flex-shrink-0">
                                         <svg className="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
@@ -234,7 +210,7 @@ const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
                                         </svg>
                                     </div>
                                     <div className="ml-3">
-                                        <p className="text-sm font-medium text-white">
+                                        <p className="text-sm font-medium text-white mb-0">
                                             ✗ {serverError}
                                         </p>
                                     </div>
@@ -289,7 +265,7 @@ const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
                                     </div>
                                     <div>
                                         <label htmlFor="email" className="block text-white mb-1 text-lg font-medium">
-                                            Your Email *
+                                            Your Email 
                                         </label>
                                         <input
                                             type="email"
@@ -309,21 +285,22 @@ const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
                                 </div>
                                 <div>
                                     <label htmlFor="subject" className="block text-white mb-1 text-lg font-medium">
-                                        Subject *
+                                        Phone *
                                     </label>
                                     <input
                                         type="text"
-                                        id="subject"
-                                        value={formData.subject}
+                                        id="phone"
+                                        value={formData.phone}
                                         onChange={handleChange}
-                                        className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all text-sm ${errors.subject
+                                        maxLength={10}
+                                        className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all text-sm ${errors.phone
                                             ? 'border-red-500 focus:border-red-500'
                                             : 'border-white/20 focus:border-transparent'
                                             }`}
                                         disabled={isSubmitting}
                                     />
-                                    {errors.subject && (
-                                        <div className="mt-1 text-xs text-white">{errors.subject}</div>
+                                    {errors.phone && (
+                                        <div className="mt-1 text-xs text-white">{errors.phone}</div>
                                     )}
                                 </div>
                                 <div>
