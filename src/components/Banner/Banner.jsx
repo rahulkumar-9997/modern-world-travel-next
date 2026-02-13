@@ -21,7 +21,6 @@ const BannerForm = dynamic(
   { ssr: false }
 );
 export function Banner({ initialData }) {
-
     const autoplay = useRef(
         Autoplay({ delay: 3500, stopOnInteraction: false })
     )
@@ -75,8 +74,7 @@ export function Banner({ initialData }) {
                             <ChevronRight className="h-6 w-6" />
                         </CarouselNext>
                     </Carousel>
-                </div>
-                
+                </div>                
             </section>
             <BannerForm />
         </>
