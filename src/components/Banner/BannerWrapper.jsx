@@ -5,6 +5,7 @@ const BANNER_API_URL = 'https://admin.modernworldtravel.com/api/banner-img';
 export default async function BannerWrapper() {
     const queryClient = new QueryClient();
     try {
+        
         const data = await queryClient.fetchQuery({
             queryKey: ["banner-images"],
             queryFn: async () => {
