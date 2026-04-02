@@ -37,6 +37,7 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet"></link>
         <link rel="stylesheet" href="/assets/css/vendors.css" />
         <link rel="stylesheet" href="/assets/css/main.css" />
       </head>
