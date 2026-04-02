@@ -11,7 +11,7 @@ export default function AboutUsPage() {
                 title="About Us"
                 subtitle=""
             />
-            <section className="layout-pt-lg layout-pb-lg">
+            <section className="layout-pt-lg layout-pb-lg about-us-page">
                 <div className="container animated">
                     <div className="row y-gap-20 align-items-center">
                         <div className="col-lg-6 is-in-view">
@@ -76,7 +76,7 @@ export default function AboutUsPage() {
                     </div>
                 </div>
             </section>
-            <section className="layout-pt-xl layout-pb-xl">
+            <section className="layout-pt-xl layout-pb-xl why-choose-us">
                 <div className="container animated">
                     <div className="row justify-content-md-center">
                         <div className="col-md-10">

@@ -79,7 +79,7 @@
 }
 
 :root {
-  --font-primary: "DM sans", sans-serif;
+  --font-primary:  "Poppins", sans-serif;
   --secondary-font: 'Dancing Script', cursive;
 }
 
@@ -5068,8 +5068,17 @@ h1, h2, h3{
   height: 100%;
   padding-bottom: 20px;
 }
-
+.home-landscape-img-se h6,
+.about-us-page h4,
+.why-choose-us h4{
+  font-family: var(--font-primary);
+  font-weight: 500!important;
+  text-transform: unset;
+  color: var(--color-logo-1)!important;
+}
 .featureCard.-type-2 .featureCard__content h4 {
+  font-family: var(--font-primary);
+  text-transform: unset;
   font-size: 20px;
   font-weight: 500;
 }
@@ -14260,6 +14269,8 @@ button.gm-ui-hover-effect::after {
 .international-tour-card .tourCard__location,
 .international-tour-card h5,
 .home-duration .duration-content{
+    font-family: var(--font-primary);
+    text-transform: unset;
     position: relative;
     z-index: 2;
     transition: color 0.3s ease-in-out;
@@ -14637,6 +14648,8 @@ button.gm-ui-hover-effect::after {
   justify-content: center;
 }
 .tour-package-home  .featureCard.-type-1 .featureCard__content .title-color{
+    font-family: var(--font-primary);
+    text-transform: unset;
     font-size: 18px;
     line-height: 25px;
     font-weight: 600;
@@ -14839,5 +14852,15 @@ button.gm-ui-hover-effect::after {
   .city_section .sub-heading{
     text-align: unset;
   } 
+}
+.home-tour-package{
+    background-image: url(/assets/modern-img/cityscape-Desktop.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 253, 230);
+    height: auto;
+    position: relative;
+    z-index: 0;
+    background-position: center center;
 }
 /*Contact us*/
