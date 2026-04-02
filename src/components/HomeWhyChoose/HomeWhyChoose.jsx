@@ -13,11 +13,11 @@ export const HomeWhyChoose = () => {
                                     <h2></h2>
                                     <Heading
                                         level={2}
-                                        text="Why Choose Morden World Travel ?"
+                                        text="Why Choose Modern World Travel ?"
                                         className="text-30 md:text-24 mb-1"
                                     /> 
                                     <p>
-                                       “The purpose of our organization is simple; helping our customers get exactly what they want at the best value available. Consequently, we are capable of providing an exceptionally complex range of products and integrated services for both individual and corporate clients. We are convinced that besides being sensitive to prices, people tend to choose their Travel Agency on the basis of reliability.
+                                       The purpose of our Travel Agency is simple; helping our Visitors & Tourists get exactly what they want at the best value available. Consequently, we are capable of providing an exceptionally complex range of Travel Plans and Itiniraries for both individual and corporate clients. We are convinced that besides being sensitive to prices, people tend to choose their Travel Agency on the basis of reliability.
                                     </p>
                                     
                                 </div>
