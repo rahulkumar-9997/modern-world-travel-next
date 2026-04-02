@@ -537,6 +537,8 @@ h5,
 h6{
     font-family: "Cinzel", serif;
     font-weight: 400;
+    text-transform: uppercase;
+    font-style: normal;
 }
 
 body {
