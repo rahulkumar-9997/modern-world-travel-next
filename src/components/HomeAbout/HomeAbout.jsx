@@ -18,12 +18,16 @@ export const HomeAbout = () => {
                     <div className="about-home-content">
                         <Heading
                             level={2}
-                            text="About Modern World Travel"
                             className="text-30 md:text-24"
-                        />
+                            >
+                            Modern World Travel —{' '}
+                            <em className="italic text-[#1a3c5e] dark:text-blue-400 not-italic">
+                                Your Journey, Our Passion
+                            </em>
+                        </Heading>
                         <div className='about-text'>
                             <p className="mb-3!">
-                                “Modern World Travel has its corporate office in Varanasi. Located in the prime commercial/tourist area of the city of Varanasi, Modern World Travel’s close to a whole range of hotels from 5 star to budget. The main railway station is nearby and the airport is aprrox a 45 minute comfortable drive. The area also has many local traditional shops and bazaars as well as a small, but well appointed modern shopping mall and cinema.”
+                                Modern World Travel has its corporate office in Varanasi. Located in the prime commercial/tourist area of the city of Varanasi, Modern World Travel’s close to a whole range of hotels from 5 star to budget. The main railway station is nearby and the airport is aprrox a 45 minute comfortable drive. The area also has many local traditional shops and bazaars as well as a small, but well appointed modern shopping mall and cinema.
                             </p>
                             <p className="mb-3!">
                                 Our major focused areas are Holiday Packages (Domestic & International). We will endeavour to be the most preferred travel company for the national and international travellers, by achieving excellence in customer satisfaction. We believe in Guest delight. We strive constanty to keep up the Service Excellence Level at its best for our guest. We are an Equal Opportunity employer and we believe that it is essential to be Good Corporate Citizens to serve the community that sustains us.
