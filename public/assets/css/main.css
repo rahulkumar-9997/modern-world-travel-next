@@ -81,6 +81,7 @@
 :root {
   --font-primary:  "Poppins", sans-serif;
   --secondary-font: 'Dancing Script', cursive;
+  --P22Mackinac-Medium-font: P22Mackinac-Medium, Georgia, serif;
 }
 
 :root {
@@ -137,6 +138,15 @@
   --color-success-2: #5B7052;
   --color-logo-1:#eb6605;
   --color-logo-2:#004d91;
+}
+
+@font-face{
+  font-family:P22Mackinac-Medium;
+  src:url(../fonts/p22-mackinac/P22Mackinac-Medium.woff2)format("woff2"),
+  url(../fonts/p22-mackinac/P22Mackinac-Medium.woff2)format("woff"),
+  url(../fonts/p22-mackinac/P22Mackinac-Medium.otf)format("opentype");
+  font-weight:400;font-style:normal;
+  font-display:swap
 }
 
 [data-anim-wrap] {
@@ -535,9 +545,12 @@ h3,
 h4,
 h5,
 h6{
-    font-family: "Cinzel", serif;
+    /* font-family: "Cinzel", serif;
     font-weight: 400;
     text-transform: uppercase;
+    font-style: normal; */   
+    font-family: var(--P22Mackinac-Medium-font);
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -14269,8 +14282,10 @@ button.gm-ui-hover-effect::after {
 .international-tour-card .tourCard__location,
 .international-tour-card h5,
 .home-duration .duration-content{
-    font-family: var(--font-primary);
-    text-transform: unset;
+    /* font-family: var(--font-primary); */
+    /* text-transform: unset; */
+    font-family: var(--P22Mackinac-Medium-font);
+    font-weight: 400;
     position: relative;
     z-index: 2;
     transition: color 0.3s ease-in-out;
