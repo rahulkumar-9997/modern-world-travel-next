@@ -15,9 +15,9 @@ import HomePortraitVideoWrapper from "@/components/HomePortraitVideo/HomePortrai
 export default function Home() {
   return (
     <>
-      <Suspense fallback={<Spinner />}>
+     {/* <Suspense fallback={<Spinner />}>
         <BannerWrapper />
-      </Suspense>
+      </Suspense> */}
       <HomeAbout />
       <HomeLandscapeImageWrapper/>
       <Suspense fallback={<Spinner />}>
@@ -37,7 +37,7 @@ export default function Home() {
       <HomePortraitVideoWrapper/>
       {/* <Suspense fallback={<Spinner />}>
         <Testimonials />
-      </Suspense> */}
+      </Suspense> 
     </>
   );
 }
