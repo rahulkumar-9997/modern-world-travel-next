@@ -75,7 +75,7 @@ export default function GallerySlugPage({ initialData }) {
                             />
                         </div>
                     )} */}
-                    <div className="gallery-masonry-container">
+                    <div className="gallery-masonry-container home-landscape-img-se">
                         <div className="row masonry-grid" ref={masonryRef}>
                             {items.map((item, index) => {
                                 const image = item.gallery_url;
@@ -129,7 +129,7 @@ export default function GallerySlugPage({ initialData }) {
 
                                                     <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent pointer-events-none">
                                                         {title && title.trim() && (
-                                                            <div className="text-white font-semibold text-center mb-1 truncate text-18">
+                                                            <div className="text-white font-semibold text-center mb-1 truncate text-18 p-landscape-img-title">
                                                                 {title}
                                                             </div>
                                                         )}
@@ -230,7 +230,7 @@ export default function GallerySlugPage({ initialData }) {
 
                                                     <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent pointer-events-none">
                                                         {title && title.trim() && (
-                                                            <div className="text-white font-semibold text-center mb-1 truncate text-18">
+                                                            <div className="text-white font-semibold text-center mb-1 truncate text-18 p-portrait-img-title">
                                                                 {title}
                                                             </div>
                                                         )}

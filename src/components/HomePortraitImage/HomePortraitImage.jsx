@@ -72,7 +72,7 @@ export const HomePortraitImage = ({ initialData, sectionInfo }) => {
     }
 
     return (
-        <section className="relative layout-pt-xl layout-pb-xl bg-gradient-to-b from-gray-50 to-white home-landscape-img-se">
+        <section className="relative layout-pt-xl layout-pb-xl bg-gradient-to-b from-gray-50 to-white home-landscape-img-se h-portait-image-section">
             <div className="container relative">
                 <div className="row justify-center text-center">
                     <div className="col-auto">
@@ -152,7 +152,7 @@ export const HomePortraitImage = ({ initialData, sectionInfo }) => {
                                                 )}
                                                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent pointer-events-none">
                                                     {item.title && item.title.trim() && (
-                                                        <div className="text-white font-semibold text-center mb-1 truncate text-18">
+                                                        <div className="text-white font-semibold text-center mb-1 truncate text-18 port-img-title">
                                                             {item.title} 
                                                         </div>
                                                     )}

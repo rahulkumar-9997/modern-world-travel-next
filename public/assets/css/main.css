@@ -5081,16 +5081,23 @@ h1, h2, h3{
   height: 100%;
   padding-bottom: 20px;
 }
+.h-portait-image-section .port-img-title,
+.gallery-masonry-container .p-portrait-img-title,
+.gallery-masonry-container .p-landscape-img-title{
+  font-family: var(--P22Mackinac-Medium-font);
+  font-weight: 500!important;
+}
 .home-landscape-img-se h6,
 .about-us-page h4,
-.why-choose-us h4{
-  font-family: var(--font-primary);
+.why-choose-us h4
+{
+  font-family: var(--P22Mackinac-Medium-font);
   font-weight: 500!important;
   text-transform: unset;
   color: var(--color-logo-1)!important;
 }
 .featureCard.-type-2 .featureCard__content h4 {
-  font-family: var(--font-primary);
+  font-family: var(--P22Mackinac-Medium-font);
   text-transform: unset;
   font-size: 20px;
   font-weight: 500;
@@ -5520,7 +5527,7 @@ h1, h2, h3{
 
 .pageHeader.-type-1 .pageHeader__title {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 25px;
   color: #eb6605;
   -webkit-text-fill-color: unset;
