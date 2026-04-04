@@ -5083,6 +5083,9 @@ h1, h2, h3{
   height: 100%;
   padding-bottom: 20px;
 }
+.h-landscape-image-section{
+  padding-bottom: 30px;
+}
 .h-portait-image-section .port-img-title,
 .h-landscape-image-section .land-img-title,
 .gallery-masonry-container .p-portrait-img-title,
