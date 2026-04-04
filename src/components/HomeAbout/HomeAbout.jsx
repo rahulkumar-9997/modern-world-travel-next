@@ -34,7 +34,7 @@ export const HomeAbout = () => {
                 <div className="about-home-container">                    
                     <div className="container about-home-section relative z-10">
                         <div className="row items-center">                            
-                            <div className="col-md-6 md:order-2">
+                            <div className="col-md-6 lg:order-1 md:order-2">
                                 <div className="about-home-content">
                                     <Heading
                                         level={1}
@@ -60,7 +60,7 @@ export const HomeAbout = () => {
                                 </div>
                             </div>    
                             
-                            <div className="col-md-6 md:order-1">
+                            <div className="col-md-6 lg:order-2 md:order-1">
                                 <div className="abou-home-image relative">
                                     <Carousel
                                         ref={carouselRef}
