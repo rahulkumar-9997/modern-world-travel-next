@@ -34,11 +34,11 @@ export const HomeAbout = () => {
                 <div className="about-home-container">                    
                     <div className="container about-home-section relative z-10">
                         <div className="row items-center">                            
-                            <div className="col-md-6">
+                            <div className="col-md-6 md:order-2">
                                 <div className="about-home-content">
                                     <Heading
                                         level={1}
-                                        className="text-40 md:text-24 md:max-w-full max-w-xl font-extrabold md:mt-8 mt-4 mx-auto about-h-home-heading"
+                                        className="text-40 md:text-20 md:max-w-full max-w-xl font-extrabold md:mt-8 mt-4 mx-auto about-h-home-heading"
                                     >
                                         Modern World Travel —                            
                                         Your 
@@ -60,7 +60,7 @@ export const HomeAbout = () => {
                                 </div>
                             </div>    
                             
-                            <div className="col-md-6">
+                            <div className="col-md-6 md:order-1">
                                 <div className="abou-home-image relative">
                                     <Carousel
                                         ref={carouselRef}

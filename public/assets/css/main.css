@@ -14766,9 +14766,6 @@ button.gm-ui-hover-effect::after {
   }
   
 }
-.about-text p{
-  text-align: justify;
-}
 
 @media screen and (max-width: 991px) {
   .home-enqiry-from {
@@ -14891,6 +14888,10 @@ button.gm-ui-hover-effect::after {
   .city_section .sub-heading{
     text-align: unset;
   } 
+  .about-home-section {
+      padding-top: 0px;
+      padding-bottom: 0px;
+  }
 }
 .home-tour-package{
     background-image: url(/assets/modern-img/cityscape-Desktop.png);
