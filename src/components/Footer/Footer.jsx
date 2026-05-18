@@ -114,10 +114,10 @@ export function Footer({ initialData }) {
                                         </div>
                                         <span className="text-white">
                                             <p>
-                                                <a href="tel:+919839901531" className="text-white">+91 98399 01531</a>
+                                                <a href="tel:+919839901531" className="text-white">+91 -9839901531</a>
                                             </p>
                                             <p>
-                                                <a href="tel:+919451311551" className="text-white">+91 94513 11551</a>
+                                                <a href="tel:+919451311551" className="text-white">+91 -9451311551</a>
                                             </p>
                                         </span>
                                     </li>
@@ -144,20 +144,15 @@ export function Footer({ initialData }) {
                                         </div>
                                         <span className="text-white">
                                             <p>
-                                                <a href="mailto:info@modernworldtravel.com" className="transition-colors">
-                                                    info@modernworldtravel.com,
+                                                <a href="mailto:mwt@modernworldtravel.com" className="transition-colors">
+                                                    mwt@modernworldtravel.com,
                                                 </a>
                                             </p>
                                             <p>
-                                                <a href="mailto:modernworldtravel@gmail.com," className="transition-colors">
-                                                    modernworldtravel@gmail.com,
+                                                <a href="mailto:mwt@modernworldtravel.in" className="transition-colors">
+                                                    mwt@modernworldtravel.in 
                                                 </a>
-                                            </p>
-                                            <p>
-                                                <a href="mailto:sales@modernworldtravel.com" className="transition-colors">
-                                                    sales@modernworldtravel.com
-                                                </a>
-                                            </p>
+                                            </p>                                            
                                         </span>
                                     </li>
                                 </ul>
@@ -173,15 +168,15 @@ export function Footer({ initialData }) {
                         <div className="row justify-center items-center">                           
                             <div className="col-auto">
                                 <div className="footer__links d-flex items-center gap-1 lg:gap-4 md:gap-1">
-                                    <a href="/privacy-policy" className="text-gray-400! text-14 transition-colors">
+                                    <a href="#" className="text-gray-400! text-14 transition-colors">
                                         Privacy Policy
                                     </a>
                                     <span className="text-white">|</span>
-                                    <a href="/terms-conditions" className="text-gray-400!  hover:text-white text-14 transition-colors">
+                                    <a href="#" className="text-gray-400!  hover:text-white text-14 transition-colors">
                                         Terms & Conditions
                                     </a>
                                     <span className="text-white">|</span>
-                                    <a href="/refund-policy" className="text-gray-400! text-14 transition-colors">
+                                    <a href="#" className="text-gray-400! text-14 transition-colors">
                                         Return / Refund
                                     </a>
                                 </div>
