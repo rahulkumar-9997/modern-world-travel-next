@@ -138,12 +138,7 @@ export default function ContactUsPage() {
                                                 level={3}
                                                 text="Phone Number"
                                                 className="text-24 fw-700 mb-2"
-                                            />
-                                            <p className='mb-1'>
-                                                <a href="tel:5424108953" className="">
-                                                    +91 542 4108953
-                                                </a>
-                                            </p>
+                                            />                                            
                                             <p className='mb-1'>
                                                 <a href="tel:+919839901531" className="">
                                                     +91 98399 01531
@@ -168,21 +163,9 @@ export default function ContactUsPage() {
                                                 className="text-24 fw-700 mb-2"
                                             />
                                             <p className='mb-1'>
-                                                <a href="mailto:info@modernworldtravel.com"
+                                                <a href="mailto:mwt@modernworldtravel.com"
                                                     className="">
-                                                    info@modernworldtravel.com
-                                                </a>
-                                            </p>
-                                            <p className='mb-1'>
-                                                <a href="mailto:modernworldtravel@gmail.com"
-                                                    className="">
-                                                    modernworldtravel@gmail.com
-                                                </a>
-                                            </p>
-                                            <p className='mb-1'>
-                                                <a href="mailto:sales@modernworldtravel.com"
-                                                    className="">
-                                                    sales@modernworldtravel.com
+                                                    mwt@modernworldtravel.com
                                                 </a>
                                             </p>
                                             <p className='mb-1'>
@@ -190,7 +173,7 @@ export default function ContactUsPage() {
                                                     className="">
                                                     mwt@modernworldtravel.in
                                                 </a>
-                                            </p>
+                                            </p>                                           
 
                                             <p className="text-sm text-black! mt-1">We respond within 24 hours</p>
                                         </div>
