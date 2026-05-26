@@ -2,7 +2,7 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 import React from 'react';
 import ItineraryOrTourPackagePage from './ItineraryOrTourPackagePage';
-
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 async function getItineraryDetails(slug) {
     try {
         const res = await fetch(
@@ -30,6 +30,9 @@ export async function generateMetadata({ params }) {
             return {
                 title: 'Itinerary not found - Modern World Travel',
                 description: 'Itinerary details not found',
+                alternates: {
+                    canonical: `${baseUrl}/tour-package/${slug}`,
+                },
             };
         }
         return {
@@ -40,6 +43,9 @@ export async function generateMetadata({ params }) {
             description:
                 data.meta_description ||
                 `Explore ${data.title || "this Itinerary"} with Modern World Travel`,
+                alternates: {
+                    canonical: `${baseUrl}/tour-package/${slug}`,
+                },
         };
 
     } catch (error) {

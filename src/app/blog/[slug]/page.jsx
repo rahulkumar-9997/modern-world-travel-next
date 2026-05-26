@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 import React from 'react';
 import BlogDetailsPage from './BlogDetailsPage';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 
 async function getBlogDetails(slug) {
     try {
@@ -32,6 +33,9 @@ export async function generateMetadata({ params }) {
             return {
                 title: 'Blog not found - Modern World Travel',
                 description: 'Blog details not found',
+                alternates: {
+                    canonical: `${baseUrl}/blog/${slug}`,
+                },
             };
         }
         const blog = response.data;
@@ -39,18 +43,24 @@ export async function generateMetadata({ params }) {
             title:
                 blog.meta_title ||
                 blog.title ||
-                'Modern World Travel Blog',
+                'Blog - Modern World Travel | Latest Travel Insights and Stories',
 
             description:
                 blog.meta_description ||
                 blog.intro ||
-                'Modern World Travel Blog',
+                'Explore the Modern World Travel Blog for the latest travel insights, tips, and stories. Stay updated on domestic and international travel trends, destination guides, and expert advice.',
+            alternates: {
+                canonical: `${baseUrl}/blog/${slug}`,
+            },
         };
 
     } catch (error) {
         return {
             title: 'Modern World Travel',
             description: 'Modern World Travel Blog',
+            alternates: {
+                canonical: `${baseUrl}/blog/${slug}`,
+            },
         };
     }
 }

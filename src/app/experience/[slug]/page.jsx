@@ -2,7 +2,7 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 import React from 'react';
 import ExperienceDetailsPage from './ExperienceDetailsPage';
-
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 async function getExperienceDetails(slug) {
     try {
         const res = await fetch(
@@ -32,20 +32,29 @@ export async function generateMetadata({ params }) {
             return {
                 title: 'Experience not found - Modern World Travel',
                 description: 'Experience details not found',
+                alternates: {
+                    canonical: `${baseUrl}/experience/${slug}`,
+                },
             };
         }
         return {
             title:
-                data.meta_title ||
+                data.meta_title - 'Modern World Travel' ||
                 `${data.title || "Experience"} - Modern World Travel`,
             description:
                 data.meta_description ||
                 `Explore ${data.title || "this Experience"} with Modern World Travel`,
+                alternates: {
+                    canonical: `${baseUrl}/experience/${slug}`,
+                },
         };
     } catch (error) {
         return {
             title: 'Modern World Travel',
             description: 'Explore experiences',
+            alternates: {
+                canonical: `${baseUrl}/experience/${slug}`,
+            },
         };
     }
 }

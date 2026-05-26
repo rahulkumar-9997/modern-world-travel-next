@@ -2,6 +2,7 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 import React from 'react';
 import GallerySlugPage from './GallerySlugPage';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 async function getGalleryDetails(slug) {
     try {
         const res = await fetch(
@@ -24,6 +25,9 @@ export async function generateMetadata({ params }) {
         return {
             title: 'Gallery - Modern World Travel',
             description: 'Gallery not found',
+            alternates: {
+                canonical: `${baseUrl}/gallery/${slug}`,
+            },
         };
     }
     const section = response.section_info;
@@ -33,6 +37,9 @@ export async function generateMetadata({ params }) {
             section.sub_heading ||
             section.heading ||
             'Modern World Travel Gallery',
+        alternates: {
+            canonical: `${baseUrl}/gallery/${slug}`,
+        },
     };
 }
 export default async function Page({ params }) {

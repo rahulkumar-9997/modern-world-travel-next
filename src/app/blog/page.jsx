@@ -1,6 +1,7 @@
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 import React from 'react';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 import BlogListPage from './BlogListPage';
 async function getBlogList() {
     try {
@@ -21,13 +22,19 @@ export async function generateMetadata() {
     const res = await getBlogList();
     if (!res || !res.status) {
         return {
-            title: 'Modern World Travel Blog',
-            description: 'Modern World Travel Blog',
+            title: 'Blog - Modern World Travel | Latest Travel Insights and Stories',
+            description: 'Explore the Modern World Travel Blog for the latest travel insights, tips, and stories. Stay updated on domestic and international travel trends, destination guides, and expert advice.',
+            alternates: {
+                canonical: `${baseUrl}/blog`,
+            },
         };
     }
     return {
-        title: res.meta_title || 'Modern World Travel Blog',
-        description: res.meta_description || 'Modern World Travel Blog',
+        title: res.meta_title || 'Blog - Modern World Travel | Latest Travel Insights and Stories',
+        description: res.meta_description || 'Explore the Modern World Travel Blog for the latest travel insights, tips, and stories. Stay updated on domestic and international travel trends, destination guides, and expert advice.',
+        alternates: {
+            canonical: `${baseUrl}/blog`,
+        },
     };
 }
 

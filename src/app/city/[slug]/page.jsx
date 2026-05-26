@@ -3,7 +3,7 @@ export const revalidate = 0;
 import React from 'react';
 import CityPage from './CityPage';
 import axios from "axios";
-
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 async function getCityDetails(slug) {
     try {
         const { data: response } = await axios.get(
@@ -27,6 +27,9 @@ export async function generateMetadata({ params }) {
             return {
                 title: 'City not found - Modern World Travel',
                 description: 'City details not found',
+                alternates: {
+                    canonical: `${baseUrl}/city/${slug}`,
+                },
             };
         }
 
@@ -35,11 +38,17 @@ export async function generateMetadata({ params }) {
             description: data.city.meta_description ||
                 data.city.city_details?.substring(0, 160) ||
                 `Explore ${data.city.title || "this city"} with Modern World Travel`,
+            alternates: {
+                canonical: `${baseUrl}/city/${slug}`,
+            },
         };
     } catch (error) {
         return {
             title: 'Modern World Travel',
             description: 'Explore city details and packages',
+            alternates: {
+                canonical: `${baseUrl}/city/${slug}`,
+            },
         };
     }
 }

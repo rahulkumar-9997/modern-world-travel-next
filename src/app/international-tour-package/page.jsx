@@ -1,6 +1,7 @@
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 import React from 'react';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 import { InternationalTourPackageList } from './InternationalTourPackageList';
 async function getInternationalPackages() {
     try {
@@ -24,6 +25,9 @@ export async function generateMetadata() {
             return {
                 title: 'International Tour Packages - Modern World Travel',
                 description: 'Explore international tour packages',
+                alternates: {
+                    canonical: `${baseUrl}/international-tour-package`,
+                },
             };
         }
 
@@ -35,6 +39,9 @@ export async function generateMetadata() {
             description:
                 apiData.meta_description ||
                 'Explore international tour packages with Modern World Travel',
+            alternates: {
+                canonical: `${baseUrl}/international-tour-package`,
+            },
         };
 
     } catch (e) {

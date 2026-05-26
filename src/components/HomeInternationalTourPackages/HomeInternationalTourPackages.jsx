@@ -14,7 +14,7 @@ export function HomeInternationalTourPackages({ initialData }) {
                 <div className="row justify-between md:justify-center items-end y-gap-10 items-center">
                     <div className="col-auto">
                         <Heading
-                            level={2}
+                            level={5}
                             text="International Tour Packages"
                             className="text-30 md:text-24 mb-0 int-title"
                         />

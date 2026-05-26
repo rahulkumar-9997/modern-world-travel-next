@@ -3,6 +3,7 @@ export const revalidate = 0;
 import React from 'react';
 import TourLocationPage from './TourLocationPage';
 import axios from "axios";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 async function getTourLocationDetails(slug) {
     try {
         const { data: response } = await axios.get(
@@ -26,6 +27,9 @@ export async function generateMetadata({ params }) {
             return {
                 title: 'Tour Location not found - Modern World Travel',
                 description: 'Tour location details not found',
+                alternates: {
+                    canonical: `${baseUrl}/tours-location/${slug}`,
+                },
             };
         }
         return {
@@ -36,6 +40,9 @@ export async function generateMetadata({ params }) {
             description:
                 data.meta_description ||
                 `Explore ${data.title || "this tour location"} with Modern World Travel`,
+            alternates: {
+                canonical: `${baseUrl}/tours-location/${slug}`,
+            },
         };
 
     } catch (error) {

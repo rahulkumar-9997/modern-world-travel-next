@@ -1,6 +1,39 @@
 import React from 'react'
 import BreadcrumbHeader from '@/components/BreadcrumbHeader/BreadcrumbHeader';
 import { Heading } from '@/components/Heading/Heading';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
+export const metadata = {
+    title: 'About Us - Modern World Travel | Trusted Travel Agency in Varanasi',
+    description: 'Learn about Modern World Travel, a trusted travel agency in Varanasi offering personalized holiday packages, domestic & international tours, and exceptional travel experiences since establishment.',
+    keywords: 'about Modern World Travel, travel agency Varanasi, holiday packages, domestic tours, international tours, travel company India',
+    authors: [{ name: 'Modern World Travel' }],
+    openGraph: {
+        title: 'About Modern World Travel - Excellence in Travel Since Establishment',
+        description: 'Discover our philosophy, mission, and why we are the most preferred travel company for national and international travellers.',
+        url: `${baseUrl}/about-us`,
+        siteName: 'Modern World Travel',
+        images: [
+            {
+                url: '/assets/modern-img/about-1.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'About Modern World Travel',
+            },
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'About Us - Modern World Travel',
+        description: 'Trusted travel agency in Varanasi offering personalized travel experiences.',
+        images: ['/assets/modern-img/about-1.jpg'],
+    },
+    alternates: {
+        canonical: `${baseUrl}/about-us`,
+    },
+};
+
 export default function AboutUsPage() {
     return (
         <>
@@ -129,7 +162,7 @@ export default function AboutUsPage() {
                         <div className="col-lg-3 col-sm-6 mb-10">
                             <div className="featureIcon h-full -type-1 shadow-2xl bg-amber-100 text-center p-3 rounded">
                                 <div className="featureIcon__icon text-center">
-                                    <img src="/assets/img/icons/1/diamond.svg" alt="icon" className='d-block mx-auto'/>
+                                    <img src="/assets/img/icons/1/diamond.svg" alt="icon" className='d-block mx-auto' />
                                 </div>
                                 <Heading
                                     level={4}
@@ -144,7 +177,7 @@ export default function AboutUsPage() {
                         <div className="col-lg-3 col-sm-6 mb-10">
                             <div className="featureIcon h-full -type-1 shadow-2xl bg-amber-100 text-center p-3 rounded">
                                 <div className="featureIcon__icon text-center">
-                                    <img src="/assets/img/icons/1/medal.svg" alt="icon" className='d-block mx-auto'/>
+                                    <img src="/assets/img/icons/1/medal.svg" alt="icon" className='d-block mx-auto' />
                                 </div>
                                 <Heading
                                     level={4}

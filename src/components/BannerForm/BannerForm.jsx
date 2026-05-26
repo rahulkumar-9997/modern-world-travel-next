@@ -1,6 +1,5 @@
 'use client';
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 import { toast, Toaster } from 'react-hot-toast';
 import {
@@ -18,6 +17,11 @@ import {
 } from '@/components/ui/popover';
 
 export const BannerForm = () => {
+    const [isClient, setIsClient] = useState(false);
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
     const [date, setDate] = useState(null);
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -229,33 +233,39 @@ export const BannerForm = () => {
                                                         <CalendarIcon className="text-20" />
                                                     </div>
                                                     <div className="searchFormItem__content">
-                                                        <Popover open={open} onOpenChange={setOpen}>
-                                                            <PopoverTrigger asChild>
-                                                                <Button
-                                                                    variant="outline"
-                                                                    className={`w-full justify-start text-left font-normal px-0 py-2 rounded bg-transparent border-0 ${errors.date ? 'text-red-500' : ''}`}
+                                                        {isClient && (
+                                                            <Popover open={open} onOpenChange={setOpen}>
+                                                                <PopoverTrigger asChild>
+                                                                    <Button
+                                                                        variant="outline"
+                                                                        className={`w-full justify-start text-left font-normal px-0 py-2 rounded bg-transparent border-0 ${errors.date ? 'text-red-500' : ''
+                                                                            }`}
+                                                                    >
+                                                                        <span className="truncate">
+                                                                            {date ? format(date, "PPP") : "Select Date"}
+                                                                        </span>
+                                                                    </Button>
+                                                                </PopoverTrigger>
+                                                                <PopoverContent
+                                                                    className="w-auto p-0"
+                                                                    align="start"
                                                                 >
-                                                                    <span className="truncate">
-                                                                        {date ? format(date, "PPP") : "Select Date"}
-                                                                    </span>
-                                                                </Button>
-                                                            </PopoverTrigger>
-                                                            <PopoverContent className="w-auto p-0" align="start">
-                                                                <Calendar
-                                                                    mode="single"
-                                                                    selected={date}
-                                                                    onSelect={handleDateSelect}
-                                                                    initialFocus
-                                                                    disabled={(date) => {
-                                                                        const today = new Date();
-                                                                        today.setHours(0, 0, 0, 0);
-                                                                        const selectedDate = new Date(date);
-                                                                        selectedDate.setHours(0, 0, 0, 0);
-                                                                        return selectedDate <= today;
-                                                                    }}
-                                                                />
-                                                            </PopoverContent>
-                                                        </Popover>
+                                                                    <Calendar
+                                                                        mode="single"
+                                                                        selected={date}
+                                                                        onSelect={handleDateSelect}
+                                                                        initialFocus
+                                                                        disabled={(date) => {
+                                                                            const today = new Date();
+                                                                            today.setHours(0, 0, 0, 0);
+                                                                            const selectedDate = new Date(date);
+                                                                            selectedDate.setHours(0, 0, 0, 0);
+                                                                            return selectedDate <= today;
+                                                                        }}
+                                                                    />
+                                                                </PopoverContent>
+                                                            </Popover>
+                                                        )}
                                                     </div>
                                                 </div>
                                                 {/* {errors.date && (

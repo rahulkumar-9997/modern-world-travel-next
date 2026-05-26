@@ -2,7 +2,7 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 import React from 'react';
 import DestinationDetailsPage from './DestinationDetailsPage';
-
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 async function getDestinationDetails(slug1, slug2) {
     try {
         const res = await fetch(
@@ -30,6 +30,9 @@ export async function generateMetadata({ params }) {
             return {
                 title: 'Destination not found - Modern World Travel',
                 description: 'Destination details not found',
+                alternates: {
+                    canonical: `${baseUrl}/destination/${slug1}/${slug2}`,
+                },  
             };
         }
         return {
@@ -39,11 +42,17 @@ export async function generateMetadata({ params }) {
             description:
                 data.meta_desc ||
                 `Explore ${data.title || decodeURIComponent(slug2)} with Modern World Travel`,
+            alternates: {
+                canonical: `${baseUrl}/destination/${slug1}/${slug2}`,
+            },
         };
     } catch (error) {
         return {
             title: 'Modern World Travel',
             description: 'Explore destinations',
+            alternates: {
+                canonical: `${baseUrl}/destination/${slug1}/${slug2}`,
+            },
         };
     }
 }
