@@ -28,7 +28,7 @@ export default function CityPage({ initialData }) {
                                     )}
                                     {destinations.length > 0 && (
                                         <div className="city_inner destination-table">
-                                            <h3>Destinations</h3>
+                                            <h2 className="!text-[22px] !sm:text-[16px] !md:text-[20px] lg:text-[22px]">Destinations</h2>
                                             <hr/>
                                             {destinations.map((destination, index) => (
                                                 <div className="grid grid-cols-1 gap-3 city-slug"  key={destination.nid || index}>
