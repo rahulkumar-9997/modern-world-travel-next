@@ -30,8 +30,8 @@ export async function POST(request) {
       }),
     );
     const { data, error } = await resend.emails.send({
-      from: "Modern World Travel <seo@modernworldtravel.com>",
-      to: ["info@modernworldtravel.com", "modernworldtravel@gmail.com"],
+      from: "Modern World Travel <mwtseo@wizards.co.in>",
+      to: ["info@modernworldtravel.com", "modernworldtravel@gmail.com", "akshat@wizards.co.in"],
       subject: `Modern World Travel Home Enquiry from ${name}`,
       html: emailHtml,
     });
