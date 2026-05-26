@@ -68,7 +68,7 @@ export function HomeTrendingDestinations({ initialData }) {
                                                 />
                                             </div>
                                             <div className="featureCard__content text-center">
-                                                <h3 style={{ color: 'white',WebkitTextFillColor: 'unset', fontWeight: 'normal' }}className="text-white! text-18 md:text-16">{destination.name}</h3>
+                                                <h3 style={{ color: 'white',WebkitTextFillColor: 'unset', fontWeight: 'normal' }} className="text-white! text-18 md:text-16">{destination.name}</h3>
                                             </div>
                                         </Link>
                                     </CarouselItem>
