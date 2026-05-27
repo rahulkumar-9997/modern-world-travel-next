@@ -55,7 +55,7 @@ export function HomeInternationalTourPackages({ initialData }) {
                                                 <Heading
                                                     level={5}
                                                     text={tour.title}
-                                                    className="ttourCard__title  fw-500 mt-5 md:text-18 leading-tight! "
+                                                    className="ttourCard__title  fw-500 mt-5 leading-tight!"
                                                 />
                                                 <p className='relative z-10! line-clamp-4 group-hover:text-white! transition-colors'>
                                                     {tour.description}

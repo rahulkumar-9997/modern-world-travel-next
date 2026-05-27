@@ -10,7 +10,7 @@ export default function ItineraryOrTourPackagePage({initialData}) {
     const [selectedTour, setSelectedTour] = useState(null);
     const pathname = usePathname();
 
-    const {title, duration, desktop_banner_image, mobile_banner_image, meta_title, meta_desc, highlights, inclusions, currenturl, exclusions,  for_daywise = [], cover_city = []} = initialData;
+    const {title, duration, desktop_banner_image, mobile_banner_image, meta_title, meta_desc, highlights, inclusions, exclusions,  for_daywise = [], cover_city = []} = initialData;
     return (
         <>
             <BreadcrumbHeader
@@ -172,7 +172,7 @@ export default function ItineraryOrTourPackagePage({initialData}) {
                 isOpen={isModalOpen}
                 title={selectedTour?.title}
                 duration={selectedTour?.duration}
-                currentUrl={currenturl || pathname} 
+                currentUrl={typeof window !== "undefined" ? window.location.href : ""}
                 onClose={() => setIsModalOpen(false)}
             />
         </>

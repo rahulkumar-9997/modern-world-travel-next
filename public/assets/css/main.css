@@ -602,7 +602,7 @@ ul, li {
 }
 
 p, li{
-    font-size: 18px;
+    font-size: 17px;
     color: var(--color-dark-1);
     /* margin: 0; */
     margin: 0 0 15px;
@@ -14289,10 +14289,14 @@ button.gm-ui-hover-effect::after {
 .tourCard:hover .tourCard__location,
 .tourCard:hover .tourCard__location i,
 .tourCard:hover h5,
+.tourCard:hover h2,
 .tourCard:hover p,
 .tourCard:hover .home-duration .duration-content
 {
   color: #FFFFFF!important;
+}
+.tourCard h2{
+  color: #eb6605;
 }
 /* .tourCard:hover .home-duration .duration-content{
   border-top: 1px solid #FFFFFF;

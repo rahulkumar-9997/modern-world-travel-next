@@ -18,8 +18,8 @@ export const Heading = ({
             case 2: return 'text-3xl md:text-4xl font-bold';
             case 3: return 'text-2xl md:text-3xl font-semibold';
             case 4: return 'text-xl md:text-2xl font-semibold';
-            case 5: return 'text-lg md:text-xl font-medium';
-            case 6: return 'text-base md:text-lg font-medium';
+            case 5: return 'lg:text-[21px] text-[18px] font-medium';
+            case 6: return 'text-base md:text-[16px] font-medium';
             default: return 'text-3xl font-bold';
         }
     };

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { toast, Toaster } from 'react-hot-toast';
 
-const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
+const EnquiryModal = ({ isOpen, onClose, title = "Contact Us", currentUrl = "" }) => {
     const [formData, setFormData] = useState({
         title: '',
         name: '',
@@ -98,7 +98,8 @@ const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
                     email: formData.email.trim(),
                     phone: formData.phone.trim(),
                     message: formData.message.trim(),
-                    source: 'Enquiry Modal'
+                    source: 'Enquiry Modal',
+                    currenturl: currentUrl
                 })
             });
 
