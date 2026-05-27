@@ -35,7 +35,7 @@ export async function POST(request) {
       from: "Modern World Travel <mwt@modernworldtravel.com>",
       to: ["info@modernworldtravel.com", "modernworldtravel@gmail.com", "akshat@wizards.co.in"],
       replyTo: email || undefined,
-      subject: `New Enquiry Modal Form - ${name}`,
+      subject: `New Itinerary Enquiry From - ${name}`,
       html: emailHtml,
     });
     if (error) {
