@@ -7,7 +7,7 @@ export function HomeEmailTemplate({
 }) {
   return (
     <div style={{ fontFamily: "Arial, sans-serif", lineHeight: 1.5 }}>
-      <h2>New Home Enquiry</h2>
+      <h2>New Enquiry from Modern World Travel Home Page</h2>
       <p><strong>Name:</strong> {name}</p>
       <p><strong>Phone / Email:</strong> {phoneEmail}</p>
       <p><strong>Destination:</strong> {destination}</p>
