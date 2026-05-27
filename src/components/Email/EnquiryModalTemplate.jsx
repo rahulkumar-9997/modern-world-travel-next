@@ -9,7 +9,8 @@ export function EnquiryModalTemplate({
 }) {
   return (
     <div style={{ fontFamily: "Arial, sans-serif", lineHeight: 1.5 }}>
-      <h2>Modal form enquiry form {title} </h2>
+      <h2>New Itinerary Enquiry</h2>
+      <h3>Itinerary Name : {title} </h3>
       <p><strong>Name:</strong> {name}</p>
       <p><strong>Phone:</strong> {phone}</p>
       <p><strong>Email:</strong> {email}</p>
