@@ -361,7 +361,7 @@ const VaranasiAirportServicesPage = ({ initialData }) => {
           <div className="relative overflow-hidden rounded-2xl lg:px-8 lg:py-10 px-8 sm:py-10"
             style={{ background: 'linear-gradient(135deg, #0f3460 0%, #16213e 40%, #1e3a5f 100%)' }}
           >
-            <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8 text-center sm:text-left">
+            <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8 sm:text-left">
               {/* Left text */}
               <div className="">
                 <h6 className="lg:text-[30px]! text-[24px]! font-bold text-white mb-2 leading-tight">
