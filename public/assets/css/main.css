@@ -2565,7 +2565,7 @@ h1, h2, h3{
 
 .header.-type-3.-is-sticky {
   background-color: white;
-  position: sticky;
+  position: fixed;
 }
 
 .header.-type-3 .header__container {
