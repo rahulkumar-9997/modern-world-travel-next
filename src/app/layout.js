@@ -27,7 +27,6 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="/assets/css/vendors.css?v=12"/>
         <link rel="stylesheet" href="/assets/css/main.css?v=12"/>
       </head>
-
       <body>
         <Provider>
           <Suspense>
