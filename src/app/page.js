@@ -65,11 +65,7 @@ export const metadata = {
 };
 export default function Home() {
   return (
-    <>
-      {/* <Suspense fallback={<Spinner />}>
-        <BannerWrapper />
-      </Suspense> */}
-      {/* <HomeAbout /> */}
+      <>      
       <BannerForm />
       <HomeLandscapeImageWrapper />
       <Suspense fallback={<Spinner />}>
@@ -87,9 +83,6 @@ export default function Home() {
         <HomeInternationalTourPackagesWrapper />
       </Suspense>
       <HomePortraitVideoWrapper />
-      {/* <Suspense fallback={<Spinner />}>
-        <Testimonials />
-      </Suspense> */}
     </>
   );
 }

@@ -771,16 +771,17 @@ function pinOnScroll() {
 }
 
 function headerSticky() {
-  const target = document.querySelector(".js-header")
-  if (!target) return
+    const target = document.querySelector(".js-header");
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      target.classList.add('-is-sticky')
-    } else {
-      target.classList.remove('-is-sticky')
-    }
-  })
+    if (!target) return;
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 20) {
+            target.classList.add("-is-sticky");
+        } else {
+            target.classList.remove("-is-sticky");
+        }
+    });
 }
 
 function dbSidebarToggle() {

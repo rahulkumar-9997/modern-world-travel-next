@@ -1263,7 +1263,7 @@ button:focus {
   height: 45px;
   border: 1px solid #E7E6E6;
   border-radius: 12px;
-  padding: 15px;
+  padding: 5px;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -14763,6 +14763,11 @@ button.gm-ui-hover-effect::after {
 }
 
 @media screen and (max-width: 991px) {
+    .pageHeader.-type-1.for-varanasi-airport {
+        background-repeat: no-repeat;
+        background-position: center center;
+        padding: 100px 0 145px;
+    }
   .menuNav__item a.menu-head-t{
     padding: 10px 0;
     color: #004d91;

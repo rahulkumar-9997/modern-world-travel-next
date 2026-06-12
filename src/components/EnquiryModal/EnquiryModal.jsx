@@ -336,7 +336,7 @@ const EnquiryModal = ({ isOpen, onClose, title = "Contact Us", currentUrl = "" }
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className={`w-full px-3 py-3 rounded! bg-white text-[#410f06] font-semibold transition-all duration-300 flex items-center justify-center ${isSubmitting
+                                        className={`w-full px-3 py-2.5! rounded! bg-white text-[#410f06] font-semibold transition-all duration-300 flex items-center justify-center ${isSubmitting
                                             ? 'opacity-70 cursor-not-allowed'
                                             : 'hover:bg-gray-100 hover:shadow-lg transform hover:-translate-y-0.5'
                                             }`}
