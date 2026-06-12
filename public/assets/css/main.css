@@ -602,7 +602,7 @@ ul, li {
 }
 
 p, li{
-    font-size: 18px;
+    font-size: 17px;
     color: var(--color-dark-1);
     /* margin: 0; */
     margin: 0 0 15px;
@@ -1263,7 +1263,7 @@ button:focus {
   height: 45px;
   border: 1px solid #E7E6E6;
   border-radius: 12px;
-  padding: 15px;
+  padding: 5px;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -14289,10 +14289,14 @@ button.gm-ui-hover-effect::after {
 .tourCard:hover .tourCard__location,
 .tourCard:hover .tourCard__location i,
 .tourCard:hover h5,
+.tourCard:hover h2,
 .tourCard:hover p,
 .tourCard:hover .home-duration .duration-content
 {
   color: #FFFFFF!important;
+}
+.tourCard h2{
+  color: #eb6605;
 }
 /* .tourCard:hover .home-duration .duration-content{
   border-top: 1px solid #FFFFFF;
@@ -14759,6 +14763,11 @@ button.gm-ui-hover-effect::after {
 }
 
 @media screen and (max-width: 991px) {
+    .pageHeader.-type-1.for-varanasi-airport {
+        background-repeat: no-repeat;
+        background-position: center center;
+        padding: 100px 0 145px;
+    }
   .menuNav__item a.menu-head-t{
     padding: 10px 0;
     color: #004d91;

@@ -7,7 +7,7 @@ export function Header({ menuList }) {
     const pathname = usePathname();
     useEffect(() => {
         if (!menuList || menuList.length === 0) return;
-        headerSticky()
+        headerSticky1()
         menuEvents()
         menuListBindEvents()
         menuCloseOnLinkClick()
@@ -95,13 +95,13 @@ export function Header({ menuList }) {
                                                                                                     className='dropdown-link-a'>
                                                                                                     {item.name}
                                                                                                     {
-                                                                                                        item.duration && (
-                                                                                                            <>
-                                                                                                                <br /><span className="span-text-s">
-                                                                                                                    {item.duration}
-                                                                                                                </span>
-                                                                                                            </>
-                                                                                                        )
+                                                                                                                                                                                item.duration && (
+                                                                                                                                                                                    <>
+                                                                                                                                                                                        <br /><span className="span-text-s">
+                                                                                                                                                                                            {item.duration}
+                                                                                                                                                                                        </span>
+                                                                                                                                                                                    </>
+                                                                                                                                                                                )
                                                                                                     }
                                                                                                 </Link>
 
@@ -248,7 +248,7 @@ export function Header({ menuList }) {
     )
 }
 
-function headerSticky() {
+function headerSticky1() {
     const target = document.querySelector(".js-header")
     if (!target) return
 

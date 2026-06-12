@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { toast, Toaster } from 'react-hot-toast';
 
-const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
+const EnquiryModal = ({ isOpen, onClose, title = "Contact Us", currentUrl = "" }) => {
     const [formData, setFormData] = useState({
         title: '',
         name: '',
@@ -98,7 +98,8 @@ const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
                     email: formData.email.trim(),
                     phone: formData.phone.trim(),
                     message: formData.message.trim(),
-                    source: 'Enquiry Modal'
+                    source: 'Enquiry Modal',
+                    currenturl: currentUrl
                 })
             });
 
@@ -335,7 +336,7 @@ const EnquiryModal = ({ isOpen, onClose, title = "Contact Us" }) => {
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className={`w-full px-3 py-3 rounded! bg-white text-[#410f06] font-semibold transition-all duration-300 flex items-center justify-center ${isSubmitting
+                                        className={`w-full px-3 py-2.5! rounded! bg-white text-[#410f06] font-semibold transition-all duration-300 flex items-center justify-center ${isSubmitting
                                             ? 'opacity-70 cursor-not-allowed'
                                             : 'hover:bg-gray-100 hover:shadow-lg transform hover:-translate-y-0.5'
                                             }`}

@@ -47,11 +47,9 @@ export function InternationalTourPackageList({ initialData }) {
                                                         <i className="icon-pin d-flex text-16 text-light-2 mr-5" />
                                                         {tour.location}
                                                     </div> */}
-                                                    <Heading
-                                                        level={5}
-                                                        text={tour.title}
-                                                        className="ttourCard__title  fw-500 mt-5 leading-tight! "
-                                                    />
+                                                    <h2 className="lg:text-[21px]! text-[18px]! font-medium ttourCard__title  fw-500 mt-5 leading-tight! z-10!" style={{ WebkitTextFillColor: 'unset', fontWeight: 'normal' }}>
+                                                        {tour.title}
+                                                    </h2>                                                    
                                                     <p className='relative z-10! line-clamp-4 group-hover:text-white! transition-colors'>
                                                         {tour.description}
                                                     </p>

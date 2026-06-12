@@ -49,11 +49,13 @@ export const HomeAbout = () => {
                                         <p className="mb-3!">
                                            Modern World Travel is a trusted travel agency in Varanasi. Located in a prime tourist and commercial area, we offer easy access to a wide range of hotels, from luxury stays to budget options, ensuring a smooth and comfortable travel experience. 
                                         </p>
-                                        
                                     </div>
-                                    <div className="mt-3">
+                                    <div className="mt-3 d-flex gap-3">
                                         <Link href="/about-us" className="py-2! px-5! inline-block tracking-wide align-middle duration-500 text-base text-center bg-logo-color1 text-white rounded-md hover:!text-white">
                                             Read More 
+                                        </Link>
+                                        <Link href="/varanasi-airport-services" className="py-2! px-5! inline-block tracking-wide align-middle duration-500 text-base text-center bg-logo-color2 text-white rounded-md hover:!text-white">
+                                            Varanasi Airport Services
                                         </Link>
                                     </div>
                                 </div>
