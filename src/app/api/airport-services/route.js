@@ -62,8 +62,7 @@ export async function POST(request) {
 
     const { error } = await resend.emails.send({
       from: "Modern World Travel <mwt@modernworldtravel.com>",
-      //to: ["info@modernworldtravel.com", "modernworldtravel@gmail.com", "akshat@wizards.co.in"],
-      to: ["rahulkumarmaurya464@gmail.com"],
+      to: ["info@modernworldtravel.com", "modernworldtravel@gmail.com", "akshat@wizards.co.in"],
       replyTo: email || undefined,
       subject: `New Airport Service Enquiry From - ${name}`,
       html: emailHtml,
