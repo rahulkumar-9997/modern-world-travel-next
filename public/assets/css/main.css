@@ -605,7 +605,7 @@ p, li{
     font-size: 17px;
     color: var(--color-dark-1);
     /* margin: 0; */
-    margin: 0 0 15px;
+    margin: 0 0 5px;
     font-weight: 400;
 }
 
@@ -629,7 +629,7 @@ button:focus {
   text-align: center;
   font-size: 15px;
   font-weight: 500;
-  line-height: 28px;
+  line-height: 22px;
   border-radius: 12px;
   border: 1px solid transparent;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -14462,7 +14462,7 @@ button.gm-ui-hover-effect::after {
 .single-tour-inner .package-head-text {
   margin-bottom: 20px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 26px;
   color: var(--color-dark-1);
 }
@@ -14527,7 +14527,7 @@ button.gm-ui-hover-effect::after {
 .inclusions-exclusions ul li,
 .inclusions-exclusions ol li
 {
-  font-size: 1.1rem;
+  font-size: 17px;
   color: var(--color-dark-1);
 }
 .sticky {

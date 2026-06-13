@@ -250,7 +250,7 @@ const VaranasiAirportServicesPage = ({ initialData }) => {
       </section>
 
       <section className="layout-pb-lg layout-pt-lg" style={{
-        background: 'linear-gradient(135deg, #fdf6ec 0%, #fef9f0 50%, #f0f7ff 100%)',
+        background: 'linear-gradient(135deg, rgb(208 181 141) 0%, rgb(254, 249, 240) 50%, rgb(240, 247, 255) 100%)',
       }}>
         <div className="container">
           <div className="row justify-center text-center">
