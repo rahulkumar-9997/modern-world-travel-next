@@ -66,14 +66,14 @@ export default function AboutUsPage() {
                                     </div>
                                 </div>
                                 <p className="text-lg md:text-xl text-white leading-relaxed italic font-medium pt-6">
-                                    “ModernWorld Travel has its corporate office in Varanasi. Located in the prime commercial/tourist area of the city of Varanasi, Modern World Travel’s close to a whole range of hotels from 5 star to budget. The main railway station is nearby and the airport is aprrox a 45 minute comfortable drive. The area also has many local traditional shops and bazaars as well as a small, but well appointed modern shopping mall and cinema.”
+                                    “ModernWorld Travel has its corporate office in Varanasi. Located in the prime commercial/tourist area of the city of Varanasi, Modern World Travel’s close to a whole range of hotels from 5 star to budget. The main railway station is nearby and the airport is approx   a 45 minute comfortable drive. The area also has many local traditional shops and bazaars as well as a small, but well appointed modern shopping mall and cinema.”
                                 </p>
                             </div>
                         </div>
                         <div className="col-md-6 is-in-view">
 
                             <p>
-                                Our major focused areas are Holiday Packages (Domestic & International). We will endeavour to be the most preferred travel company for the national and international travellers, by achieving excellence in customer satisfaction. We believe in Guest delight. We strive constanty to keep up the Service Excellence Level at its best for our guest. We are an Equal Opportunity employer and we believe that it is essential to be Good Corporate Citizens to serve the community that sustains us.
+                                Our major focused areas are Holiday Packages (Domestic & International). We will endeavour to be the most preferred travel company for the national and international travellers, by achieving excellence in customer satisfaction. We believe in Guest delight. We strive constantly to keep up the Service Excellence Level at its best for our guest. We are an Equal Opportunity employer and we believe that it is essential to be Good Corporate Citizens to serve the community that sustains us.
                             </p>
                         </div>
                     </div>
@@ -116,7 +116,7 @@ export default function AboutUsPage() {
                             <div className="text-center">
                                 <Heading
                                     level={3}
-                                    text="Why Choose Morden World Travel ?"
+                                    text="Why Choose Modern World Travel ?"
                                     className="text-30 md:text-24 lh-13"
                                 />
                                 <p>

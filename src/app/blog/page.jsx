@@ -30,8 +30,8 @@ export async function generateMetadata() {
         };
     }
     return {
-        title: res.meta_title || 'Blog - Modern World Travel | Latest Travel Insights and Stories',
-        description: res.meta_description || 'Explore the Modern World Travel Blog for the latest travel insights, tips, and stories. Stay updated on domestic and international travel trends, destination guides, and expert advice.',
+        title: res.meta_title,
+        description: res.meta_description,
         alternates: {
             canonical: `${baseUrl}/blog`,
         },

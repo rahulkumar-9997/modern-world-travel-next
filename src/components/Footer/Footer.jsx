@@ -60,7 +60,7 @@ export function Footer({ initialData }) {
                                 </div>
                             </div>
                             <div className="col-lg-auto col-6">
-                                <h4 className="text-20 md:text-18 fw-500">Modern Word Travel</h4>
+                                <h4 className="text-20 md:text-18 fw-500">Modern World Travel</h4>
                                 <div className="y-gap-10 mt-20">
                                     <Link className="d-block fw-500" href="/about-us">
                                         About Us
