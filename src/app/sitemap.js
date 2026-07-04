@@ -9,37 +9,39 @@ function extractUrlsFromMenu(menuData, baseUrl) {
 
     menus.forEach((menu) => {
         if (!menu.sections || !Array.isArray(menu.sections)) {
-        return;
-        }
-        menu.sections.forEach((section) => {
-        if (!section.items || !Array.isArray(section.items)) {
             return;
         }
-        section.items.forEach((item) => {
-            if (!item?.url) {
+        menu.sections.forEach((section) => {
+            if (!section.items || !Array.isArray(section.items)) {
                 return;
             }
-            let path = "";
-            if (section.title === "Favourite Cities") {
-                path = `/city/${item.url}`;
-            } else if (menu.title === "Packages") {
-                path = `/tour-package/${item.url}`;
-            } else if (menu.title === "Experience") {
-                path = `/experience/${item.url}`;
-            } else {
-                path = `/tours-location/${item.url}`;
-            }
-            urls.push({
-                url: `${baseUrl}${path}`,
-                lastModified: new Date(),
-                changeFrequency: "weekly",
-                priority: 0.7,
+            section.items.forEach((item) => {
+                if (!item?.url) {
+                    return;
+                }
+                let path = "";
+                if (section.title === "Favourite Cities") {
+                    path = `/city/${item.url}`;
+                } else if (menu.title === "Packages") {
+                    path = `/tour-package/${item.url}`;
+                } else if (menu.title === "Experience") {
+                    path = `/experience/${item.url}`;
+                } else if (menu.title === "Destination") {
+                    path = `/tours-location/${item.url}`;
+                } else {
+                    path = `/tours-location/${item.url}`;
+                }
+                urls.push({
+                    url: `${baseUrl}${path}`,
+                    lastModified: new Date(),
+                    changeFrequency: "weekly",
+                    priority: 0.7,
+                });
             });
         });
     });
-});
-  console.log("Generated URLs:", urls.length);
-  return urls;
+    console.log("Generated URLs:", urls.length);
+    return urls;
 }
 function extractBlogUrls(blogData, baseUrl) {
     const urls = [];
