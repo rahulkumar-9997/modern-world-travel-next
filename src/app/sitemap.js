@@ -1,5 +1,6 @@
 export const dynamic = "force-static";
 export const revalidate = 3600;
+
 function extractUrlsFromMenu(menuData, baseUrl) {
     const urls = [];
     const menus = menuData?.data || [];
@@ -9,38 +10,41 @@ function extractUrlsFromMenu(menuData, baseUrl) {
 
     menus.forEach((menu) => {
         if (!menu.sections || !Array.isArray(menu.sections)) {
-        return;
-        }
-        menu.sections.forEach((section) => {
-        if (!section.items || !Array.isArray(section.items)) {
             return;
         }
-        section.items.forEach((item) => {
-            if (!item?.url) {
+        menu.sections.forEach((section) => {
+            if (!section.items || !Array.isArray(section.items)) {
                 return;
             }
-            let path = "";
-            if (section.title === "Favourite Cities") {
-                path = `/city/${item.url}`;
-            } else if (menu.title === "Packages") {
-                path = `/tour-package/${item.url}`;
-            } else if (menu.title === "Experience") {
-                path = `/experience/${item.url}`;
-            } else {
-                path = `/tours-location/${item.url}`;
-            }
-            urls.push({
-                url: `${baseUrl}${path}`,
-                lastModified: new Date(),
-                changeFrequency: "weekly",
-                priority: 0.7,
+            section.items.forEach((item) => {
+                if (!item?.url) {
+                    return;
+                }
+                let path = "";
+                if (section.title === "Favourite Cities") {
+                    path = `/city/${item.url}`;
+                } else if (menu.title === "Packages") {
+                    path = `/tour-package/${item.url}`;
+                } else if (menu.title === "Experience") {
+                    path = `/experience/${item.url}`;
+                } else if (menu.title === "Destination") {
+                    path = `/tours-location/${item.url}`;
+                } else {
+                    path = `/tours-location/${item.url}`;
+                }
+                urls.push({
+                    url: `${baseUrl}${path}`,
+                    lastModified: new Date(),
+                    changeFrequency: "weekly",
+                    priority: 0.7,
+                });
             });
         });
     });
-});
-  console.log("Generated URLs:", urls.length);
-  return urls;
+    console.log("Generated URLs:", urls.length);
+    return urls;
 }
+
 function extractBlogUrls(blogData, baseUrl) {
     const urls = [];
     const blogs = blogData?.data || [];
@@ -78,6 +82,29 @@ function extractInternationalTourUrls(internationalTourPages, baseUrl) {
             priority: 0.8,
         });
     });
+    return urls;
+}
+
+function extractDestinationUrls(destinationData, baseUrl) {
+    const urls = [];
+
+    const destinations = destinationData?.data?.destination || [];
+
+    if (!Array.isArray(destinations)) {
+        return urls;
+    }
+
+    destinations.forEach((destination) => {
+        if (!destination?.city_url || !destination?.destination_url) return;
+
+        urls.push({
+            url: `${baseUrl}/destination/${destination.city_url}/${destination.destination_url}`, 
+            lastModified: new Date(),
+            changeFrequency: "weekly",
+            priority: 0.7,
+        });
+    });
+
     return urls;
 }
 
@@ -144,6 +171,7 @@ export default async function sitemap() {
     let menuPages = [];
     let blogPages = [];
     let internationalTourPages = [];
+    let destinationPages = [];
     try {
         const menuResponse = await fetch(
             "https://admin.modernworldtravel.com/api/header-menu",
@@ -167,6 +195,7 @@ export default async function sitemap() {
                 menuResponse.status
             );
         }
+        
         /**
          * BLOG API
          */
@@ -188,7 +217,10 @@ export default async function sitemap() {
                 blogResponse.status
             );
         }
-        /**International Tour Package API */
+        
+        /**
+         * International Tour Package API
+         */
         const InternationalTourResponse = await fetch(
             "https://admin.modernworldtravel.com/api/international-tour-package",
             {
@@ -207,15 +239,45 @@ export default async function sitemap() {
                 InternationalTourResponse.status
             );
         }
+        
+        /**
+         * NEW: Destination Sitemap API
+         */
+        const destinationResponse = await fetch(
+            "https://admin.modernworldtravel.com/api/sitemap",
+            {
+                cache: "no-store",
+            }
+        );
+        if (destinationResponse.ok) {
+            const destinationData = await destinationResponse.json();
+            destinationPages = extractDestinationUrls(
+                destinationData,
+                baseUrl
+            );
+            console.log(
+                "Destination URLs Generated:",
+                destinationPages.length
+            );
+        } else {
+            console.log(
+                "Destination API Failed:",
+                destinationResponse.status
+            );
+        }
+        
     } catch (error) {
         console.log("Sitemap Error:", error);
     }
+    
     const allPages = [
         ...staticPages,
         ...menuPages,
         ...blogPages,
         ...internationalTourPages,
+        ...destinationPages,
     ];
+    
     const uniquePages = Array.from(
         new Map(allPages.map((item) => [item.url, item])).values(),
     );
